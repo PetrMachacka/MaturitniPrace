@@ -23,7 +23,7 @@ public class Building : MonoBehaviour
 
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
-        if (Physics.Raycast(ray, out hit, 8f))
+        if (Physics.Raycast(ray, out hit, reach))
         {
             HandleRaycastHit(hit);
         }
