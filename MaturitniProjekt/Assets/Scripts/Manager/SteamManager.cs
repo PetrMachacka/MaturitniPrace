@@ -12,7 +12,7 @@ public class SteamManager : MonoBehaviour
         }
         catch (System.Exception e)
         {
-            Debug.LogError("could not initialize steam client: " + e.Message);
+            Debug.LogError(e.Message);
         }
         DontDestroyOnLoad(this.gameObject);
     }
