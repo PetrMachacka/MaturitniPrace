@@ -7,6 +7,7 @@ public class Building : MonoBehaviour
 {
     [SerializeField]
     private int reach = 8;
+    private GameObject Folder;
     private Color originalColor;
     private GameObject currentObject;
     private EditorInputSystem editorInputSystem;
@@ -16,20 +17,22 @@ public class Building : MonoBehaviour
     void Start()
     {
         editorInputSystem = new EditorInputSystem();
+        Folder = GameObject.Find("Build");
     }
 
     void Update()
     {
+        if(!PauseMenu.isPaused){
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-
-        if (Physics.Raycast(ray, out hit, reach))
-        {
-            HandleRaycastHit(hit);
-        }
-        else
-        {
-            RestoreOriginalColor();
+            if (Physics.Raycast(ray, out hit, reach))
+            {
+                HandleRaycastHit(hit);
+            }
+            else
+            {
+                RestoreOriginalColor();
+            }
         }
     }
 
@@ -86,7 +89,7 @@ public class Building : MonoBehaviour
     }
     private void PlaceObjectNextToCurrent(RaycastHit hit)
     {
-        if (currentObject != null)
+        if (currentObject != null && !PauseMenu.isPaused)
         {
             Debug.Log(hit.point.x + " " + currentObject.transform.position.x);
             Vector3 newPosition = currentObject.transform.position;
@@ -111,8 +114,12 @@ public class Building : MonoBehaviour
                     newPosition += new Vector3(0, -1, 0);
                     break;
             }
+            GameObject newObject = Instantiate(objectPrefab, newPosition, Quaternion.identity);
 
-            Instantiate(objectPrefab, newPosition, Quaternion.identity);
+            if (Folder != null)
+            {
+                newObject.transform.SetParent(Folder.transform);
+            }
         }
     }
     private void BreakObject()

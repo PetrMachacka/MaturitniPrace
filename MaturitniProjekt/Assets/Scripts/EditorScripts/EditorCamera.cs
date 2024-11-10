@@ -12,22 +12,25 @@ public class EditorCamera : MonoBehaviour
     float xRotation;
     float yRotation;
 
-    private void Start()
-    {
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
-    }
     private void Update()
     {
-        float mouseX = Input.GetAxisRaw("Mouse X") * Time.deltaTime * sensX * 5;
-        float mouseY = Input.GetAxisRaw("Mouse Y") * Time.deltaTime * sensY * 5;
+        if(!PauseMenu.isPaused){
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
+            float mouseX = Input.GetAxisRaw("Mouse X") * Time.deltaTime * sensX * 5;
+            float mouseY = Input.GetAxisRaw("Mouse Y") * Time.deltaTime * sensY * 5;
 
-        yRotation += mouseX;
+            yRotation += mouseX;
 
-        xRotation -= mouseY;
-        xRotation = Mathf.Clamp(xRotation, -90f, 90f);
+            xRotation -= mouseY;
+            xRotation = Mathf.Clamp(xRotation, -90f, 90f);
 
-        transform.rotation = Quaternion.Euler(xRotation, yRotation, 0);
-        orientation.rotation = Quaternion.Euler(0, yRotation, 0);
+            transform.rotation = Quaternion.Euler(xRotation, yRotation, 0);
+            orientation.rotation = Quaternion.Euler(0, yRotation, 0);
+            }
+            else{
+                Cursor.lockState = CursorLockMode.None;
+                Cursor.visible = true;
+            }
     }
 }

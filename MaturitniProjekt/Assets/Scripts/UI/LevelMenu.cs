@@ -1,0 +1,66 @@
+using System;
+using System.Collections.Generic;
+using System.IO;
+using UnityEngine;
+using TMPro;
+
+public class LevelMenu : MonoBehaviour
+{
+    public GameObject buttonPrefab;
+    public Transform content;
+
+    void Start()
+    {
+        string levelsFolderPath = Path.Combine(Application.persistentDataPath, "Levels");
+
+        if (Directory.Exists(levelsFolderPath))
+        {
+            string[] jsonFiles = Directory.GetFiles(levelsFolderPath, "*.json");
+
+            for (int i = 0; i < jsonFiles.Length; i++)
+            {
+                Debug.Log("Found JSON file: " + jsonFiles[i]);
+                CreateButton(jsonFiles[i], i);
+            }
+        }
+        else
+        {
+            Debug.LogWarning("Levels folder does not exist at path: " + levelsFolderPath);
+        }
+    }
+
+    void CreateButton(string filePath, int index)
+    {
+        string json = File.ReadAllText(filePath);
+        LevelData levelData = JsonUtility.FromJson<LevelData>(json);
+
+        GameObject button = Instantiate(buttonPrefab, content);
+        button.name = levelData.guid;
+
+        RectTransform rectTransform = button.GetComponent<RectTransform>();
+        if (rectTransform != null)
+        {
+            rectTransform.anchoredPosition = new Vector2(rectTransform.anchoredPosition.x, rectTransform.anchoredPosition.y - (index * 35));
+        }
+
+        TextMeshProUGUI textComponent = button.GetComponentInChildren<TextMeshProUGUI>();
+        if (textComponent != null)
+        {
+            textComponent.text = Path.GetFileNameWithoutExtension(filePath);
+        }
+    }
+}
+
+[System.Serializable]
+public class LevelData
+{
+    public string guid;
+    public List<ObjectData> objects;
+}
+
+[System.Serializable]
+public class ObjectData
+{
+    public string name;
+    public Vector3 position;
+}

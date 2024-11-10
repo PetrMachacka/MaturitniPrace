@@ -53,6 +53,15 @@ public partial class @EditorInputSystem: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""ESCAPE"",
+                    ""type"": ""Button"",
+                    ""id"": ""b0972b92-ba55-496d-b86e-219bc15ba2d9"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -154,6 +163,17 @@ public partial class @EditorInputSystem: IInputActionCollection2, IDisposable
                     ""action"": ""RightClick"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""45932542-361a-4a56-8605-ad5605f0c746"",
+                    ""path"": ""<Keyboard>/escape"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ESCAPE"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -165,6 +185,7 @@ public partial class @EditorInputSystem: IInputActionCollection2, IDisposable
         m_Editor_Movement = m_Editor.FindAction("Movement", throwIfNotFound: true);
         m_Editor_LeftClick = m_Editor.FindAction("LeftClick", throwIfNotFound: true);
         m_Editor_RightClick = m_Editor.FindAction("RightClick", throwIfNotFound: true);
+        m_Editor_ESCAPE = m_Editor.FindAction("ESCAPE", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -229,6 +250,7 @@ public partial class @EditorInputSystem: IInputActionCollection2, IDisposable
     private readonly InputAction m_Editor_Movement;
     private readonly InputAction m_Editor_LeftClick;
     private readonly InputAction m_Editor_RightClick;
+    private readonly InputAction m_Editor_ESCAPE;
     public struct EditorActions
     {
         private @EditorInputSystem m_Wrapper;
@@ -236,6 +258,7 @@ public partial class @EditorInputSystem: IInputActionCollection2, IDisposable
         public InputAction @Movement => m_Wrapper.m_Editor_Movement;
         public InputAction @LeftClick => m_Wrapper.m_Editor_LeftClick;
         public InputAction @RightClick => m_Wrapper.m_Editor_RightClick;
+        public InputAction @ESCAPE => m_Wrapper.m_Editor_ESCAPE;
         public InputActionMap Get() { return m_Wrapper.m_Editor; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -254,6 +277,9 @@ public partial class @EditorInputSystem: IInputActionCollection2, IDisposable
             @RightClick.started += instance.OnRightClick;
             @RightClick.performed += instance.OnRightClick;
             @RightClick.canceled += instance.OnRightClick;
+            @ESCAPE.started += instance.OnESCAPE;
+            @ESCAPE.performed += instance.OnESCAPE;
+            @ESCAPE.canceled += instance.OnESCAPE;
         }
 
         private void UnregisterCallbacks(IEditorActions instance)
@@ -267,6 +293,9 @@ public partial class @EditorInputSystem: IInputActionCollection2, IDisposable
             @RightClick.started -= instance.OnRightClick;
             @RightClick.performed -= instance.OnRightClick;
             @RightClick.canceled -= instance.OnRightClick;
+            @ESCAPE.started -= instance.OnESCAPE;
+            @ESCAPE.performed -= instance.OnESCAPE;
+            @ESCAPE.canceled -= instance.OnESCAPE;
         }
 
         public void RemoveCallbacks(IEditorActions instance)
@@ -289,5 +318,6 @@ public partial class @EditorInputSystem: IInputActionCollection2, IDisposable
         void OnMovement(InputAction.CallbackContext context);
         void OnLeftClick(InputAction.CallbackContext context);
         void OnRightClick(InputAction.CallbackContext context);
+        void OnESCAPE(InputAction.CallbackContext context);
     }
 }
