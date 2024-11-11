@@ -40,7 +40,33 @@ public class SaveLevel : MonoBehaviour
             Directory.CreateDirectory(levelsPath);
         }
 
-        string filePath = Path.Combine(levelsPath, "levelData.json");
+        string newLevelName = PlayerPrefs.GetString("NewLevel", null);
+        Debug.Log(PlayerPrefs.GetString("NewLevel", null));
+        string filePath;
+
+        if (!string.IsNullOrEmpty(newLevelName))
+        {
+            filePath = Path.Combine(levelsPath, newLevelName + ".json");
+            PlayerPrefs.DeleteKey("NewLevel");
+        }
+        else
+        {
+            string[] levelFiles = Directory.GetFiles(levelsPath, "*.json");
+            filePath = Path.Combine(levelsPath, "levelData.json");
+
+            foreach (string levelFile in levelFiles)
+            {
+                string existingJson = File.ReadAllText(levelFile);
+                LevelData existingLevelData = JsonUtility.FromJson<LevelData>(existingJson);
+
+                if (existingLevelData.guid == PlayerPrefs.GetString("SelectedLevel", "DefaultLevel"))
+                {
+                    filePath = levelFile;
+                    break;
+                }
+            }
+        }
+
         string existingGuid = null;
 
         if (File.Exists(filePath))

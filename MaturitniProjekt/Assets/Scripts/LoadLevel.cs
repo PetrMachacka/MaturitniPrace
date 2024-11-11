@@ -23,6 +23,7 @@ public class LoadLevel : MonoBehaviour
 
     void Start()
     {
+        bool newLevel = PlayerPrefs.GetInt("NewLevelInt", 0) == 1;
         string selectedGuid = PlayerPrefs.GetString("SelectedLevel", "DefaultLevel");
         Debug.Log("Loaded Level GUID: " + selectedGuid);
 
@@ -34,22 +35,31 @@ public class LoadLevel : MonoBehaviour
             return;
         }
 
-        string[] levelFiles = Directory.GetFiles(levelsPath, "*.json");
         string filePath = null;
 
-        foreach (string levelFile in levelFiles)
+        if (newLevel)
         {
-            string json = File.ReadAllText(levelFile);
-            LevelData levelData = JsonUtility.FromJson<LevelData>(json);
+            filePath = Path.Combine(levelsPath, "LevelData.json");
+            PlayerPrefs.DeleteKey("NewLevelInt");
+        }
+        else
+        {
+            string[] levelFiles = Directory.GetFiles(levelsPath, "*.json");
 
-            if (levelData.guid == selectedGuid)
+            foreach (string levelFile in levelFiles)
             {
-                filePath = levelFile;
-                break;
+                string json = File.ReadAllText(levelFile);
+                LevelData levelData = JsonUtility.FromJson<LevelData>(json);
+
+                if (levelData.guid == selectedGuid)
+                {
+                    filePath = levelFile;
+                    break;
+                }
             }
         }
 
-        if (filePath != null)
+        if (filePath != null && File.Exists(filePath))
         {
             string json = File.ReadAllText(filePath);
             LevelData levelData = JsonUtility.FromJson<LevelData>(json);

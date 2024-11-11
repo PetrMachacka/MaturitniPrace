@@ -7,6 +7,7 @@ public class Menu : MonoBehaviour
 {
     public void LevelsButton()
     {
+        PlayerPrefs.DeleteKey("NewLevel");
         SceneManager.LoadScene("Levels");
     }
     public void QuitGame()
