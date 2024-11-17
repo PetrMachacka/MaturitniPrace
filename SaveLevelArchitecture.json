@@ -1,0 +1,20 @@
+{
+    "guid": "e39ae104-4cb3-430c-b316-d2ac2037b8d6",
+    "name": "SaveLevelArhitecture",
+    "objects": [
+        {
+            "name": "Cube",
+            "position": {
+                "x": 2.0,
+                "y": 2.0,
+                "z": 2.0
+            }
+		 "rotation": "L"
+		 "connection": {
+                "x": 2.0,
+                "y": 2.0,
+                "z": 2.0
+            }
+        }
+    ]
+}

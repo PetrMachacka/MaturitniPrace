@@ -19,76 +19,86 @@ public class LoadLevel : MonoBehaviour
         public List<ObjectData> objects;
     }
 
-    private string prefabsPath = "Prefabs/Building";
+private string prefabsPath = "Prefabs/Building";
+private string levelTemplatePath = "LevelTemplates";
 
-    void Start()
+void Start()
+{
+    bool newLevel = PlayerPrefs.GetInt("NewLevelInt", 0) == 1;
+    string selectedGuid = PlayerPrefs.GetString("SelectedLevel", "DefaultLevel");
+    Debug.Log("Loaded Level GUID: " + selectedGuid);
+
+    string levelsPath = Path.Combine(Application.persistentDataPath, "Levels");
+
+    if (!Directory.Exists(levelsPath))
     {
-        bool newLevel = PlayerPrefs.GetInt("NewLevelInt", 0) == 1;
-        string selectedGuid = PlayerPrefs.GetString("SelectedLevel", "DefaultLevel");
-        Debug.Log("Loaded Level GUID: " + selectedGuid);
+        Debug.LogError("Levels directory not found: " + levelsPath);
+        return;
+    }
 
-        string levelsPath = Path.Combine(Application.persistentDataPath, "Levels");
+    string filePath = null;
+    string json = null;
 
-        if (!Directory.Exists(levelsPath))
+    if (newLevel)
+    {
+        TextAsset levelTemplate = Resources.Load<TextAsset>(Path.Combine(levelTemplatePath, "LevelData"));
+        if (levelTemplate != null)
         {
-            Debug.LogError("Levels directory not found: " + levelsPath);
-            return;
-        }
-
-        string filePath = null;
-
-        if (newLevel)
-        {
-            filePath = Path.Combine(levelsPath, "LevelData.json");
+            json = levelTemplate.text;
             PlayerPrefs.DeleteKey("NewLevelInt");
         }
         else
         {
-            string[] levelFiles = Directory.GetFiles(levelsPath, "*.json");
-
-            foreach (string levelFile in levelFiles)
-            {
-                string json = File.ReadAllText(levelFile);
-                LevelData levelData = JsonUtility.FromJson<LevelData>(json);
-
-                if (levelData.guid == selectedGuid)
-                {
-                    filePath = levelFile;
-                    break;
-                }
-            }
-        }
-
-        if (filePath != null && File.Exists(filePath))
-        {
-            string json = File.ReadAllText(filePath);
-            LevelData levelData = JsonUtility.FromJson<LevelData>(json);
-
-            GameObject buildFolder = GameObject.Find("Build");
-            if (buildFolder == null)
-            {
-                Debug.LogError("No object named 'Build' in the scene.");
-                return;
-            }
-
-            foreach (var obj in levelData.objects)
-            {
-                string prefabPath = Path.Combine(prefabsPath, obj.name);
-                GameObject prefab = Resources.Load<GameObject>(prefabPath);
-                if (prefab != null)
-                {
-                    GameObject newObject = Instantiate(prefab, obj.position, Quaternion.identity);
-                    newObject.transform.SetParent(buildFolder.transform);
-                }
-                else
-                {
-                    Debug.LogError($"Prefab not found: {prefabPath}");
-                }
-            }
-        }
-        else
-        {
-            Debug.LogError("No level file found with the matching GUID: " + selectedGuid);
+            Debug.LogError("Level template not found in Resources/LevelTemplates.");
+            return;
         }
     }
+    else
+    {
+        string[] levelFiles = Directory.GetFiles(levelsPath, "*.json");
+
+        foreach (string levelFile in levelFiles)
+        {
+            json = File.ReadAllText(levelFile);
+            LevelData levelData = JsonUtility.FromJson<LevelData>(json);
+
+            if (levelData.guid == selectedGuid)
+            {
+                filePath = levelFile;
+                break;
+            }
+        }
+    }
+
+    if (json != null)
+    {
+        LevelData levelData = JsonUtility.FromJson<LevelData>(json);
+
+        GameObject buildFolder = GameObject.Find("Build");
+        if (buildFolder == null)
+        {
+            Debug.LogError("No object named 'Build' in the scene.");
+            return;
+        }
+
+        foreach (var obj in levelData.objects)
+        {
+            string prefabPath = Path.Combine(prefabsPath, obj.name);
+            GameObject prefab = Resources.Load<GameObject>(prefabPath);
+            if (prefab != null)
+            {
+                GameObject newObject = Instantiate(prefab, obj.position, Quaternion.identity);
+                newObject.transform.SetParent(buildFolder.transform);
+            }
+            else
+            {
+                Debug.LogError($"Prefab not found: {prefabPath}");
+            }
+        }
+    }
+    else
+    {
+        Debug.LogError("No level file found with the matching GUID: " + selectedGuid);
+    }
+}
 }

@@ -12,4 +12,8 @@ public class LevelButtonScript : MonoBehaviour
         
         SceneManager.LoadScene("EditorScene");
     }
+    public void DeleteLevel()
+    {
+        string levelGuid = gameObject.name;
+    }
 }
