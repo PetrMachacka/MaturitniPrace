@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
@@ -6,72 +5,75 @@ using UnityEngine;
 public class LoadLevel : MonoBehaviour
 {
     [System.Serializable]
-    public class ObjectData
-    {
-        public string name;
-        public Vector3 position;
-    }
-
-    [System.Serializable]
     public class LevelData
     {
         public string guid;
         public List<ObjectData> objects;
     }
 
-private string prefabsPath = "Prefabs/Building";
-private string levelTemplatePath = "LevelTemplates";
-
-void Start()
-{
-    bool newLevel = PlayerPrefs.GetInt("NewLevelInt", 0) == 1;
-    string selectedGuid = PlayerPrefs.GetString("SelectedLevel", "DefaultLevel");
-    Debug.Log("Loaded Level GUID: " + selectedGuid);
-
-    string levelsPath = Path.Combine(Application.persistentDataPath, "Levels");
-
-    if (!Directory.Exists(levelsPath))
+    [System.Serializable]
+    public class ObjectData
     {
-        Debug.LogError("Levels directory not found: " + levelsPath);
-        return;
+        public string name;
+        public Vector3 position;
     }
 
-    string filePath = null;
-    string json = null;
+    private string prefabsPath = "Prefabs/Building";
 
-    if (newLevel)
+    void Start()
     {
-        TextAsset levelTemplate = Resources.Load<TextAsset>(Path.Combine(levelTemplatePath, "LevelData"));
-        if (levelTemplate != null)
+        bool newLevel = PlayerPrefs.GetInt("NewLevelInt", 0) == 1;
+        string selectedGuid = PlayerPrefs.GetString("SelectedLevel", "DefaultLevel");
+        Debug.Log("Loaded Level GUID: " + selectedGuid);
+
+        string levelsPath = Path.Combine(Application.persistentDataPath, "Levels");
+
+        if (!Directory.Exists(levelsPath))
         {
-            json = levelTemplate.text;
-            PlayerPrefs.DeleteKey("NewLevelInt");
+            Debug.LogError("Levels directory not found: " + levelsPath);
+            return;
+        }
+
+        string filePath = GetLevelFilePath(levelsPath, newLevel, selectedGuid);
+        if (filePath != null)
+        {
+            LoadLevelData(filePath);
         }
         else
         {
-            Debug.LogError("Level template not found in Resources/LevelTemplates.");
-            return;
+            Debug.LogError("No level file found with the matching GUID: " + selectedGuid);
         }
     }
-    else
+
+    private string GetLevelFilePath(string levelsPath, bool newLevel, string selectedGuid)
     {
-        string[] levelFiles = Directory.GetFiles(levelsPath, "*.json");
-
-        foreach (string levelFile in levelFiles)
+        if (newLevel)
         {
-            json = File.ReadAllText(levelFile);
-            LevelData levelData = JsonUtility.FromJson<LevelData>(json);
+            PlayerPrefs.DeleteKey("NewLevelInt");
+            return Path.Combine(levelsPath, "LevelData.json");
+        }
+        else
+        {
+            string[] levelFiles = Directory.GetFiles(levelsPath, "*.json");
 
-            if (levelData.guid == selectedGuid)
+            foreach (string levelFile in levelFiles)
             {
-                filePath = levelFile;
-                break;
+                string json = File.ReadAllText(levelFile);
+                LevelData levelData = JsonUtility.FromJson<LevelData>(json);
+
+                if (levelData.guid == selectedGuid)
+                {
+                    return levelFile;
+                }
             }
         }
+
+        return null;
     }
 
-    if (json != null)
+    private void LoadLevelData(string filePath)
     {
+        string json = File.ReadAllText(filePath);
         LevelData levelData = JsonUtility.FromJson<LevelData>(json);
 
         GameObject buildFolder = GameObject.Find("Build");
@@ -89,6 +91,7 @@ void Start()
             {
                 GameObject newObject = Instantiate(prefab, obj.position, Quaternion.identity);
                 newObject.transform.SetParent(buildFolder.transform);
+                Debug.Log($"Instantiated {obj.name} at {obj.position}");
             }
             else
             {
@@ -96,9 +99,4 @@ void Start()
             }
         }
     }
-    else
-    {
-        Debug.LogError("No level file found with the matching GUID: " + selectedGuid);
-    }
-}
 }
