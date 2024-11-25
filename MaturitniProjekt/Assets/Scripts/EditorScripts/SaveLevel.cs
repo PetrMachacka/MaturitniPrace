@@ -83,7 +83,7 @@ public class SaveLevel : MonoBehaviour
     {
         LevelData levelData = new LevelData
         {
-            name = PlayerPrefs.GetString("NewLevel", "DefaultLevel")
+            name = PlayerPrefs.GetString("NewLevel", "")
         };
 
         foreach (Transform child in Folder.transform)

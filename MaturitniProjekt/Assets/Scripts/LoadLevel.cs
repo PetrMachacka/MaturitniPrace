@@ -1,5 +1,7 @@
+using System;
 using System.Collections.Generic;
 using System.IO;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class LoadLevel : MonoBehaviour
@@ -22,7 +24,8 @@ public class LoadLevel : MonoBehaviour
 
     void Start()
     {
-        bool newLevel = PlayerPrefs.GetInt("NewLevelInt", 0) == 1;
+        bool newLevel = PlayerPrefs.GetString("NewLevel", "") != "";
+
         selectedGuid = PlayerPrefs.GetString("SelectedLevel", "DefaultLevel");
         Debug.Log("Loaded Level GUID: " + selectedGuid);
 
@@ -49,7 +52,6 @@ public class LoadLevel : MonoBehaviour
     {
         if (newLevel)
         {
-            PlayerPrefs.DeleteKey("NewLevelInt");
             return Path.Combine(Application.persistentDataPath, "LevelData.json");
         }
         else

@@ -36,8 +36,6 @@ public class AddLevel : MonoBehaviour
         }
         Debug.Log("Creating new level: " + levelName);
         PlayerPrefs.SetString("NewLevel", levelName);
-        PlayerPrefs.SetInt("NewLevelInt", 1);
-
         PlayerPrefs.Save();
         
         SceneManager.LoadScene("EditorScene");
