@@ -17,13 +17,13 @@ public class LoadLevel : MonoBehaviour
         public string name;
         public Vector3 position;
     }
-
+    public static string selectedGuid;
     private string prefabsPath = "Prefabs/Building";
 
     void Start()
     {
         bool newLevel = PlayerPrefs.GetInt("NewLevelInt", 0) == 1;
-        string selectedGuid = PlayerPrefs.GetString("SelectedLevel", "DefaultLevel");
+        selectedGuid = PlayerPrefs.GetString("SelectedLevel", "DefaultLevel");
         Debug.Log("Loaded Level GUID: " + selectedGuid);
 
         string levelsPath = Path.Combine(Application.persistentDataPath, "Levels");
