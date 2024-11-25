@@ -7,6 +7,7 @@ public class LevelButtonScript : MonoBehaviour
     public void SelectLevel()
     {
         string levelGuid = gameObject.name;
+        Debug.Log("Selected Level GUID: " + levelGuid);
         PlayerPrefs.SetString("SelectedLevel", levelGuid);
         PlayerPrefs.Save();
         

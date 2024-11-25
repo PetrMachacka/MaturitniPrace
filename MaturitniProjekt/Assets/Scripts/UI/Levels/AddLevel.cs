@@ -34,6 +34,7 @@ public class AddLevel : MonoBehaviour
             Debug.Log("Level name is null");
             return;
         }
+        Debug.Log("Creating new level: " + levelName);
         PlayerPrefs.SetString("NewLevel", levelName);
         PlayerPrefs.SetInt("NewLevelInt", 1);
 

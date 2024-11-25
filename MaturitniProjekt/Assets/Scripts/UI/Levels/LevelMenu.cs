@@ -35,7 +35,7 @@ public class LevelMenu : MonoBehaviour
         LevelData levelData = JsonUtility.FromJson<LevelData>(json);
 
         GameObject button = Instantiate(buttonPrefab, content);
-        button.name = levelData.guid;
+        button.name = Path.GetFileNameWithoutExtension(filePath);
 
         RectTransform rectTransform = button.GetComponent<RectTransform>();
         if (rectTransform != null)
@@ -46,7 +46,7 @@ public class LevelMenu : MonoBehaviour
         TextMeshProUGUI textComponent = button.GetComponentInChildren<TextMeshProUGUI>();
         if (textComponent != null)
         {
-            textComponent.text = Path.GetFileNameWithoutExtension(filePath);
+            textComponent.text = levelData.name;
         }
     }
 }
@@ -54,7 +54,7 @@ public class LevelMenu : MonoBehaviour
 [System.Serializable]
 public class LevelData
 {
-    public string guid;
+    public string name;
     public List<ObjectData> objects;
 }
 

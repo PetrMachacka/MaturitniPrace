@@ -50,7 +50,7 @@ public class LoadLevel : MonoBehaviour
         if (newLevel)
         {
             PlayerPrefs.DeleteKey("NewLevelInt");
-            return Path.Combine(levelsPath, "LevelData.json");
+            return Path.Combine(Application.persistentDataPath, "LevelData.json");
         }
         else
         {
@@ -58,10 +58,8 @@ public class LoadLevel : MonoBehaviour
 
             foreach (string levelFile in levelFiles)
             {
-                string json = File.ReadAllText(levelFile);
-                LevelData levelData = JsonUtility.FromJson<LevelData>(json);
-
-                if (levelData.guid == selectedGuid)
+                string fileName = Path.GetFileNameWithoutExtension(levelFile);
+                if (fileName == selectedGuid)
                 {
                     return levelFile;
                 }

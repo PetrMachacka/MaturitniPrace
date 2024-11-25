@@ -6,10 +6,11 @@ using UnityEngine;
 public class SaveLevel : MonoBehaviour
 {
     private GameObject Folder;
+
     [Serializable]
     public class LevelData
     {
-        public string guid;
+        public string name;
         public List<ObjectData> objects = new List<ObjectData>();
     }
 
@@ -40,14 +41,22 @@ public class SaveLevel : MonoBehaviour
             Directory.CreateDirectory(levelsPath);
         }
 
+        string filePath = GetFilePath(levelsPath);
+        LevelData levelData = CollectLevelData(filePath);
+        WriteLevelDataToFile(filePath, levelData);
+        PlayerPrefs.DeleteKey("NewLevel");
+    }
+
+    private string GetFilePath(string levelsPath)
+    {
         string newLevelName = PlayerPrefs.GetString("NewLevel", null);
-        Debug.Log(PlayerPrefs.GetString("NewLevel", null));
+
+        Debug.Log(newLevelName);
         string filePath;
 
         if (!string.IsNullOrEmpty(newLevelName))
         {
-            filePath = Path.Combine(levelsPath, newLevelName + ".json");
-            PlayerPrefs.DeleteKey("NewLevel");
+            filePath = Path.Combine(levelsPath, Guid.NewGuid().ToString() + ".json");
         }
         else
         {
@@ -59,7 +68,7 @@ public class SaveLevel : MonoBehaviour
                 string existingJson = File.ReadAllText(levelFile);
                 LevelData existingLevelData = JsonUtility.FromJson<LevelData>(existingJson);
 
-                if (existingLevelData.guid == PlayerPrefs.GetString("SelectedLevel", "DefaultLevel"))
+                if (existingLevelData.name == PlayerPrefs.GetString("SelectedLevel", "DefaultLevel"))
                 {
                     filePath = levelFile;
                     break;
@@ -67,30 +76,31 @@ public class SaveLevel : MonoBehaviour
             }
         }
 
-        string existingGuid = null;
+        return filePath;
+    }
 
-        if (File.Exists(filePath))
-        {
-            string existingJson = File.ReadAllText(filePath);
-            LevelData existingLevelData = JsonUtility.FromJson<LevelData>(existingJson);
-            existingGuid = existingLevelData.guid;
-        }
-
+    private LevelData CollectLevelData(string filePath)
+    {
         LevelData levelData = new LevelData
         {
-            guid = existingGuid ?? Guid.NewGuid().ToString()
+            name = PlayerPrefs.GetString("NewLevel", "DefaultLevel")
         };
 
         foreach (Transform child in Folder.transform)
         {
             ObjectData objectData = new ObjectData
             {
-                name = child.gameObject.name.Split('(')[0], // Remove (Clone) from the name
+                name = child.gameObject.name.Split('(')[0],
                 position = child.position
             };
             levelData.objects.Add(objectData);
         }
 
+        return levelData;
+    }
+
+    private void WriteLevelDataToFile(string filePath, LevelData levelData)
+    {
         Debug.Log(levelData.objects[0].name);
         string json = JsonUtility.ToJson(levelData, true);
 

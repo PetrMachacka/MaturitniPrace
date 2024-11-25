@@ -7,8 +7,8 @@ public class Menu : MonoBehaviour
 {
     public async void SteamUpload()
     {
-        Debug.Log(LoadLevel.selectedGuid);
-        await SteamManager.UploadLevelToSteamWorkshopAsync(LoadLevel.selectedGuid);
+
+        await SteamManager.UploadLevelToSteamWorkshopAsync(PlayerPrefs.GetString("NewLevel"));
     }
     public void LevelsButton()
     {
