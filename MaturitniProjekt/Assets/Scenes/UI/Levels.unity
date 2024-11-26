@@ -328,8 +328,8 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
-  m_VertexColorAlwaysGammaSpace: 0
-  m_AdditionalShaderChannelsFlag: 25
+  m_VertexColorAlwaysGammaSpace: 1
+  m_AdditionalShaderChannelsFlag: 31
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
   m_SortingOrder: 0
@@ -417,7 +417,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -0.000364991, y: 0.00021153945}
   m_SizeDelta: {x: 0, y: 300}
   m_Pivot: {x: 0, y: 1}
 --- !u!1 &257213875
@@ -456,7 +456,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -1.0999985, y: 0}
+  m_AnchoredPosition: {x: -1.0999756, y: 0}
   m_SizeDelta: {x: 20, y: -17}
   m_Pivot: {x: 1, y: 1}
 --- !u!114 &257213877
@@ -502,8 +502,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2035898173}
   m_HandleRect: {fileID: 2035898172}
   m_Direction: 2
-  m_Value: 1
-  m_Size: 0.6666667
+  m_Value: 0
+  m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -1671,17 +1671,17 @@ RectTransform:
   m_GameObject: {fileID: 625711018}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2.4649696, y: 1.7842002, z: 1.7009991}
+  m_LocalScale: {x: 1, y: 1, z: 1.7100999}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1241543334}
   - {fileID: 257213876}
   m_Father: {fileID: 204443527}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 5, y: -35}
-  m_SizeDelta: {x: 200, y: 200}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 5.449951, y: -27.349987}
+  m_SizeDelta: {x: -362.0999, y: -117.90003}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &625711020
 MonoBehaviour:
@@ -1763,7 +1763,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2bae60e172604747a8055de85084acf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buttonPrefab: {fileID: 2667063178704579139, guid: 0601f370e6523854fab74acb97e2275f, type: 3}
+  buttonPrefab: {fileID: 7192390776737214760, guid: 45ec590a84bb9364aa62adb9fa82504e, type: 3}
   content: {fileID: 229830199}
 --- !u!1 &851518756
 GameObject:

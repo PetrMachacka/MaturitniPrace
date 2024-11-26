@@ -24,8 +24,6 @@ public class LoadLevel : MonoBehaviour
 
     void Start()
     {
-        bool newLevel = PlayerPrefs.GetString("NewLevel", "") != "";
-
         selectedGuid = PlayerPrefs.GetString("SelectedLevel", "DefaultLevel");
         Debug.Log("Loaded Level GUID: " + selectedGuid);
 
@@ -37,7 +35,7 @@ public class LoadLevel : MonoBehaviour
             return;
         }
 
-        string filePath = GetLevelFilePath(levelsPath, newLevel, selectedGuid);
+        string filePath = GetLevelFilePath(levelsPath, selectedGuid);
         if (filePath != null)
         {
             LoadLevelData(filePath);
@@ -48,26 +46,18 @@ public class LoadLevel : MonoBehaviour
         }
     }
 
-    private string GetLevelFilePath(string levelsPath, bool newLevel, string selectedGuid)
+    private string GetLevelFilePath(string levelsPath, string selectedGuid)
     {
-        if (newLevel)
-        {
-            return Path.Combine(Application.persistentDataPath, "LevelData.json");
-        }
-        else
-        {
-            string[] levelFiles = Directory.GetFiles(levelsPath, "*.json");
+        string[] levelFiles = Directory.GetFiles(levelsPath, "*.json");
 
-            foreach (string levelFile in levelFiles)
+        foreach (string levelFile in levelFiles)
+        {
+            string fileName = Path.GetFileNameWithoutExtension(levelFile);
+            if (fileName == selectedGuid)
             {
-                string fileName = Path.GetFileNameWithoutExtension(levelFile);
-                if (fileName == selectedGuid)
-                {
-                    return levelFile;
-                }
+                return levelFile;
             }
         }
-
         return null;
     }
 

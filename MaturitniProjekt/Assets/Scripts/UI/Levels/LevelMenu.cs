@@ -38,9 +38,9 @@ public class LevelMenu : MonoBehaviour
         button.name = Path.GetFileNameWithoutExtension(filePath);
 
         RectTransform rectTransform = button.GetComponent<RectTransform>();
-        if (rectTransform != null)
+        if (rectTransform != null)  
         {
-            rectTransform.anchoredPosition = new Vector2(rectTransform.anchoredPosition.x, rectTransform.anchoredPosition.y - (index * 35));
+            rectTransform.anchoredPosition = new Vector2(rectTransform.rect.width / 2 + 5, rectTransform.anchoredPosition.y - (index * 40));
         }
 
         TextMeshProUGUI textComponent = button.GetComponentInChildren<TextMeshProUGUI>();

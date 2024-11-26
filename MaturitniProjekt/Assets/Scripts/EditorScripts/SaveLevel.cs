@@ -41,67 +41,52 @@ public class SaveLevel : MonoBehaviour
             Directory.CreateDirectory(levelsPath);
         }
 
-        string filePath = GetFilePath(levelsPath);
-        LevelData levelData = CollectLevelData(filePath);
+        string filePath = Path.Combine(levelsPath, PlayerPrefs.GetString("SelectedLevel", "DefaultLevel") + ".json");
+
+        Debug.Log(filePath);
+        string existingName = ReadExistingLevelData(filePath);
+        Debug.Log(existingName);
+        
+        LevelData levelData = CollectLevelData(existingName);
+        Debug.Log(levelData.objects[0].name);
         WriteLevelDataToFile(filePath, levelData);
-        PlayerPrefs.DeleteKey("NewLevel");
     }
 
-    private string GetFilePath(string levelsPath)
+    private string ReadExistingLevelData(string filePath)
     {
-        string newLevelName = PlayerPrefs.GetString("NewLevel", null);
+        string existingName = null;
 
-        Debug.Log(newLevelName);
-        string filePath;
-
-        if (!string.IsNullOrEmpty(newLevelName))
+        if (File.Exists(filePath))
         {
-            filePath = Path.Combine(levelsPath, Guid.NewGuid().ToString() + ".json");
-        }
-        else
-        {
-            string[] levelFiles = Directory.GetFiles(levelsPath, "*.json");
-            filePath = Path.Combine(levelsPath, "levelData.json");
-
-            foreach (string levelFile in levelFiles)
-            {
-                string existingJson = File.ReadAllText(levelFile);
-                LevelData existingLevelData = JsonUtility.FromJson<LevelData>(existingJson);
-
-                if (existingLevelData.name == PlayerPrefs.GetString("SelectedLevel", "DefaultLevel"))
-                {
-                    filePath = levelFile;
-                    break;
-                }
-            }
+            string existingJson = File.ReadAllText(filePath);
+            LevelData existingLevelData = JsonUtility.FromJson<LevelData>(existingJson);
+            existingName = existingLevelData.name;
         }
 
-        return filePath;
+        return existingName;
     }
 
-    private LevelData CollectLevelData(string filePath)
+    private LevelData CollectLevelData(string existingName)
     {
         LevelData levelData = new LevelData
         {
-            name = PlayerPrefs.GetString("NewLevel", "")
+            name = existingName
         };
 
         foreach (Transform child in Folder.transform)
         {
             ObjectData objectData = new ObjectData
             {
-                name = child.gameObject.name.Split('(')[0],
+                name = child.gameObject.name.Split('(')[0], // Remove (Clone) from the name
                 position = child.position
             };
             levelData.objects.Add(objectData);
         }
-
         return levelData;
     }
-
+    
     private void WriteLevelDataToFile(string filePath, LevelData levelData)
     {
-        Debug.Log(levelData.objects[0].name);
         string json = JsonUtility.ToJson(levelData, true);
 
         Debug.Log(json);

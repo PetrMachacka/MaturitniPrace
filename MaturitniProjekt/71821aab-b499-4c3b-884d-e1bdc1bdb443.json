@@ -1,0 +1,13 @@
+{
+    "name": "nice",
+    "objects": [
+        {
+            "name": "Cube",
+            "position": {
+                "x": 2.0,
+                "y": 2.0,
+                "z": 2.0
+            }
+        }
+    ]
+}
