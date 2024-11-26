@@ -30,25 +30,24 @@ public class SteamManager : MonoBehaviour
         Steamworks.SteamClient.RunCallbacks();
     }
 
-    public static async Task UploadLevelToSteamWorkshopAsync(string levelGuid)
+    public static async Task UploadLevelToSteamWorkshopAsync(string SelectedLevel)
     {
-        Debug.Log("Uploading...");
-
+        
         string levelsPath = Path.Combine(Application.persistentDataPath, "Levels");
-        string filePath = GetLevelFilePath(levelsPath, levelGuid);
+        Debug.Log(levelsPath);
+        string filePath = levelsPath + "/" + SelectedLevel + ".json";
         Debug.Log(filePath);
         if (filePath == null)
         {
-            Debug.LogError("No level file found with the matching GUID: " + levelGuid);
+            Debug.LogError("No level file found with the matching GUID: " + SelectedLevel);
             return;
         }
 
         var result = await Steamworks.Ugc.Editor.NewCommunityFile
-            .WithTitle("Level")
-            .WithDescription("Level")
-            .WithTag("Level")
-            .WithContent(filePath)
-            .SubmitAsync( new ProgressClass() );
+					.WithTitle( "My New Item" )
+					.WithDescription( "nice" )
+					.WithTag( "Map" )
+					.SubmitAsync();
 
         Debug.Log(result.Success);
 
@@ -62,30 +61,6 @@ public class SteamManager : MonoBehaviour
         }
     }
 
-    private static string GetLevelFilePath(string levelsPath, string levelGuid)
-    {
-        if (!Directory.Exists(levelsPath))
-        {
-            Debug.LogError("Levels directory not found: " + levelsPath);
-            return null;
-        }
-
-        string[] levelFiles = Directory.GetFiles(levelsPath, "*.json");
-
-        foreach (string levelFile in levelFiles)
-        {
-            string json = File.ReadAllText(levelFile);
-            Debug.Log(json);
-            LevelData levelData = JsonUtility.FromJson<LevelData>(json);
-
-            if (levelData.guid == levelGuid)
-            {
-                return levelFile;
-            }
-        }
-
-        return null;
-    }
     class ProgressClass : IProgress<float>
     {
         float lastvalue = 0;

@@ -40,7 +40,7 @@ public class LevelMenu : MonoBehaviour
         RectTransform rectTransform = button.GetComponent<RectTransform>();
         if (rectTransform != null)  
         {
-            rectTransform.anchoredPosition = new Vector2(rectTransform.rect.width / 2 + 5, rectTransform.anchoredPosition.y - (index * 40));
+            rectTransform.anchoredPosition = new Vector2(rectTransform.rect.width / 2 + 5, rectTransform.anchoredPosition.y - (index * 45));
         }
 
         TextMeshProUGUI textComponent = button.GetComponentInChildren<TextMeshProUGUI>();

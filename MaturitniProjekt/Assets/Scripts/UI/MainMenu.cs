@@ -8,11 +8,11 @@ public class Menu : MonoBehaviour
     public async void SteamUpload()
     {
 
-        await SteamManager.UploadLevelToSteamWorkshopAsync(PlayerPrefs.GetString("NewLevel"));
+        await SteamManager.UploadLevelToSteamWorkshopAsync(PlayerPrefs.GetString("SelectedLevel"));
     }
     public void LevelsButton()
     {
-        PlayerPrefs.DeleteKey("NewLevel");
+        PlayerPrefs.DeleteKey("SelectedLevel");
         PlayerPrefs.Save();
         SceneManager.LoadScene("Levels");
     }
