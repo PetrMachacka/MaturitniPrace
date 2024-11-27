@@ -47,10 +47,8 @@ public class SteamManager : MonoBehaviour
 					.WithTitle( "My New Item" )
 					.WithDescription( "nice" )
 					.WithTag( "Map" )
-					.SubmitAsync();
-
-        Debug.Log(result.Success);
-
+                    .SubmitAsync( new ProgressClass() );
+                    
         if (result.Success)
         {
             Debug.Log("Upload successful!");
