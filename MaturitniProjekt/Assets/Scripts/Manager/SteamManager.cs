@@ -3,10 +3,15 @@ using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
+using Steamworks;
 using UnityEngine;
-
+using Assets.Scripts;
 public class SteamManager : MonoBehaviour
 {
+    private void Start()
+    {
+        SteamUGC.Download(3375074002);
+    }
     private void Awake()
     {
         try
@@ -33,20 +38,21 @@ public class SteamManager : MonoBehaviour
     public static async Task UploadLevelToSteamWorkshopAsync(string SelectedLevel)
     {
         
-        string levelsPath = Path.Combine(Application.persistentDataPath, "Levels");
-        Debug.Log(levelsPath);
-        string filePath = levelsPath + "/" + SelectedLevel + ".json";
-        Debug.Log(filePath);
-        if (filePath == null)
+        string directoryPath = FileHelpers.GetFolderPathByGuid(SelectedLevel);
+        Debug.Log(directoryPath);
+        if (directoryPath == null)
         {
             Debug.LogError("No level file found with the matching GUID: " + SelectedLevel);
             return;
         }
-
+        LevelData levelData =  JsonUtility.FromJson<LevelData>(File.ReadAllText(directoryPath + "/levelData.json"));
+        Debug.Log(levelData.name);
         var result = await Steamworks.Ugc.Editor.NewCommunityFile
-					.WithTitle( "My New Item" )
+					.WithTitle( levelData.name )
 					.WithDescription( "nice" )
 					.WithTag( "Map" )
+                    .WithContent( directoryPath )
+                    .WithPublicVisibility()
                     .SubmitAsync( new ProgressClass() );
                     
         if (result.Success)
@@ -59,6 +65,45 @@ public class SteamManager : MonoBehaviour
         }
     }
 
+    public static async Task<Steamworks.Ugc.ResultPage?> GetLevelListWorkshop(WorkshopSearchOptions searchOptions, int page = 1)
+    {
+        var query = Steamworks.Ugc.Query.Items
+            .WithTag("Map")
+            .MatchAnyTag();
+        if(searchOptions == WorkshopSearchOptions.SortByDate)
+        {
+            Debug.Log("SortByDate");
+            query = query.RankedByPublicationDate();
+        }
+        else if(searchOptions == WorkshopSearchOptions.sortByVote)
+        {
+            query = query.SortByVoteScore();
+        }
+        else if(searchOptions == WorkshopSearchOptions.madeByFriends)
+        {
+            query = query.CreatedByFriends();
+        }
+        else if(searchOptions == WorkshopSearchOptions.mostPlayed)
+        {
+            query = query.RankedByTotalPlaytime();
+        }
+        else if(searchOptions == WorkshopSearchOptions.trending)
+        {
+            query = query.RankedByTrend();
+        }
+
+        var result = await query.GetPageAsync(page);
+        
+        return  result;
+    }
+    public static void DownloadByID( Steamworks.Ugc.Item steamItem)
+    {
+        steamItem.Subscribe();
+        Debug.Log(steamItem.Id);
+        //SteamUGC.Download(steamItem.Id);
+    }
+
+
     class ProgressClass : IProgress<float>
     {
         float lastvalue = 0;
@@ -69,22 +114,8 @@ public class SteamManager : MonoBehaviour
 
             lastvalue = value;
 
-            Console.WriteLine( value );
+            Debug.Log( value );
         }
-    }
-
-    [System.Serializable]
-    public class LevelData
-    {
-        public string guid;
-        public List<ObjectData> objects;
-    }
-
-    [System.Serializable]
-    public class ObjectData
-    {
-        public string name;
-        public Vector3 position;
     }
 }
 

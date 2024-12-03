@@ -61,13 +61,13 @@ public class AddLevel : MonoBehaviour
 
         string json = JsonUtility.ToJson(newLevelData, true);
 
-        string levelsPath = Path.Combine(Application.persistentDataPath, "Levels");
+        string levelsPath = Path.Combine(Application.persistentDataPath, "Levels", newGuid);
         if (!Directory.Exists(levelsPath))
         {
             Directory.CreateDirectory(levelsPath);
         }
 
-        string filePath = Path.Combine(levelsPath, newGuid + ".json");
+        string filePath = Path.Combine(levelsPath, "levelData.json");
         File.WriteAllText(filePath, json);
 
         PlayerPrefs.SetString("SelectedLevel", newGuid);

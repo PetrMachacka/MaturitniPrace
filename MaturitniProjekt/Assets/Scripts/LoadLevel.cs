@@ -3,28 +3,16 @@ using System.Collections.Generic;
 using System.IO;
 using Unity.VisualScripting;
 using UnityEngine;
-
+using Assets.Scripts;
 public class LoadLevel : MonoBehaviour
 {
-    [System.Serializable]
-    public class LevelData
-    {
-        public string guid;
-        public List<ObjectData> objects;
-    }
-
-    [System.Serializable]
-    public class ObjectData
-    {
-        public string name;
-        public Vector3 position;
-    }
     public static string selectedGuid;
     private string prefabsPath = "Prefabs/Building";
 
     void Start()
     {
-        selectedGuid = PlayerPrefs.GetString("SelectedLevel", "DefaultLevel");
+        bool newLevel = PlayerPrefs.GetInt("NewLevelInt", 0) == 1;
+        string selectedGuid = PlayerPrefs.GetString("SelectedLevel", "DefaultLevel");
         Debug.Log("Loaded Level GUID: " + selectedGuid);
 
         string levelsPath = Path.Combine(Application.persistentDataPath, "Levels");
@@ -35,27 +23,28 @@ public class LoadLevel : MonoBehaviour
             return;
         }
 
-        string filePath = GetLevelFilePath(levelsPath, selectedGuid);
-        if (filePath != null)
+        string directoryPath = GetLevelDirectoryPath(levelsPath, selectedGuid);
+        if (directoryPath != null)
         {
+            string filePath = Path.Combine(directoryPath, "levelData.json");
             LoadLevelData(filePath);
         }
         else
         {
-            Debug.LogError("No level file found with the matching GUID: " + selectedGuid);
+            Debug.LogError("No level directory found with the matching GUID: " + selectedGuid);
         }
     }
 
-    private string GetLevelFilePath(string levelsPath, string selectedGuid)
+    private string GetLevelDirectoryPath(string levelsPath, string selectedGuid)
     {
-        string[] levelFiles = Directory.GetFiles(levelsPath, "*.json");
+        string[] directories = Directory.GetDirectories(levelsPath);
 
-        foreach (string levelFile in levelFiles)
+        foreach (string directory in directories)
         {
-            string fileName = Path.GetFileNameWithoutExtension(levelFile);
-            if (fileName == selectedGuid)
+            string directoryName = Path.GetFileName(directory);
+            if (directoryName == selectedGuid)
             {
-                return levelFile;
+                return directory;
             }
         }
         return null;
@@ -63,6 +52,12 @@ public class LoadLevel : MonoBehaviour
 
     private void LoadLevelData(string filePath)
     {
+        if (!File.Exists(filePath))
+        {
+            Debug.LogError("Level data file not found: " + filePath);
+            return;
+        }
+
         string json = File.ReadAllText(filePath);
         LevelData levelData = JsonUtility.FromJson<LevelData>(json);
 

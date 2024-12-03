@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
 using TMPro;
+using Assets.Scripts;
 
 public class LevelMenu : MonoBehaviour
 {
@@ -15,7 +16,7 @@ public class LevelMenu : MonoBehaviour
 
         if (Directory.Exists(levelsFolderPath))
         {
-            string[] jsonFiles = Directory.GetFiles(levelsFolderPath, "*.json");
+            string[] jsonFiles = Directory.GetDirectories(levelsFolderPath);
 
             for (int i = 0; i < jsonFiles.Length; i++)
             {
@@ -29,13 +30,14 @@ public class LevelMenu : MonoBehaviour
         }
     }
 
-    void CreateButton(string filePath, int index)
+    void CreateButton(string directoryPath, int index)
     {
-        string json = File.ReadAllText(filePath);
+        string jsonPath = Path.Combine(directoryPath, "levelData.json");
+        string json = File.ReadAllText(jsonPath);
         LevelData levelData = JsonUtility.FromJson<LevelData>(json);
 
         GameObject button = Instantiate(buttonPrefab, content);
-        button.name = Path.GetFileNameWithoutExtension(filePath);
+        button.name = Path.GetFileNameWithoutExtension(directoryPath);
 
         RectTransform rectTransform = button.GetComponent<RectTransform>();
         if (rectTransform != null)  
@@ -49,18 +51,14 @@ public class LevelMenu : MonoBehaviour
             textComponent.text = levelData.name;
         }
     }
+    public async void Workshop(){
+        var result = await SteamManager.GetLevelListWorkshop(WorkshopSearchOptions.SortByDate, 1);
+
+        foreach (var item in result.Value.Entries)
+        {
+            Debug.Log($"Title: {item.Title}, Description: {item.Description}, ID: {item.Id}");
+            SteamManager.DownloadByID(item);
+        }
+    }
 }
 
-[System.Serializable]
-public class LevelData
-{
-    public string name;
-    public List<ObjectData> objects;
-}
-
-[System.Serializable]
-public class ObjectData
-{
-    public string name;
-    public Vector3 position;
-}
