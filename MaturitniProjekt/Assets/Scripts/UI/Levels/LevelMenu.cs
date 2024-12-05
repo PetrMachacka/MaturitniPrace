@@ -40,9 +40,12 @@ public class LevelMenu : MonoBehaviour
         button.name = Path.GetFileNameWithoutExtension(directoryPath);
 
         RectTransform rectTransform = button.GetComponent<RectTransform>();
-        if (rectTransform != null)  
+        if (rectTransform != null)
         {
-            rectTransform.anchoredPosition = new Vector2(rectTransform.rect.width / 2 + 5, rectTransform.anchoredPosition.y - (index * 45));
+            rectTransform.offsetMin = new Vector2(5, rectTransform.offsetMin.y);
+            rectTransform.offsetMax = new Vector2(-5, rectTransform.offsetMax.y);
+
+            rectTransform.anchoredPosition = new Vector2(rectTransform.anchoredPosition.x, -((rectTransform.rect.height + 3) * index) - rectTransform.rect.height / 2 - 5);
         }
 
         TextMeshProUGUI textComponent = button.GetComponentInChildren<TextMeshProUGUI>();

@@ -19,16 +19,15 @@ public class LevelButtonScript : MonoBehaviour
         Debug.Log("Deleting Level GUID: " + levelGuid);
 
         string levelsPath = Path.Combine(Application.persistentDataPath, "Levels");
-        string filePath = Path.Combine(levelsPath, levelGuid + ".json");
-
-        if (File.Exists(filePath))
+        string directoryPath = Path.Combine(levelsPath, levelGuid);
+        if (Directory.Exists(directoryPath))
         {
-            File.Delete(filePath);
-            Debug.Log("Level file deleted: " + filePath);
+            Debug.Log("Level file found: " + directoryPath);
+            Directory.Delete(directoryPath, true);
         }
         else
         {
-            Debug.LogError("Level file not found: " + filePath);
+            Debug.LogError("Level file not found: " + directoryPath);
         }
 
         SceneManager.LoadScene("Levels");

@@ -5,23 +5,32 @@ using UnityEngine.SceneManagement;
 
 public class Menu : MonoBehaviour
 {
-    public async void SteamUpload()
-    {
-        await SteamManager.UploadLevelToSteamWorkshopAsync(PlayerPrefs.GetString("SelectedLevel"));
-    }
-    public void LevelsButton()
-    {
-        PlayerPrefs.DeleteKey("SelectedLevel");
-        PlayerPrefs.Save();
-        SceneManager.LoadScene("Levels");
-    }
+    public GameObject LevelEditSelection;
+    public GameObject LevelPlaySelection;
     public void QuitGame()
     {
         Application.Quit();
     }
-    public void MainMenu()
+    public void PlaySelection()
     {
-        SceneManager.LoadScene("Menu");
+        if(LevelPlaySelection.activeSelf)
+        {
+            LevelPlaySelection.SetActive(false);
+        }
+        else
+        {
+            LevelPlaySelection.SetActive(true);
+        }
     }
-
+    public void EditSelection()
+    {
+        if(LevelEditSelection.activeSelf)
+        {
+            LevelEditSelection.SetActive(false);
+        }
+        else
+        {
+            LevelEditSelection.SetActive(true);
+        }
+    }
 }

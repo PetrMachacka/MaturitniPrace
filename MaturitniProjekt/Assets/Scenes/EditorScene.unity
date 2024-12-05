@@ -430,8 +430,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1450246105}
-        m_TargetAssemblyTypeName: Menu, Assembly-CSharp
+      - m_Target: {fileID: 1127084035}
+        m_TargetAssemblyTypeName: PauseMenu, Assembly-CSharp
         m_MethodName: SteamUpload
         m_Mode: 1
         m_Arguments:
@@ -638,8 +638,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1450246105}
-        m_TargetAssemblyTypeName: Menu, Assembly-CSharp
+      - m_Target: {fileID: -3735988914832290171, guid: dab3bdd3986761a4d92465dcfd1b1363, type: 3}
+        m_TargetAssemblyTypeName: PauseMenu, Assembly-CSharp
         m_MethodName: LevelsButton
         m_Mode: 1
         m_Arguments:
@@ -1137,6 +1137,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dab3bdd3986761a4d92465dcfd1b1363, type: 3}
+--- !u!114 &1127084035 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: -3735988914832290171, guid: dab3bdd3986761a4d92465dcfd1b1363, type: 3}
+  m_PrefabInstance: {fileID: 1127084034}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1eef9a5d8d93f84eaf23bf721d7a820, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1179915041
 GameObject:
   m_ObjectHideFlags: 0
@@ -1179,7 +1190,6 @@ GameObject:
   - component: {fileID: 1450246102}
   - component: {fileID: 1450246104}
   - component: {fileID: 1450246103}
-  - component: {fileID: 1450246105}
   m_Layer: 5
   m_Name: PauseMenu
   m_TagString: Untagged
@@ -1251,18 +1261,6 @@ MonoBehaviour:
   m_DefaultActionMap: Editor
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
---- !u!114 &1450246105
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1450246101}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 186812bf2e239b84f9ecc1603c4a149f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1607843451
 GameObject:
   m_ObjectHideFlags: 0

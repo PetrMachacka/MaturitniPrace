@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PauseMenu : MonoBehaviour
 {
@@ -22,5 +23,15 @@ public class PauseMenu : MonoBehaviour
             Time.timeScale = 1f;
             isPaused = false;
         }
+    }
+    public void LevelsButton()
+    {
+        PlayerPrefs.DeleteKey("SelectedLevel");
+        PlayerPrefs.Save();
+        SceneManager.LoadScene("Levels");
+    }
+    public async void SteamUpload()
+    {
+        await SteamManager.UploadLevelToSteamWorkshopAsync(PlayerPrefs.GetString("SelectedLevel"));
     }
 }
