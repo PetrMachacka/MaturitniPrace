@@ -7,6 +7,8 @@ public class Menu : MonoBehaviour
 {
     public GameObject LevelEditSelection;
     public GameObject LevelPlaySelection;
+    public GameObject LevelPlayCommunitySelection;
+
     public void QuitGame()
     {
         Application.Quit();
@@ -31,6 +33,17 @@ public class Menu : MonoBehaviour
         else
         {
             LevelEditSelection.SetActive(true);
+        }
+    }
+    public void PlayCommunitySelection()
+    {
+        if(LevelPlayCommunitySelection.activeSelf)
+        {
+            LevelPlayCommunitySelection.SetActive(false);
+        }
+        else
+        {
+            LevelPlayCommunitySelection.SetActive(true);
         }
     }
 }
