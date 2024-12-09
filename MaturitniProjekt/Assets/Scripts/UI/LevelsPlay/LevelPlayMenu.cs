@@ -28,28 +28,20 @@ public class LevelPlayMenu : MonoBehaviour
         }
 
         TextMeshProUGUI[] textComponents = button.GetComponentsInChildren<TextMeshProUGUI>();
+        var textMapping = new Dictionary<string, string>
+        {
+            { "Name", item.Title },
+            { "Rating", item.Score.ToString() },
+            { "Author", item.Owner.Name },
+            { "Date", item.Updated.ToShortDateString() },
+            { "Downloads", item.NumSubscriptions.ToString() }
+        };
+
         foreach (var textComponent in textComponents)
         {
-            Debug.Log(textComponent.name);
-            if (textComponent.name == "Name")
+            if (textMapping.TryGetValue(textComponent.name, out var text))
             {
-                textComponent.text = item.Title;
-            }
-            if(textComponent.name == "Rating")
-            {
-                textComponent.text = item.Score.ToString();
-            }
-            if(textComponent.name == "Author")
-            {
-                textComponent.text = item.Owner.Name;
-            }
-            if(textComponent.name == "Date")
-            {
-                textComponent.text = item.Updated.ToShortDateString();
-            }
-            if(textComponent.name == "Downloads")
-            {
-                textComponent.text = item.NumSubscriptions.ToString();
+            textComponent.text = text;
             }
         }
     }

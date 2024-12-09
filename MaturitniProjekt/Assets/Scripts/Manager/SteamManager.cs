@@ -96,13 +96,17 @@ public class SteamManager : MonoBehaviour
         
         return  result;
     }
-    public static void DownloadByID( Steamworks.Ugc.Item steamItem)
+    public static async void DownloadByID( Steamworks.Ugc.Item steamItem)
     {
-        steamItem.Subscribe();
+        await steamItem.Subscribe();
         Debug.Log(steamItem.Id);
-        //SteamUGC.Download(steamItem.Id);
+        SteamUGC.Download(steamItem.Id);
     }
-
+    public static async Task<Steamworks.Ugc.Item?> GetItemByID(ulong id)
+    {
+        var result = await Steamworks.Ugc.Item.GetAsync(id);
+        return result;
+    }
 
     class ProgressClass : IProgress<float>
     {
