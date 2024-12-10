@@ -65,14 +65,13 @@ public class SteamManager : MonoBehaviour
         }
     }
 
-    public static async Task<Steamworks.Ugc.ResultPage?> GetLevelListWorkshop(WorkshopSearchOptions searchOptions, int page = 1)
+    public static async Task<Steamworks.Ugc.ResultPage?> GetLevelListWorkshop(WorkshopSearchOptions searchOptions, int page = 1, string textSearch = null)
     {
         var query = Steamworks.Ugc.Query.Items
             .WithTag("Map")
             .MatchAnyTag();
         if(searchOptions == WorkshopSearchOptions.SortByDate)
         {
-            Debug.Log("SortByDate");
             query = query.RankedByPublicationDate();
         }
         else if(searchOptions == WorkshopSearchOptions.sortByVote)

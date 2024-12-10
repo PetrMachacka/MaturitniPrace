@@ -6,9 +6,11 @@ using UnityEngine.SceneManagement;
 public class PauseMenu : MonoBehaviour
 {
     public GameObject pauseMenu;
+    public GameObject uploadMenu;
     public static bool isPaused = false;
     private void Start() {
         isPaused = false;
+        uploadMenu.SetActive(false);
         pauseMenu.SetActive(false);
         Time.timeScale = 1f;
     }
@@ -29,6 +31,21 @@ public class PauseMenu : MonoBehaviour
         PlayerPrefs.DeleteKey("SelectedLevel");
         PlayerPrefs.Save();
         SceneManager.LoadScene("Levels");
+    }
+    public void ResumeButton()
+    {
+        pauseMenu.SetActive(false);
+        Time.timeScale = 1f;
+        isPaused = false;
+    }
+    public void UploadButton()
+    {
+        if(!uploadMenu.activeSelf){
+            uploadMenu.SetActive(true);
+        }
+        else{
+            uploadMenu.SetActive(false);
+        }
     }
     public async void SteamUpload()
     {
