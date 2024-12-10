@@ -11,6 +11,7 @@ public class LevelPlayMenu : MonoBehaviour
 {
     private int itemsPerPage = 6;
     public GameObject buttonPrefab;
+    public TextMeshProUGUI pageText;
     private int _page = 1;
     void Start()
     {
@@ -55,7 +56,7 @@ public class LevelPlayMenu : MonoBehaviour
    public async void LoadWorkshopLevels(int page)
     {
         ClearChildren(transform);
-
+        pageText.text = $"{page}";
         int itemsPerPageSteam = 50;
         int totalItems = (page - 1) * itemsPerPage;
         int steamPage = (totalItems / itemsPerPageSteam) + 1;

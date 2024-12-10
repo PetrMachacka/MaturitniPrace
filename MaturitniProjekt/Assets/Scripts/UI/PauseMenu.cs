@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -7,6 +8,8 @@ public class PauseMenu : MonoBehaviour
 {
     public GameObject pauseMenu;
     public GameObject uploadMenu;
+    public TextMeshProUGUI pageText;
+
     public static bool isPaused = false;
     private void Start() {
         isPaused = false;
