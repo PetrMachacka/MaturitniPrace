@@ -5,14 +5,16 @@ using UnityEngine;
 using TMPro;
 using Assets.Scripts;
 using Steamworks.Data;
+using System.Linq;
 
 public class LevelPlayMenu : MonoBehaviour
 {
+    private int itemsPerPage = 6;
     public GameObject buttonPrefab;
     private int _page = 1;
     void Start()
     {
-        Workshop(_page);
+        LoadWorkshopLevels(_page);
     }
     private void ClearChildren(Transform parent)
     {
@@ -29,7 +31,7 @@ public class LevelPlayMenu : MonoBehaviour
         RectTransform rectTransform = button.GetComponent<RectTransform>();
         if (rectTransform != null)
         {
-            rectTransform.anchoredPosition = new Vector2(rectTransform.anchoredPosition.x, rectTransform.anchoredPosition.y - (rectTransform.rect.height * (index + 0.5f) + (index * 3f) + 6 ));
+            rectTransform.anchoredPosition = new Vector2(rectTransform.anchoredPosition.x, rectTransform.anchoredPosition.y - (rectTransform.rect.height * (index + 0.5f) + (index * 2.5f) + 6 ));
         }
 
         TextMeshProUGUI[] textComponents = button.GetComponentsInChildren<TextMeshProUGUI>();
@@ -50,32 +52,46 @@ public class LevelPlayMenu : MonoBehaviour
             }
         }
     }
-    public async void Workshop(int page){
+   public async void LoadWorkshopLevels(int page)
+    {
         ClearChildren(transform);
-        var itemsPerPage = 6;
-        var result = await SteamManager.GetLevelListWorkshop(WorkshopSearchOptions.SortByDate, 1);
+
+        int itemsPerPageSteam = 50;
+        int totalItems = (page - 1) * itemsPerPage;
+        int steamPage = (totalItems / itemsPerPageSteam) + 1;
+        int startIndex = totalItems % itemsPerPageSteam;
+
+        var result = await SteamManager.GetLevelListWorkshop(WorkshopSearchOptions.SortByDate, steamPage);
+        if (!result.HasValue)
+        {
+            Debug.LogError("Failed to get workshop levels.");
+            return;
+        }
+
         int index = 0;
         foreach (var item in result.Value.Entries)
         {
-            if(index >= page * itemsPerPage - itemsPerPage && index < page * itemsPerPage)
+            if (index >= startIndex && index < startIndex + itemsPerPage)
             {
                 Debug.Log($"Title: {item.Title}, Description: {item.Description}, ID: {item.Id}");
-                CreateButton(item, index);
+                CreateButton(item, index - startIndex);
             }
             index++;
-            //SteamManager.DownloadByID(item);
         }
-        Debug.Log(index);
+        Debug.Log($"Total items: {index}");
     }
     public void NextPage()
     {
         _page++;
-        Workshop(_page);
+        LoadWorkshopLevels(_page);
     }
     public void PreviousPage()
     {
-        _page--;
-        Workshop(_page);
+        if(_page > 1)
+        {
+            _page--;
+            LoadWorkshopLevels(_page);
+        }
     }
 }
 
