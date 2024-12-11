@@ -8,8 +8,6 @@ public class PauseMenu : MonoBehaviour
 {
     public GameObject pauseMenu;
     public GameObject uploadMenu;
-    public TextMeshProUGUI pageText;
-
     public static bool isPaused = false;
     private void Start() {
         isPaused = false;
@@ -18,6 +16,7 @@ public class PauseMenu : MonoBehaviour
         Time.timeScale = 1f;
     }
     private void OnESCAPE(){
+        Debug.Log("ESCAPE");
         if(!pauseMenu.activeSelf){
             pauseMenu.SetActive(true);
             Time.timeScale = 0f;
@@ -28,6 +27,9 @@ public class PauseMenu : MonoBehaviour
             Time.timeScale = 1f;
             isPaused = false;
         }
+    }
+    private void OnPhoto(){
+        Debug.Log("Photo");
     }
     public void LevelsButton()
     {

@@ -62,6 +62,15 @@ public partial class @EditorInputSystem: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Photo"",
+                    ""type"": ""Button"",
+                    ""id"": ""0244089c-4e90-4261-b821-32d249254875"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -174,6 +183,17 @@ public partial class @EditorInputSystem: IInputActionCollection2, IDisposable
                     ""action"": ""ESCAPE"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""b1b155e4-124d-4083-8a9b-697a7b6ec49c"",
+                    ""path"": ""<Keyboard>/#(P)"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Photo"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -186,6 +206,7 @@ public partial class @EditorInputSystem: IInputActionCollection2, IDisposable
         m_Editor_LeftClick = m_Editor.FindAction("LeftClick", throwIfNotFound: true);
         m_Editor_RightClick = m_Editor.FindAction("RightClick", throwIfNotFound: true);
         m_Editor_ESCAPE = m_Editor.FindAction("ESCAPE", throwIfNotFound: true);
+        m_Editor_Photo = m_Editor.FindAction("Photo", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -251,6 +272,7 @@ public partial class @EditorInputSystem: IInputActionCollection2, IDisposable
     private readonly InputAction m_Editor_LeftClick;
     private readonly InputAction m_Editor_RightClick;
     private readonly InputAction m_Editor_ESCAPE;
+    private readonly InputAction m_Editor_Photo;
     public struct EditorActions
     {
         private @EditorInputSystem m_Wrapper;
@@ -259,6 +281,7 @@ public partial class @EditorInputSystem: IInputActionCollection2, IDisposable
         public InputAction @LeftClick => m_Wrapper.m_Editor_LeftClick;
         public InputAction @RightClick => m_Wrapper.m_Editor_RightClick;
         public InputAction @ESCAPE => m_Wrapper.m_Editor_ESCAPE;
+        public InputAction @Photo => m_Wrapper.m_Editor_Photo;
         public InputActionMap Get() { return m_Wrapper.m_Editor; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -280,6 +303,9 @@ public partial class @EditorInputSystem: IInputActionCollection2, IDisposable
             @ESCAPE.started += instance.OnESCAPE;
             @ESCAPE.performed += instance.OnESCAPE;
             @ESCAPE.canceled += instance.OnESCAPE;
+            @Photo.started += instance.OnPhoto;
+            @Photo.performed += instance.OnPhoto;
+            @Photo.canceled += instance.OnPhoto;
         }
 
         private void UnregisterCallbacks(IEditorActions instance)
@@ -296,6 +322,9 @@ public partial class @EditorInputSystem: IInputActionCollection2, IDisposable
             @ESCAPE.started -= instance.OnESCAPE;
             @ESCAPE.performed -= instance.OnESCAPE;
             @ESCAPE.canceled -= instance.OnESCAPE;
+            @Photo.started -= instance.OnPhoto;
+            @Photo.performed -= instance.OnPhoto;
+            @Photo.canceled -= instance.OnPhoto;
         }
 
         public void RemoveCallbacks(IEditorActions instance)
@@ -319,5 +348,6 @@ public partial class @EditorInputSystem: IInputActionCollection2, IDisposable
         void OnLeftClick(InputAction.CallbackContext context);
         void OnRightClick(InputAction.CallbackContext context);
         void OnESCAPE(InputAction.CallbackContext context);
+        void OnPhoto(InputAction.CallbackContext context);
     }
 }
