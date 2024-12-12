@@ -30,6 +30,7 @@ public class PauseMenu : MonoBehaviour
         }
     }
     private void OnPhoto(){
+        Debug.Log("nice");
         if(pictureMode)
         {
             TakeScreenshot();
