@@ -51,10 +51,10 @@ public class SteamManager : MonoBehaviour
 					.WithTitle( levelData.name )
 					.WithDescription( "nice" )
 					.WithTag( "Map" )
+                    .WithPreviewFile( directoryPath + "/preview.png" )
                     .WithContent( directoryPath )
                     .WithPublicVisibility()
                     .SubmitAsync( new ProgressClass() );
-                    
         if (result.Success)
         {
             Debug.Log("Upload successful!");

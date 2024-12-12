@@ -1,11 +1,19 @@
+using System.IO;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using System;
-using System.IO;
+using UnityEngine.UI;
+using TMPro;
+using System.Threading.Tasks;
+using Unity.VisualScripting;
+using Palmmedia.ReportGenerator.Core.Common;
+using Assets.Scripts;
 public class PauseMenu : MonoBehaviour
 {
     public GameObject pauseMenu;
     public GameObject uploadMenu;
+    public GameObject canvas;
+    public GameObject imageCanvas;
+    public TextMeshPro levelNameText;
     public static bool isPaused = false;
     public static bool pictureMode = false;
     private void Start() {
@@ -15,7 +23,9 @@ public class PauseMenu : MonoBehaviour
         Time.timeScale = 1f;
     }
     private void OnESCAPE(){
-        TogglePauseMenu();
+        if(!pictureMode){
+            TogglePauseMenu();
+        }
     }
     private void TogglePauseMenu(){
         if(!pauseMenu.activeSelf){
@@ -29,11 +39,23 @@ public class PauseMenu : MonoBehaviour
             isPaused = false;
         }
     }
-    private void OnPhoto(){
-        Debug.Log("nice");
+    private void ToggleUI(){
+        Debug.Log("ToggleUI");
+        if(!canvas.activeSelf){
+            canvas.SetActive(true);
+        }
+        else{
+            canvas.SetActive(false);
+        }
+    }
+    private async void OnPhoto(){
         if(pictureMode)
         {
             TakeScreenshot();
+            await Task.Delay(100);
+            TogglePauseMenu();
+            ToggleUI();
+            FillImage();
             pictureMode = false;
         }
     }
@@ -66,6 +88,7 @@ public class PauseMenu : MonoBehaviour
     public void UploadButton()
     {
         if(!uploadMenu.activeSelf){
+            FillImage();
             uploadMenu.SetActive(true);
         }
         else{
@@ -80,5 +103,32 @@ public class PauseMenu : MonoBehaviour
     {
         pictureMode = true;
         TogglePauseMenu();
+        ToggleUI();
+    }
+    public void FillImage()
+    {
+        string selectedLevel = PlayerPrefs.GetString("SelectedLevel");
+        string screenshotPath = Path.Combine(Application.persistentDataPath, $"Levels/{selectedLevel}/preview.png");
+
+        if (File.Exists(screenshotPath))
+        {
+            byte[] fileData = File.ReadAllBytes(screenshotPath);
+            Texture2D texture = new Texture2D(2, 2);
+            texture.LoadImage(fileData);
+
+            RawImage rawImage = imageCanvas.GetComponent<RawImage>();
+            if (rawImage != null)
+            {
+                rawImage.texture = texture;
+            }
+            else
+            {
+                Debug.LogError("RawImage component not found on imageCanvas.");
+            }
+        }
+        else
+        {
+            Debug.LogError("Screenshot not found: " + screenshotPath);
+        }
     }
 }
