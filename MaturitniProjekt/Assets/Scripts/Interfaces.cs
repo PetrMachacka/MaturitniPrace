@@ -15,6 +15,7 @@ namespace Assets.Scripts {
     public class LevelData
     {
         public string name;
+        public string steamId;
         public List<ObjectData> objects;
     }
 

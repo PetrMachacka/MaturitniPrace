@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 using Steamworks;
 using UnityEngine;
 using Assets.Scripts;
+using Unity.VisualScripting;
+using TMPro;
 public class SteamManager : MonoBehaviour
 {
     private void Start()
@@ -37,7 +39,6 @@ public class SteamManager : MonoBehaviour
 
     public static async Task UploadLevelToSteamWorkshopAsync(string SelectedLevel)
     {
-        
         string directoryPath = FileHelpers.GetFolderPathByGuid(SelectedLevel);
         Debug.Log(directoryPath);
         if (directoryPath == null)
@@ -45,19 +46,36 @@ public class SteamManager : MonoBehaviour
             Debug.LogError("No level file found with the matching GUID: " + SelectedLevel);
             return;
         }
+        string levelDataPath = Path.Combine(directoryPath, "levelData.json");
         LevelData levelData =  JsonUtility.FromJson<LevelData>(File.ReadAllText(directoryPath + "/levelData.json"));
-        Debug.Log(levelData.name);
-        var result = await Steamworks.Ugc.Editor.NewCommunityFile
+        if(levelData.steamId != null)
+        {
+            Debug.LogError("Level already uploaded to Steam Workshop");
+            var result = await new Steamworks.Ugc.Editor( levelData.steamId )
 					.WithTitle( levelData.name )
-					.WithDescription( "nice" )
+					.WithDescription( "Description" )
 					.WithTag( "Map" )
                     .WithPreviewFile( directoryPath + "/preview.png" )
                     .WithContent( directoryPath )
                     .WithPublicVisibility()
                     .SubmitAsync( new ProgressClass() );
+            return;
+        }
+        Debug.Log(levelData.name);
+        var result = await Steamworks.Ugc.Editor.NewCommunityFile
+					.WithTitle( levelData.name )
+					.WithDescription( "Description" )
+					.WithTag( "Map" )
+                    .WithPreviewFile( directoryPath + "/preview.png" )
+                    .WithContent( directoryPath )
+                    .WithPublicVisibility()
+                    .SubmitAsync( new ProgressClass() );
+        Debug.Log(result.FileId);
         if (result.Success)
         {
             Debug.Log("Upload successful!");
+            levelData.steamId = result.FileId.ToString();
+            File.WriteAllText(levelDataPath, JsonUtility.ToJson(levelData, true));
         }
         else
         {

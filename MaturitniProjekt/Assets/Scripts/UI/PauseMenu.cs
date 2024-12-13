@@ -4,9 +4,6 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using TMPro;
 using System.Threading.Tasks;
-using Unity.VisualScripting;
-using Palmmedia.ReportGenerator.Core.Common;
-using Assets.Scripts;
 public class PauseMenu : MonoBehaviour
 {
     public GameObject pauseMenu;
