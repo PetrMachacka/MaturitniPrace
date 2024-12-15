@@ -40,6 +40,7 @@ public class Building : MonoBehaviour
     {
         if (hit.collider.CompareTag("Edit"))
         {
+            Debug.Log(hit.collider.gameObject.name);
             if (currentObject != hit.collider.gameObject)
             {
                 RestorePreviousObjectColor();

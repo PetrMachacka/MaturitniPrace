@@ -37,39 +37,39 @@ public class SteamManager : MonoBehaviour
         Steamworks.SteamClient.RunCallbacks();
     }
 
-    public static async Task UploadLevelToSteamWorkshopAsync(string SelectedLevel)
+        public static async Task UploadLevelToSteamWorkshopAsync(string selectedLevel)
     {
-        string directoryPath = FileHelpers.GetFolderPathByGuid(SelectedLevel);
+        string directoryPath = FileHelpers.GetFolderPathByGuid(selectedLevel);
         Debug.Log(directoryPath);
         if (directoryPath == null)
         {
-            Debug.LogError("No level file found with the matching GUID: " + SelectedLevel);
+            Debug.LogError("No level file found with the matching GUID: " + selectedLevel);
             return;
         }
+
         string levelDataPath = Path.Combine(directoryPath, "levelData.json");
-        LevelData levelData =  JsonUtility.FromJson<LevelData>(File.ReadAllText(directoryPath + "/levelData.json"));
-        if(levelData.steamId != null)
+        LevelData levelData = JsonUtility.FromJson<LevelData>(File.ReadAllText(levelDataPath));
+
+        Steamworks.Ugc.Editor editor;
+        if (!string.IsNullOrEmpty(levelData.steamId))
         {
-            Debug.LogError("Level already uploaded to Steam Workshop");
-            var result = await new Steamworks.Ugc.Editor( levelData.steamId )
-					.WithTitle( levelData.name )
-					.WithDescription( "Description" )
-					.WithTag( "Map" )
-                    .WithPreviewFile( directoryPath + "/preview.png" )
-                    .WithContent( directoryPath )
-                    .WithPublicVisibility()
-                    .SubmitAsync( new ProgressClass() );
-            return;
+            Debug.Log("Level already uploaded to Steam Workshop");
+            editor = new Steamworks.Ugc.Editor(ulong.Parse(levelData.steamId));
         }
-        Debug.Log(levelData.name);
-        var result = await Steamworks.Ugc.Editor.NewCommunityFile
-					.WithTitle( levelData.name )
-					.WithDescription( "Description" )
-					.WithTag( "Map" )
-                    .WithPreviewFile( directoryPath + "/preview.png" )
-                    .WithContent( directoryPath )
-                    .WithPublicVisibility()
-                    .SubmitAsync( new ProgressClass() );
+        else
+        {
+            editor = Steamworks.Ugc.Editor.NewCommunityFile;
+        }
+
+        var result = await editor
+            .WithTitle(levelData.name)
+            .WithDescription("Description")
+            .WithTag("Map")
+            .WithPreviewFile(Path.Combine(directoryPath, "preview.png"))
+            .WithContent(directoryPath)
+            .WithPublicVisibility()
+            .SubmitAsync(new ProgressClass());
+
         Debug.Log(result.FileId);
         if (result.Success)
         {

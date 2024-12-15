@@ -33,4 +33,13 @@ public class LevelButtonScript : MonoBehaviour
         SceneManager.LoadScene("Levels");
 
     }
+    public void PlayLevel()
+    {
+        string levelGuid = gameObject.name;
+        Debug.Log("Playing Level GUID: " + levelGuid);
+        PlayerPrefs.SetString("SelectedLevel", levelGuid);
+        PlayerPrefs.Save();
+
+        SceneManager.LoadScene("PlayLevel");
+    }
 }
