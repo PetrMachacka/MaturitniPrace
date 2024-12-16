@@ -71,6 +71,15 @@ public partial class @EditorInputSystem: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""NumberKeys"",
+                    ""type"": ""PassThrough"",
+                    ""id"": ""619e1322-44b8-4918-8f82-dcb968c87fcf"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
                 }
             ],
             ""bindings"": [
@@ -194,6 +203,116 @@ public partial class @EditorInputSystem: IInputActionCollection2, IDisposable
                     ""action"": ""Photo"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""0ddfa9f2-503d-45dc-983b-b88bf4c7d8a5"",
+                    ""path"": ""<Keyboard>/1"",
+                    ""interactions"": ""Press"",
+                    ""processors"": ""Scale(factor=0)"",
+                    ""groups"": """",
+                    ""action"": ""NumberKeys"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""ddb266e3-1e7d-4c9b-ac19-fddfabdda7a0"",
+                    ""path"": ""<Keyboard>/2"",
+                    ""interactions"": ""Press"",
+                    ""processors"": ""Scale"",
+                    ""groups"": """",
+                    ""action"": ""NumberKeys"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""608fcd8c-97b5-489e-9a8d-2150239ef0fc"",
+                    ""path"": ""<Keyboard>/3"",
+                    ""interactions"": ""Press"",
+                    ""processors"": ""Scale(factor=2)"",
+                    ""groups"": """",
+                    ""action"": ""NumberKeys"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""c0dab9a5-3b90-45bb-a788-1063c1d79c8d"",
+                    ""path"": ""<Keyboard>/4"",
+                    ""interactions"": ""Press"",
+                    ""processors"": ""Scale(factor=3)"",
+                    ""groups"": """",
+                    ""action"": ""NumberKeys"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""ba5c51a5-1cfa-4a27-9ddd-ee04cce03d27"",
+                    ""path"": ""<Keyboard>/5"",
+                    ""interactions"": ""Press"",
+                    ""processors"": ""Scale(factor=4)"",
+                    ""groups"": """",
+                    ""action"": ""NumberKeys"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""6aad5ad5-b26e-4f71-adfc-9ed50c763720"",
+                    ""path"": ""<Keyboard>/6"",
+                    ""interactions"": ""MultiTap"",
+                    ""processors"": ""Scale(factor=5)"",
+                    ""groups"": """",
+                    ""action"": ""NumberKeys"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""5ef2aefd-1b81-46bc-b840-07aa67cd0922"",
+                    ""path"": ""<Keyboard>/7"",
+                    ""interactions"": ""Press"",
+                    ""processors"": ""Scale(factor=6)"",
+                    ""groups"": """",
+                    ""action"": ""NumberKeys"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""6761754b-0392-45a8-a254-86a95387dff9"",
+                    ""path"": ""<Keyboard>/8"",
+                    ""interactions"": ""Press"",
+                    ""processors"": ""Scale(factor=7)"",
+                    ""groups"": """",
+                    ""action"": ""NumberKeys"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""59188e66-3156-4482-b3e7-68e96f9d71d8"",
+                    ""path"": ""<Keyboard>/9"",
+                    ""interactions"": ""Press"",
+                    ""processors"": ""Scale(factor=8)"",
+                    ""groups"": """",
+                    ""action"": ""NumberKeys"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""57347d70-37ac-4062-b4c3-da453a73c5d2"",
+                    ""path"": ""<Keyboard>/0"",
+                    ""interactions"": ""Press"",
+                    ""processors"": ""Scale(factor=9)"",
+                    ""groups"": """",
+                    ""action"": ""NumberKeys"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -207,6 +326,7 @@ public partial class @EditorInputSystem: IInputActionCollection2, IDisposable
         m_Editor_RightClick = m_Editor.FindAction("RightClick", throwIfNotFound: true);
         m_Editor_ESCAPE = m_Editor.FindAction("ESCAPE", throwIfNotFound: true);
         m_Editor_Photo = m_Editor.FindAction("Photo", throwIfNotFound: true);
+        m_Editor_NumberKeys = m_Editor.FindAction("NumberKeys", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -273,6 +393,7 @@ public partial class @EditorInputSystem: IInputActionCollection2, IDisposable
     private readonly InputAction m_Editor_RightClick;
     private readonly InputAction m_Editor_ESCAPE;
     private readonly InputAction m_Editor_Photo;
+    private readonly InputAction m_Editor_NumberKeys;
     public struct EditorActions
     {
         private @EditorInputSystem m_Wrapper;
@@ -282,6 +403,7 @@ public partial class @EditorInputSystem: IInputActionCollection2, IDisposable
         public InputAction @RightClick => m_Wrapper.m_Editor_RightClick;
         public InputAction @ESCAPE => m_Wrapper.m_Editor_ESCAPE;
         public InputAction @Photo => m_Wrapper.m_Editor_Photo;
+        public InputAction @NumberKeys => m_Wrapper.m_Editor_NumberKeys;
         public InputActionMap Get() { return m_Wrapper.m_Editor; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -306,6 +428,9 @@ public partial class @EditorInputSystem: IInputActionCollection2, IDisposable
             @Photo.started += instance.OnPhoto;
             @Photo.performed += instance.OnPhoto;
             @Photo.canceled += instance.OnPhoto;
+            @NumberKeys.started += instance.OnNumberKeys;
+            @NumberKeys.performed += instance.OnNumberKeys;
+            @NumberKeys.canceled += instance.OnNumberKeys;
         }
 
         private void UnregisterCallbacks(IEditorActions instance)
@@ -325,6 +450,9 @@ public partial class @EditorInputSystem: IInputActionCollection2, IDisposable
             @Photo.started -= instance.OnPhoto;
             @Photo.performed -= instance.OnPhoto;
             @Photo.canceled -= instance.OnPhoto;
+            @NumberKeys.started -= instance.OnNumberKeys;
+            @NumberKeys.performed -= instance.OnNumberKeys;
+            @NumberKeys.canceled -= instance.OnNumberKeys;
         }
 
         public void RemoveCallbacks(IEditorActions instance)
@@ -349,5 +477,6 @@ public partial class @EditorInputSystem: IInputActionCollection2, IDisposable
         void OnRightClick(InputAction.CallbackContext context);
         void OnESCAPE(InputAction.CallbackContext context);
         void OnPhoto(InputAction.CallbackContext context);
+        void OnNumberKeys(InputAction.CallbackContext context);
     }
 }
