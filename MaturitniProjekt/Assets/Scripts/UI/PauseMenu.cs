@@ -4,6 +4,8 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using TMPro;
 using System.Threading.Tasks;
+
+
 public class PauseMenu : MonoBehaviour
 {
     public GameObject pauseMenu;
@@ -29,6 +31,7 @@ public class PauseMenu : MonoBehaviour
             pauseMenu.SetActive(true);
             Time.timeScale = 0f;
             isPaused = true;
+
         }
         else{
             pauseMenu.SetActive(false);
@@ -81,6 +84,7 @@ public class PauseMenu : MonoBehaviour
         pauseMenu.SetActive(false);
         Time.timeScale = 1f;
         isPaused = false;
+
     }
     public void UploadButton()
     {

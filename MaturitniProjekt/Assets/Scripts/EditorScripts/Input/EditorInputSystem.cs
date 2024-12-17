@@ -80,6 +80,15 @@ public partial class @EditorInputSystem: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""E"",
+                    ""type"": ""Button"",
+                    ""id"": ""b282bf9e-74db-4a58-9767-7ec90c503c67"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -313,6 +322,17 @@ public partial class @EditorInputSystem: IInputActionCollection2, IDisposable
                     ""action"": ""NumberKeys"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""a335c21e-bf03-4d26-9b94-12794c01b296"",
+                    ""path"": ""<Keyboard>/e"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""E"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -327,6 +347,7 @@ public partial class @EditorInputSystem: IInputActionCollection2, IDisposable
         m_Editor_ESCAPE = m_Editor.FindAction("ESCAPE", throwIfNotFound: true);
         m_Editor_Photo = m_Editor.FindAction("Photo", throwIfNotFound: true);
         m_Editor_NumberKeys = m_Editor.FindAction("NumberKeys", throwIfNotFound: true);
+        m_Editor_E = m_Editor.FindAction("E", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -394,6 +415,7 @@ public partial class @EditorInputSystem: IInputActionCollection2, IDisposable
     private readonly InputAction m_Editor_ESCAPE;
     private readonly InputAction m_Editor_Photo;
     private readonly InputAction m_Editor_NumberKeys;
+    private readonly InputAction m_Editor_E;
     public struct EditorActions
     {
         private @EditorInputSystem m_Wrapper;
@@ -404,6 +426,7 @@ public partial class @EditorInputSystem: IInputActionCollection2, IDisposable
         public InputAction @ESCAPE => m_Wrapper.m_Editor_ESCAPE;
         public InputAction @Photo => m_Wrapper.m_Editor_Photo;
         public InputAction @NumberKeys => m_Wrapper.m_Editor_NumberKeys;
+        public InputAction @E => m_Wrapper.m_Editor_E;
         public InputActionMap Get() { return m_Wrapper.m_Editor; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -431,6 +454,9 @@ public partial class @EditorInputSystem: IInputActionCollection2, IDisposable
             @NumberKeys.started += instance.OnNumberKeys;
             @NumberKeys.performed += instance.OnNumberKeys;
             @NumberKeys.canceled += instance.OnNumberKeys;
+            @E.started += instance.OnE;
+            @E.performed += instance.OnE;
+            @E.canceled += instance.OnE;
         }
 
         private void UnregisterCallbacks(IEditorActions instance)
@@ -453,6 +479,9 @@ public partial class @EditorInputSystem: IInputActionCollection2, IDisposable
             @NumberKeys.started -= instance.OnNumberKeys;
             @NumberKeys.performed -= instance.OnNumberKeys;
             @NumberKeys.canceled -= instance.OnNumberKeys;
+            @E.started -= instance.OnE;
+            @E.performed -= instance.OnE;
+            @E.canceled -= instance.OnE;
         }
 
         public void RemoveCallbacks(IEditorActions instance)
@@ -478,5 +507,6 @@ public partial class @EditorInputSystem: IInputActionCollection2, IDisposable
         void OnESCAPE(InputAction.CallbackContext context);
         void OnPhoto(InputAction.CallbackContext context);
         void OnNumberKeys(InputAction.CallbackContext context);
+        void OnE(InputAction.CallbackContext context);
     }
 }

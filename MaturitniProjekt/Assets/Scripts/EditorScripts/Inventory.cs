@@ -1,5 +1,5 @@
-using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
@@ -8,6 +8,7 @@ public class Inventory : MonoBehaviour, EditorInputSystem.IEditorActions
 {
     private EditorInputSystem inputSystem;
     public GameObject inventoryPanel;
+    public GameObject MainInventory;
     public GameObject hotBarPanel;
 
     private void Awake()
@@ -38,22 +39,30 @@ public class Inventory : MonoBehaviour, EditorInputSystem.IEditorActions
             inventorySlots.Add(child.gameObject);
             Debug.Log(child.name);
         }
-
-        GameObject[] prefabs = Resources.LoadAll<GameObject>("Prefabs/Build");
-        foreach (GameObject prefab in prefabs)
-        {
-            Debug.Log(prefab.name);
-        }
-        for (int i = 0; i < inventorySlots.Count && i < prefabs.Length; i++)
+        GameObject[] prefabs = Resources.LoadAll<GameObject>("Prefabs/Building");
+        Debug.Log(prefabs.Length);
+        for (int i = 0; i < inventorySlots.Count ; i++)
         {
             GameObject slot = inventorySlots[i];
-            Debug.Log(slot.name);
-            GameObject prefab = prefabs[i];
-            if (slot.TryGetComponent<Image>(out Image slotImage))
-            if (slotImage != null)
+            if(i < prefabs.Length)
             {
-                Sprite prefabSprite = prefab.GetComponent<SpriteRenderer>().sprite;
-                slotImage.sprite = prefabSprite;
+                GameObject prefab = prefabs[i];
+                Texture2D prefabTexture = AssetPreview.GetAssetPreview(prefab);
+                if (prefabTexture != null)
+                {
+                    GameObject textureObject = new GameObject("PrefabTexture");
+                    textureObject.transform.SetParent(slot.transform);
+                    textureObject.transform.localPosition = Vector3.zero;
+
+                    Image textureImage = textureObject.AddComponent<Image>();
+                    textureImage.sprite = Sprite.Create(prefabTexture, new Rect(0, 0, prefabTexture.width, prefabTexture.height), new Vector2(0.5f, 0.5f), 100f);
+                    textureImage.rectTransform.sizeDelta = new Vector2(70, 70);
+                    textureImage.name = prefab.name;
+                }
+            }
+            else
+            {
+                slot.SetActive(false);
             }
         }
     }
@@ -73,7 +82,26 @@ public class Inventory : MonoBehaviour, EditorInputSystem.IEditorActions
             Debug.Log($"Number key pressed: {key}");
         }
     }
-
+    public void OnE(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+        {
+            if(MainInventory.activeSelf)
+            {
+                MainInventory.SetActive(false);
+                Time.timeScale = 1f;
+                PauseMenu.isPaused = false;
+                inputSystem.Editor.ESCAPE.Enable();
+            }
+            else if(!MainInventory.activeSelf && !PauseMenu.isPaused)
+            {
+                MainInventory.SetActive(true);
+                Time.timeScale = 0f;
+                PauseMenu.isPaused = true;
+                inputSystem.Editor.ESCAPE.Disable();
+            }
+        }
+    }
     public void OnMovement(InputAction.CallbackContext context) { }
     public void OnLeftClick(InputAction.CallbackContext context) { }
     public void OnRightClick(InputAction.CallbackContext context) { }
