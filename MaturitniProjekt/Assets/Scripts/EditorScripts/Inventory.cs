@@ -6,6 +6,8 @@ using UnityEngine.InputSystem;
 public class Inventory : MonoBehaviour, EditorInputSystem.IEditorActions
 {
     private EditorInputSystem inputSystem;
+    public GameObject inventoryPanel;
+    public GameObject hotBarPanel;
 
     private void Awake()
     {
