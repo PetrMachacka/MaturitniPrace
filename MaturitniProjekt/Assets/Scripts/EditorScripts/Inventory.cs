@@ -10,6 +10,7 @@ public class Inventory : MonoBehaviour, EditorInputSystem.IEditorActions
     public GameObject inventoryPanel;
     public GameObject MainInventory;
     public GameObject hotBarPanel;
+    [HideInInspector]public static int lastInventorySlot = 0;
 
     private void Awake()
     {
@@ -56,8 +57,11 @@ public class Inventory : MonoBehaviour, EditorInputSystem.IEditorActions
 
                     Image textureImage = textureObject.AddComponent<Image>();
                     textureImage.sprite = Sprite.Create(prefabTexture, new Rect(0, 0, prefabTexture.width, prefabTexture.height), new Vector2(0.5f, 0.5f), 100f);
-                    textureImage.rectTransform.sizeDelta = new Vector2(70, 70);
+                    textureImage.rectTransform.sizeDelta = new Vector2(45, 45);
                     textureImage.name = prefab.name;
+                    
+                    textureImage.rectTransform.localScale = Vector3.one;
+                    textureObject.AddComponent<DraggableItem>();
                 }
             }
             else
@@ -69,6 +73,7 @@ public class Inventory : MonoBehaviour, EditorInputSystem.IEditorActions
 
     public void OnNumberKeys(InputAction.CallbackContext context)
     {
+        Color originalColor = new Color(247, 233, 118, 154);
         if (context.performed)
         {
             int key = int.Parse(context.control.name);
@@ -80,6 +85,16 @@ public class Inventory : MonoBehaviour, EditorInputSystem.IEditorActions
                 key = 9;
             }
             Debug.Log($"Number key pressed: {key}");
+            GameObject LastSlot = hotBarPanel.transform.GetChild(lastInventorySlot).gameObject;
+            GameObject hotBarSlot = hotBarPanel.transform.GetChild(key).gameObject;
+            Debug.Log(LastSlot.name);
+            Debug.Log(hotBarSlot.name);
+            Image lastSlotImage = LastSlot.GetComponent<Image>();
+            Image hotBarSlotImage = hotBarSlot.GetComponent<Image>();
+
+            hotBarSlotImage.color = Color.yellow;
+            lastSlotImage.color = originalColor;
+            lastInventorySlot = key;
         }
     }
     public void OnE(InputAction.CallbackContext context)
