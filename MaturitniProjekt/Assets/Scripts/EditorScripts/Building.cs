@@ -12,7 +12,7 @@ public class Building : MonoBehaviour
     private GameObject currentObject;
     private EditorInputSystem editorInputSystem;
     private RaycastHit hit;
-    [SerializeField] private GameObject objectPrefab; 
+    [SerializeField] public static GameObject objectPrefab; 
 
     void Start()
     {

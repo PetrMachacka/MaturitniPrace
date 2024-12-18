@@ -57,7 +57,7 @@ public class Inventory : MonoBehaviour, EditorInputSystem.IEditorActions
 
                     Image textureImage = textureObject.AddComponent<Image>();
                     textureImage.sprite = Sprite.Create(prefabTexture, new Rect(0, 0, prefabTexture.width, prefabTexture.height), new Vector2(0.5f, 0.5f), 100f);
-                    textureImage.rectTransform.sizeDelta = new Vector2(45, 45);
+                    textureImage.rectTransform.sizeDelta = new Vector2(39, 39);
                     textureImage.name = prefab.name;
                     
                     textureImage.rectTransform.localScale = Vector3.one;
@@ -73,7 +73,7 @@ public class Inventory : MonoBehaviour, EditorInputSystem.IEditorActions
 
     public void OnNumberKeys(InputAction.CallbackContext context)
     {
-        Color originalColor = new Color(247, 233, 118, 154);
+        Color originalColor = new Color(247f / 255f, 233f / 255f, 118f / 255f, 154f / 255f);
         if (context.performed)
         {
             int key = int.Parse(context.control.name);
@@ -89,12 +89,15 @@ public class Inventory : MonoBehaviour, EditorInputSystem.IEditorActions
             GameObject hotBarSlot = hotBarPanel.transform.GetChild(key).gameObject;
             Debug.Log(LastSlot.name);
             Debug.Log(hotBarSlot.name);
-            Image lastSlotImage = LastSlot.GetComponent<Image>();
-            Image hotBarSlotImage = hotBarSlot.GetComponent<Image>();
+            Outline lastSlotImage = LastSlot.GetComponent<Outline>();
+            Outline hotBarSlotImage = hotBarSlot.GetComponent<Outline>();
 
-            hotBarSlotImage.color = Color.yellow;
-            lastSlotImage.color = originalColor;
+            lastSlotImage.enabled = false;
+            hotBarSlotImage.enabled = true;
             lastInventorySlot = key;
+            var prefabName = hotBarSlotImage.transform.GetChild(0).name;
+            GameObject buildingPrefab = Resources.Load<GameObject>($"Prefabs/Building/{prefabName}");
+            Building.objectPrefab = buildingPrefab;
         }
     }
     public void OnE(InputAction.CallbackContext context)
