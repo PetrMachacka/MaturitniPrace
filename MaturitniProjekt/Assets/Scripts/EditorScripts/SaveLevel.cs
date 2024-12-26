@@ -53,16 +53,17 @@ public class SaveLevel : MonoBehaviour
             name = existingName,
             objects = new List<ObjectData>()
         };
-
+        List<Vector3> exitingPositions = new List<Vector3>();
         foreach (Transform child in Folder.transform)
         {
+            if(exitingPositions.Contains(child.position)) continue;
             ObjectData objectData = new()
             {
                 name = child.gameObject.name.Split('(')[0],
                 position = child.position
             };
-            Debug.Log(objectData.name);
             levelData.objects.Add(objectData);
+            exitingPositions.Add(child.position);
         }
         return levelData;
     }

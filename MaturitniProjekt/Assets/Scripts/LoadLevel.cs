@@ -8,7 +8,7 @@ public class LoadLevel : MonoBehaviour
 {
     public static string selectedGuid;
     private string prefabsPath = "Prefabs/Building";
-
+    [SerializeField] private bool EditingCubes = false;
     void Start()
     {
         bool newLevel = PlayerPrefs.GetInt("NewLevelInt", 0) == 1;
@@ -76,6 +76,10 @@ public class LoadLevel : MonoBehaviour
             {
                 GameObject newObject = Instantiate(prefab, obj.position, Quaternion.identity);
                 newObject.transform.SetParent(buildFolder.transform);
+                if(EditingCubes)
+                {
+                    EditCube(newObject);
+                }
                 Debug.Log($"Instantiated {obj.name} at {obj.position}");
             }
             else
@@ -83,5 +87,12 @@ public class LoadLevel : MonoBehaviour
                 Debug.LogError($"Prefab not found: {prefabPath}");
             }
         }
+    }
+    public void EditCube(GameObject newObject){
+        GameObject cube = GameObject.CreatePrimitive(PrimitiveType.Cube);
+        cube.transform.SetParent(newObject.transform);
+        cube.transform.localPosition = Vector3.zero;
+        cube.tag = "Edit";
+        cube.GetComponent<Renderer>().enabled = false;
     }
 }

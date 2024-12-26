@@ -11,9 +11,10 @@ GameObject:
   - component: {fileID: 4367797782630074}
   - component: {fileID: 33864592307117116}
   - component: {fileID: 23771980650361632}
+  - component: {fileID: 303750589170570311}
   m_Layer: 0
   m_Name: ForestLadder
-  m_TagString: Edit
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -83,3 +84,16 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &303750589170570311
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1045710228479616}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3ded03603d37164f91de56eb164b2ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TwoBlocks: 0

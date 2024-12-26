@@ -25,4 +25,13 @@ namespace Assets.Scripts {
         public string name;
         public Vector3 position;
     }
+    public enum direcions
+    {
+        up,
+        down,
+        left,
+        right,
+        forward,
+        back
+    }
 }

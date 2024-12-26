@@ -12,9 +12,10 @@ GameObject:
   - component: {fileID: 33605578515500198}
   - component: {fileID: 23542803707668920}
   - component: {fileID: 1847740582295019380}
+  - component: {fileID: -1032440376901266124}
   m_Layer: 0
   m_Name: ForestGroundDirt
-  m_TagString: Edit
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -101,7 +102,20 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Size: {x: 1.9999998, y: 2, z: 2.0000005}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &-1032440376901266124
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1641819918252310}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3ded03603d37164f91de56eb164b2ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TwoBlocks: 0
