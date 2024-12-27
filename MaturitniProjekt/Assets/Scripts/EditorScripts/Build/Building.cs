@@ -6,15 +6,17 @@ using UnityEngine.InputSystem;
 
 public class Building : MonoBehaviour
 {
-    [SerializeField]
-    private int reach = 8;
+    [SerializeField] private int reach = 8;
+    [SerializeField] private Material BrightRed;
     private GameObject Folder;
     private GameObject previewFolder;
     private GameObject currentObject;
     private EditorInputSystem editorInputSystem;
     private RaycastHit hit;
-    [SerializeField] public static GameObject objectPrefab; 
-
+    public static GameObject objectPrefab; 
+    private GameObject previewBlock;
+    private bool obstructed = false;
+    private float basicRotation = 0;
     void Start()
     {
         editorInputSystem = new EditorInputSystem();
@@ -28,7 +30,6 @@ public class Building : MonoBehaviour
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             if (Physics.Raycast(ray, out hit, reach))
             {
-                Debug.Log(hit.collider.name);
                 HandleRaycastHit(hit);
             }
         }
@@ -43,13 +44,39 @@ public class Building : MonoBehaviour
             GameObject previousPreview = previewFolder.transform.GetChild(0).gameObject;
             if(newPosition != null && previewFolder != null && previousPreview.transform.position != newPosition)
             {
-                GameObject newObject = Instantiate(objectPrefab, newPosition.Value, Quaternion.identity);
+                obstructed = false;
+                GameObject newObject = Instantiate(objectPrefab, newPosition.Value, Quaternion.Euler(0, basicRotation, 0));
+
+                if(objectPrefab.GetComponent<Block>().TwoBlocks){
+                    foreach (Transform child in Folder.transform)
+                    {
+                        if(child.position == newObject.transform.position + new Vector3(0,0.5f,0))
+                        {
+                            obstructed = true;
+                            Debug.Log("Obstructed");
+                        }
+                    }
+                }
+                Renderer renderer = newObject.GetComponent<Renderer>();
+                if (renderer != null)
+                {
+                    BuilidingHelpers.SetTransparentMaterial(renderer, obstructed);
+                }
+
+                foreach (Transform child in newObject.transform)
+                {
+                    Renderer childRenderer = child.GetComponent<Renderer>();
+                    if (childRenderer != null)
+                    {
+                        BuilidingHelpers.SetTransparentMaterial(childRenderer, obstructed);
+                    }
+                }
                 Destroy(previousPreview);
                 newObject.transform.SetParent(previewFolder.transform);
+                previewBlock = newObject;
             }
         }
     }
-
     private Vector3? GetNewBlockPosition(RaycastHit hit)
     {
         Vector3? newPosition = null;
@@ -111,16 +138,20 @@ public class Building : MonoBehaviour
     private void BreakObject()
     {
         if (currentObject != null)
-        {   
-            Destroy(currentObject);
+        {
+            Destroy(currentObject.transform.parent.gameObject);
         }
     }
     private void OnLeftClick()
     {
-        Vector3? newPosition = GetNewBlockPosition(hit);
+        if(obstructed) return;
+        if(previewBlock == null) return;
+        Vector3? newPosition = previewBlock.transform.position;
+        float? newRotation = previewBlock.transform.rotation.eulerAngles.y;
+        basicRotation = newRotation.Value;
         if(newPosition != null  && Folder != null)
         {
-            GameObject newObject = Instantiate(objectPrefab, newPosition.Value, Quaternion.identity);
+            GameObject newObject = Instantiate(objectPrefab, newPosition.Value, Quaternion.Euler(0, newRotation.Value, 0));
             newObject.transform.SetParent(Folder.transform);
             if(objectPrefab.GetComponent<Block>().TwoBlocks)
             {
@@ -137,4 +168,12 @@ public class Building : MonoBehaviour
     {
         BreakObject();
     }
+    private void OnR()
+    {
+        Debug.Log("R pressed");
+        if (objectPrefab.GetComponent<Block>().Rotating)
+        {
+            previewBlock.transform.Rotate(0, 90, 0);
+        }
+    }   
 }

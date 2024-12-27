@@ -74,7 +74,7 @@ public class LoadLevel : MonoBehaviour
             GameObject prefab = Resources.Load<GameObject>(prefabPath);
             if (prefab != null)
             {
-                GameObject newObject = Instantiate(prefab, obj.position, Quaternion.identity);
+                GameObject newObject = Instantiate(prefab, obj.position, obj.rotation);
                 newObject.transform.SetParent(buildFolder.transform);
                 if(EditingCubes)
                 {

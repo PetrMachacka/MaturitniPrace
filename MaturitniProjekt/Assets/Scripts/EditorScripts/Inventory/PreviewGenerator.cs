@@ -1,0 +1,30 @@
+#if UNITY_EDITOR
+using UnityEditor;
+using UnityEngine;
+
+public class PreviewGenerator : MonoBehaviour
+{
+    [ContextMenu("Generate Previews")]
+    private void Start()
+    {
+        GeneratePreviews();
+    }
+    public void GeneratePreviews()
+    {
+        GameObject[] prefabs = Resources.LoadAll<GameObject>("Prefabs/Building");
+        foreach (GameObject prefab in prefabs)
+        {
+            Debug.Log(prefab.name);
+            Texture2D preview = AssetPreview.GetAssetPreview(prefab);
+            if (preview != null)
+            {
+                byte[] bytes = preview.EncodeToPNG();
+                string path = Application.dataPath + $"/Resources/Prefabs/Textures/{prefab.name}.png";
+                System.IO.File.WriteAllBytes(path, bytes);
+                Debug.Log($"Saved preview for {prefab.name} at {path}");
+            }
+        }
+        Debug.Log("All previews generated!");
+    }
+}
+#endif

@@ -24,6 +24,7 @@ namespace Assets.Scripts {
     {
         public string name;
         public Vector3 position;
+        public Quaternion rotation;
     }
     public enum direcions
     {

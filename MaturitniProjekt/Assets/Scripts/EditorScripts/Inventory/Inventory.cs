@@ -38,7 +38,6 @@ public class Inventory : MonoBehaviour, EditorInputSystem.IEditorActions
         foreach (Transform child in inventoryPanel.transform)
         {
             inventorySlots.Add(child.gameObject);
-            Debug.Log(child.name);
         }
         GameObject[] prefabs = Resources.LoadAll<GameObject>("Prefabs/Building");
         Debug.Log(prefabs.Length);
@@ -48,7 +47,7 @@ public class Inventory : MonoBehaviour, EditorInputSystem.IEditorActions
             if(i < prefabs.Length)
             {
                 GameObject prefab = prefabs[i];
-                Texture2D prefabTexture = AssetPreview.GetAssetPreview(prefab);
+                Texture2D prefabTexture = Resources.Load<Texture2D>($"Prefabs/Textures/{prefab.name}");
                 if (prefabTexture != null)
                 {
                     GameObject textureObject = new GameObject("PrefabTexture");
@@ -87,8 +86,7 @@ public class Inventory : MonoBehaviour, EditorInputSystem.IEditorActions
             Debug.Log($"Number key pressed: {key}");
             GameObject LastSlot = hotBarPanel.transform.GetChild(lastInventorySlot).gameObject;
             GameObject hotBarSlot = hotBarPanel.transform.GetChild(key).gameObject;
-            Debug.Log(LastSlot.name);
-            Debug.Log(hotBarSlot.name);
+
             Outline lastSlotImage = LastSlot.GetComponent<Outline>();
             Outline hotBarSlotImage = hotBarSlot.GetComponent<Outline>();
 
@@ -125,4 +123,5 @@ public class Inventory : MonoBehaviour, EditorInputSystem.IEditorActions
     public void OnRightClick(InputAction.CallbackContext context) { }
     public void OnESCAPE(InputAction.CallbackContext context) { }
     public void OnPhoto(InputAction.CallbackContext context) { }
+    public void OnR(InputAction.CallbackContext context) { }
 }

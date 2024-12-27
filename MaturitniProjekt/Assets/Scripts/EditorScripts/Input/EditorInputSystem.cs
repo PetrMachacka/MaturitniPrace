@@ -89,6 +89,15 @@ public partial class @EditorInputSystem: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""R"",
+                    ""type"": ""Button"",
+                    ""id"": ""894255be-8229-44e4-94e3-d3f1db186074"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -333,6 +342,17 @@ public partial class @EditorInputSystem: IInputActionCollection2, IDisposable
                     ""action"": ""E"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""38b59087-7011-4729-a2fa-c886ac18403c"",
+                    ""path"": ""<Keyboard>/r"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""R"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -348,6 +368,7 @@ public partial class @EditorInputSystem: IInputActionCollection2, IDisposable
         m_Editor_Photo = m_Editor.FindAction("Photo", throwIfNotFound: true);
         m_Editor_NumberKeys = m_Editor.FindAction("NumberKeys", throwIfNotFound: true);
         m_Editor_E = m_Editor.FindAction("E", throwIfNotFound: true);
+        m_Editor_R = m_Editor.FindAction("R", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -416,6 +437,7 @@ public partial class @EditorInputSystem: IInputActionCollection2, IDisposable
     private readonly InputAction m_Editor_Photo;
     private readonly InputAction m_Editor_NumberKeys;
     private readonly InputAction m_Editor_E;
+    private readonly InputAction m_Editor_R;
     public struct EditorActions
     {
         private @EditorInputSystem m_Wrapper;
@@ -427,6 +449,7 @@ public partial class @EditorInputSystem: IInputActionCollection2, IDisposable
         public InputAction @Photo => m_Wrapper.m_Editor_Photo;
         public InputAction @NumberKeys => m_Wrapper.m_Editor_NumberKeys;
         public InputAction @E => m_Wrapper.m_Editor_E;
+        public InputAction @R => m_Wrapper.m_Editor_R;
         public InputActionMap Get() { return m_Wrapper.m_Editor; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -457,6 +480,9 @@ public partial class @EditorInputSystem: IInputActionCollection2, IDisposable
             @E.started += instance.OnE;
             @E.performed += instance.OnE;
             @E.canceled += instance.OnE;
+            @R.started += instance.OnR;
+            @R.performed += instance.OnR;
+            @R.canceled += instance.OnR;
         }
 
         private void UnregisterCallbacks(IEditorActions instance)
@@ -482,6 +508,9 @@ public partial class @EditorInputSystem: IInputActionCollection2, IDisposable
             @E.started -= instance.OnE;
             @E.performed -= instance.OnE;
             @E.canceled -= instance.OnE;
+            @R.started -= instance.OnR;
+            @R.performed -= instance.OnR;
+            @R.canceled -= instance.OnR;
         }
 
         public void RemoveCallbacks(IEditorActions instance)
@@ -508,5 +537,6 @@ public partial class @EditorInputSystem: IInputActionCollection2, IDisposable
         void OnPhoto(InputAction.CallbackContext context);
         void OnNumberKeys(InputAction.CallbackContext context);
         void OnE(InputAction.CallbackContext context);
+        void OnR(InputAction.CallbackContext context);
     }
 }

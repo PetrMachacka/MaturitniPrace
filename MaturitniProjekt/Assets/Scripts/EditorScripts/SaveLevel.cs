@@ -60,7 +60,8 @@ public class SaveLevel : MonoBehaviour
             ObjectData objectData = new()
             {
                 name = child.gameObject.name.Split('(')[0],
-                position = child.position
+                position = child.position,
+                rotation = child.rotation
             };
             levelData.objects.Add(objectData);
             exitingPositions.Add(child.position);
