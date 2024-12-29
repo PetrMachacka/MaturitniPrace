@@ -7,7 +7,8 @@ using UnityEngine.UI;
 public class Inventory : MonoBehaviour, EditorInputSystem.IEditorActions
 {
     private EditorInputSystem inputSystem;
-    public GameObject inventoryPanel;
+    public GameObject BlocksPanel;
+    public GameObject ToolsPanel;
     public GameObject MainInventory;
     public GameObject hotBarPanel;
     [HideInInspector]public static int lastInventorySlot = 0;
@@ -31,23 +32,29 @@ public class Inventory : MonoBehaviour, EditorInputSystem.IEditorActions
     {
         inputSystem.Editor.Disable();
     }
-
     private void PopulateInventory()
     {
+        PopulatePanel(BlocksPanel, "Prefabs/Building", "BuildingPictures");
+        PopulatePanel(ToolsPanel, "Prefabs/Tools", "ToolsPictures");
+    }
+
+    private void PopulatePanel(GameObject panel, string prefabFolder, string pictureFolder)
+    {
         List<GameObject> inventorySlots = new List<GameObject>();
-        foreach (Transform child in inventoryPanel.transform)
+        foreach (Transform child in panel.transform)
         {
             inventorySlots.Add(child.gameObject);
         }
-        GameObject[] prefabs = Resources.LoadAll<GameObject>("Prefabs/Building");
+
+        GameObject[] prefabs = Resources.LoadAll<GameObject>(prefabFolder);
         Debug.Log(prefabs.Length);
-        for (int i = 0; i < inventorySlots.Count ; i++)
+        for (int i = 0; i < inventorySlots.Count; i++)
         {
             GameObject slot = inventorySlots[i];
-            if(i < prefabs.Length)
+            if (i < prefabs.Length)
             {
                 GameObject prefab = prefabs[i];
-                Texture2D prefabTexture = Resources.Load<Texture2D>($"Prefabs/Textures/{prefab.name}");
+                Texture2D prefabTexture = Resources.Load<Texture2D>($"Prefabs/{pictureFolder}/{prefab.name}");
                 if (prefabTexture != null)
                 {
                     GameObject textureObject = new GameObject("PrefabTexture");
@@ -58,7 +65,7 @@ public class Inventory : MonoBehaviour, EditorInputSystem.IEditorActions
                     textureImage.sprite = Sprite.Create(prefabTexture, new Rect(0, 0, prefabTexture.width, prefabTexture.height), new Vector2(0.5f, 0.5f), 100f);
                     textureImage.rectTransform.sizeDelta = new Vector2(39, 39);
                     textureImage.name = prefab.name;
-                    
+
                     textureImage.rectTransform.localScale = Vector3.one;
                     textureObject.AddComponent<DraggableItem>();
                 }
@@ -69,6 +76,7 @@ public class Inventory : MonoBehaviour, EditorInputSystem.IEditorActions
             }
         }
     }
+    
 
     public void OnNumberKeys(InputAction.CallbackContext context)
     {
@@ -93,9 +101,16 @@ public class Inventory : MonoBehaviour, EditorInputSystem.IEditorActions
             lastSlotImage.enabled = false;
             hotBarSlotImage.enabled = true;
             lastInventorySlot = key;
-            var prefabName = hotBarSlotImage.transform.GetChild(0).name;
-            GameObject buildingPrefab = Resources.Load<GameObject>($"Prefabs/Building/{prefabName}");
-            Building.objectPrefab = buildingPrefab;
+            if(hotBarSlot.transform.childCount > 0)
+            {
+                var prefabName = hotBarSlotImage.transform.GetChild(0).name;
+                GameObject buildingPrefab = Resources.Load<GameObject>($"Prefabs/Building/{prefabName}");
+                if (buildingPrefab == null)
+                {
+                    buildingPrefab = Resources.Load<GameObject>($"Prefabs/Tools/{prefabName}");
+                }
+                Building.objectPrefab = buildingPrefab;
+            }
         }
     }
     public void OnE(InputAction.CallbackContext context)
@@ -117,6 +132,16 @@ public class Inventory : MonoBehaviour, EditorInputSystem.IEditorActions
                 inputSystem.Editor.ESCAPE.Disable();
             }
         }
+    }
+    public void SelectTools()
+    {
+        BlocksPanel.SetActive(false);
+        ToolsPanel.SetActive(true);
+    }
+    public void SelectBlocks()
+    {
+        BlocksPanel.SetActive(true);
+        ToolsPanel.SetActive(false);
     }
     public void OnMovement(InputAction.CallbackContext context) { }
     public void OnLeftClick(InputAction.CallbackContext context) { }

@@ -115,7 +115,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1619558185565566}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a3ded03603d37164f91de56eb164b2ed, type: 3}
+  m_Script: {fileID: 11500000, guid: 5ce1c8e553f07864a9e5059c7d709652, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Tool: 0
   TwoBlocks: 0
+  Rotating: 0

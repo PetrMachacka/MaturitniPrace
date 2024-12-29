@@ -27,11 +27,11 @@ public class PauseMenu : MonoBehaviour
         }
     }
     private void TogglePauseMenu(){
+        Debug.Log("TogglePauseMenu");   
         if(!pauseMenu.activeSelf){
             pauseMenu.SetActive(true);
             Time.timeScale = 0f;
             isPaused = true;
-
         }
         else{
             pauseMenu.SetActive(false);
@@ -66,10 +66,8 @@ public class PauseMenu : MonoBehaviour
         {
             Directory.CreateDirectory(screenshotFolder);
         }
-
         string screenshotName = $"preview.png";
         string screenshotPath = Path.Combine(screenshotFolder, screenshotName);
-
         ScreenCapture.CaptureScreenshot(screenshotPath);
         Debug.Log($"Screenshot saved to: {screenshotPath}");
     }

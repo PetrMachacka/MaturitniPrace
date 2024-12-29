@@ -26,6 +26,11 @@ namespace Assets.Scripts {
         public Vector3 position;
         public Quaternion rotation;
     }
+    [System.Serializable]
+    public class ConnectionData
+    {
+
+    }
     public enum direcions
     {
         up,

@@ -29,9 +29,21 @@ namespace Assets.Scripts
                 renderer.material = BrightRed;
             }
 
-            Debug.Log(color);
             material.color = color;
         }
+        public static GameObject EditingCube(GameObject parent)
+        {
+            GameObject cube = GameObject.CreatePrimitive(PrimitiveType.Cube);
+            cube.transform.SetParent(parent.transform);
+            cube.transform.localPosition = Vector3.zero;
+            cube.tag = "Edit";
 
+            cube.GetComponent<Renderer>().enabled = false;
+            return cube;
+        }
+        public static bool IsHoldingTool(GameObject objectPrefab)
+        {
+            return objectPrefab.GetComponent<Item>().isTool;
+        }
     }
 }
