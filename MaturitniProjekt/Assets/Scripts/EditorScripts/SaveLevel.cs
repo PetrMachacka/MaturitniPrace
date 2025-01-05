@@ -57,11 +57,17 @@ public class SaveLevel : MonoBehaviour
         foreach (Transform child in Folder.transform)
         {
             if(exitingPositions.Contains(child.position)) continue;
+            List<Vector3> connectionPositions = new List<Vector3>();
+            foreach (Connection connection in child.GetComponent<Item>().connections)
+            {
+                connectionPositions.Add(connection.connectedObject.transform.position);
+            }
             ObjectData objectData = new()
             {
                 name = child.gameObject.name.Split('(')[0],
                 position = child.position,
-                rotation = child.rotation
+                rotation = child.rotation,
+                connectionData = connectionPositions
             };
             levelData.objects.Add(objectData);
             exitingPositions.Add(child.position);

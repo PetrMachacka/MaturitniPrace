@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -15,6 +16,7 @@ namespace Assets.Scripts {
     public class LevelData
     {
         public string name;
+        public bool isCoop;
         public string steamId;
         public List<ObjectData> objects;
     }
@@ -25,11 +27,7 @@ namespace Assets.Scripts {
         public string name;
         public Vector3 position;
         public Quaternion rotation;
-    }
-    [System.Serializable]
-    public class ConnectionData
-    {
-
+        public List<Vector3> connectionData;
     }
     public enum direcions
     {
@@ -39,5 +37,17 @@ namespace Assets.Scripts {
         right,
         forward,
         back
+    }
+    public enum BuildModes
+    {
+        logic,
+        build,
+        rotation,
+    }
+    [Serializable]
+    public class Connection
+    {
+        public GameObject connectedObject;
+        public GameObject ConnectionLine;
     }
 }

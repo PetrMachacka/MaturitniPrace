@@ -8,6 +8,7 @@ public class Building : MonoBehaviour
 {
     [SerializeField] private int reach = 8;
     [SerializeField] private Material BrightRed;
+    [SerializeField] private GameObject linePrefab;
     private GameObject Folder;
     private GameObject previewFolder;
     private GameObject hitObject;
@@ -15,18 +16,35 @@ public class Building : MonoBehaviour
     private RaycastHit hit;
     public static GameObject objectPrefab; 
     private GameObject previewBlock;
+    private GameObject lastHitObject;
     private bool obstructed = false;
     private float basicRotation = 0;
+    // #### CONNECTION VARIABLES ####
+    private LayerMask connectionLayerMask = 1 << 8;
+    private LayerMask connectedLayserMask = 1 << 9;
+    private GameObject lastConnection;
+    private GameObject PlayerConnection;
+    private GameObject hitConnection;
+    private GameObject PlayerLine;
+    private bool isDrawingLine = false;
+    private GameObject connectionA;
+    private GameObject lineFolder;
     void Start()
     {
         editorInputSystem = new EditorInputSystem();
         Folder = GameObject.Find("Build");
         previewFolder = GameObject.Find("Preview");
+        connectionLayerMask = LayerMask.GetMask("Connection");
+        connectedLayserMask = LayerMask.GetMask("Connected");
+        PlayerConnection = GameObject.Find("PlayerConnection");
+        lineFolder = GameObject.Find("Lines");
     }
 
     void Update()
     {
-        if(!PauseMenu.isPaused){
+        if (!PauseMenu.isPaused)
+        {
+            // BUILD MODE
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             if (Physics.Raycast(ray, out hit, reach))
             {
@@ -36,7 +54,41 @@ public class Building : MonoBehaviour
             {
                 ResetPreview();
             }
+
+            // CONNECTION MODE
+            Ray connectionRay = Camera.main.ScreenPointToRay(Input.mousePosition);
+            hitConnection = null;
+            RaycastHit connectionHit;
+            if (Physics.Raycast(connectionRay, out connectionHit, reach, connectionLayerMask | connectedLayserMask))
+            {
+                hitConnection = connectionHit.transform.gameObject;
+                if(lastConnection != connectionHit.transform.gameObject)
+                {
+                    Debug.Log(connectionHit.transform.gameObject.name);
+                    HandleConnectionRaycastHit(connectionHit);
+                }
+            }
+            else
+            {
+                if (lastConnection != null)
+                {
+                    lastConnection.transform.localScale = new Vector3(0.2f, 0.2f, 0.2f);
+                    lastConnection = null;
+                }
+            }
         }
+        if (isDrawingLine && PlayerLine != null)
+        {
+            LineRenderer lineRenderer = PlayerLine.GetComponent<LineRenderer>();
+            lineRenderer.SetPosition(1, PlayerConnection.transform.position);
+        }
+    }
+    private void HandleConnectionRaycastHit(RaycastHit connectionHit)
+    {
+        GameObject connection = connectionHit.transform.gameObject;
+        connection.transform.localScale = new Vector3(0.3f, 0.3f, 0.3f);
+        
+        lastConnection = connection;
     }
 
     private void HandleRaycastHit(RaycastHit hit)
@@ -48,13 +100,14 @@ public class Building : MonoBehaviour
             if (newPosition != null && previewFolder != null)
             {
                 GameObject previousPreview = previewFolder.transform.childCount > 0 ? previewFolder.transform.GetChild(0).gameObject : null;
+                
                 if (previousPreview == null || previousPreview.transform.position != newPosition)
                 {
                     obstructed = false;
 
                     if (BuilidingHelpers.IsHoldingTool(objectPrefab))
                     {
-                        ToolPreview(newPosition.Value, previousPreview);
+                        ToolPreview();
                     }
                     else
                     {
@@ -62,8 +115,10 @@ public class Building : MonoBehaviour
                     }
                 }
             }
+            lastHitObject = hitObject;
         }
     }
+
     private void ResetPreview()
     {
         foreach (Transform child in previewFolder.transform)
@@ -72,15 +127,37 @@ public class Building : MonoBehaviour
         }
         previewBlock = new GameObject();
         previewBlock.transform.SetParent(previewFolder.transform);
+        previewBlock.name = "Reset";
     }
-    private void ToolPreview(Vector3 newPosition, GameObject previousPreview)
+
+    private void ToolPreview()
     {
-        Debug.Log("Tool preview");
+        if(objectPrefab.name == "Hammer" && hitObject != lastHitObject && hitObject != null && lastHitObject != null)
+        {
+            Renderer renderer = hitObject.transform.parent.GetComponent<Renderer>();
+            Renderer LastRenderer = lastHitObject.transform.parent.GetComponent<Renderer>();
+            if (LastRenderer != null)
+            {
+                Color originalColor = LastRenderer.material.color;
+                LastRenderer.material.color = originalColor / 1.3f;
+            }
+            if (renderer != null)
+            {
+                Debug.Log(hitObject.name);
+                Color originalColor = renderer.material.color;
+                renderer.material.color = originalColor * 1.3f;
+            }
+        }
     }
+
     private void BlockPreview(Vector3 newPosition, GameObject previousPreview)
     {
+        if (previousPreview != null)
+        {
+            Destroy(previousPreview);
+        }
         GameObject newBlockPreview = Instantiate(objectPrefab, newPosition, Quaternion.Euler(0, basicRotation, 0));
-
+        newBlockPreview.transform.SetParent(previewFolder.transform);
         if (objectPrefab.GetComponent<Item>().TwoBlocks)
         {
             foreach (Transform child in Folder.transform)
@@ -92,7 +169,6 @@ public class Building : MonoBehaviour
                 }
             }
         }
-
         Renderer blockRenderer = newBlockPreview.GetComponent<Renderer>();
         if (blockRenderer != null)
         {
@@ -107,12 +183,7 @@ public class Building : MonoBehaviour
                 BuilidingHelpers.SetTransparentMaterial(childRenderer, obstructed);
             }
         }
-
-        if (previousPreview != null)
-        {
-            Destroy(previousPreview);
-        }
-        newBlockPreview.transform.SetParent(previewFolder.transform);
+        
         previewBlock = newBlockPreview;
     }
     private Vector3? GetNewBlockPosition(RaycastHit hit)
@@ -148,7 +219,7 @@ public class Building : MonoBehaviour
                     newPosition = null;
                     break;
             }
-            if(objectPrefab.GetComponent<Item>().TwoBlocks)
+            if (objectPrefab.GetComponent<Item>().TwoBlocks)
             {
                 switch (direction)
                 {
@@ -161,8 +232,60 @@ public class Building : MonoBehaviour
                 }
             }
         }
+        if (newPosition.HasValue)
+        {
+            newPosition = new Vector3(
+            Mathf.Round(newPosition.Value.x * 2) / 2,
+            Mathf.Round(newPosition.Value.y * 2) / 2,
+            Mathf.Round(newPosition.Value.z * 2) / 2
+            );
+        }
         return newPosition;
     }
+
+    private void PlaceBlock()
+    {
+        if (obstructed || previewBlock.name == "Reset") return;
+
+        Vector3? newPosition = previewBlock.transform.position;
+        float? newRotation = previewBlock.transform.rotation.eulerAngles.y;
+        basicRotation = newRotation.Value;
+
+        if (newPosition != null && Folder != null)
+        {
+            if(objectPrefab.GetComponent<Item>().isSpawn)
+            {
+                int spawnCounter = 0;
+                foreach (Transform child in Folder.transform)
+                {
+                    if (child.GetComponent<Item>().isSpawn)
+                    {
+                        spawnCounter++;
+                    }
+                }
+                if (spawnCounter > 0)
+                {
+                    Debug.Log("Only one spawn allowed");
+                    return;
+                }
+            }
+            GameObject newObject = Instantiate(objectPrefab, newPosition.Value, Quaternion.Euler(0, newRotation.Value, 0));
+            newObject.transform.SetParent(Folder.transform);
+
+            if (objectPrefab.GetComponent<Item>().TwoBlocks)
+            {
+                GameObject cube = BuilidingHelpers.EditingCube(newObject);
+                GameObject cube1 = BuilidingHelpers.EditingCube(newObject);
+                cube.transform.position = newObject.transform.position + new Vector3(0, 0.5f, 0);
+                cube1.transform.position = newObject.transform.position + new Vector3(0, -0.5f, 0);
+                return;
+            }
+            BuilidingHelpers.EditingCube(newObject);
+        }
+
+        ResetPreview();
+    }
+
     private void BreakObject()
     {
         if (hitObject != null)
@@ -170,6 +293,7 @@ public class Building : MonoBehaviour
             Destroy(hitObject.transform.parent.gameObject);
         }
     }
+
     private void OnLeftClick()
     {
         if (PauseMenu.isPaused || !objectPrefab) return;
@@ -182,42 +306,87 @@ public class Building : MonoBehaviour
             PlaceBlock();
         }
     }
-    private void PlaceBlock()
-    {
-        if (obstructed || previewBlock == null) return;
 
-        Vector3? newPosition = previewBlock.transform.position;
-        float? newRotation = previewBlock.transform.rotation.eulerAngles.y;
-        basicRotation = newRotation.Value;
-
-        if (newPosition != null && Folder != null)
-        {
-            GameObject newObject = Instantiate(objectPrefab, newPosition.Value, Quaternion.Euler(0, newRotation.Value, 0));
-            newObject.transform.SetParent(Folder.transform);
-
-            if (objectPrefab.GetComponent<Item>().TwoBlocks)
-            {
-                GameObject cube = BuilidingHelpers.EditingCube(newObject);
-                GameObject cube1 = BuilidingHelpers.EditingCube(newObject);
-                cube.transform.localPosition = new Vector3(0, 0.5f, 0);
-                cube1.transform.localPosition = new Vector3(0, -0.5f, 0);
-                return;
-            }
-
-            BuilidingHelpers.EditingCube(newObject);
-        }
-    }
     private void UseTool()
     {
-        if (hitObject != null)
+        if (hitConnection != null)
         {
-            Debug.Log("Using tool");
+            if (PlayerLine == null)
+            {
+                PlayerLine = BuilidingHelpers.GenerateLine(linePrefab, hitConnection.transform.position, PlayerConnection.transform.position);
+                isDrawingLine = true;
+                connectionA = hitConnection;
+            }
+            else if (connectionA != hitConnection)
+            {
+                bool connectionAIsInput = connectionA.GetComponentInParent<Item>().isInput;
+                bool hitConnectionIsInput = hitConnection.GetComponentInParent<Item>().isInput;
+
+                if (connectionAIsInput != hitConnectionIsInput)
+                {
+                    var connectionAParent = connectionA.GetComponentInParent<Item>();
+                    var hitConnectionParent = hitConnection.GetComponentInParent<Item>();
+
+                    if (!connectionAParent.connections.Exists(c => c.connectedObject.GetComponent<Dot>().id == hitConnection.GetComponent<Dot>().id) && 
+                    !hitConnectionParent.connections.Exists(c => c.connectedObject.GetComponent<Dot>().id == connectionA.GetComponent<Dot>().id))
+                    {
+                        Destroy(PlayerLine);
+                        GameObject ConnectionLine = BuilidingHelpers.GenerateLine(linePrefab, connectionA.transform.position, hitConnection.transform.position);
+                        ConnectionLine.transform.SetParent(lineFolder.transform);
+                        Connection connection = new Connection
+                        {
+                            connectedObject = hitConnectionIsInput ? connectionA : hitConnection,
+                            ConnectionLine = ConnectionLine
+                        };
+
+
+                        if (connectionAIsInput)
+                        {
+                            connectionAParent.connections.Add(connection);
+                        }
+                        else
+                        {
+                            hitConnectionParent.connections.Add(connection);
+                        }
+                        PlayerLine = null;
+                        isDrawingLine = false;
+                    }
+                    else
+                    {
+                        Destroy(PlayerLine);
+                        RemoveExistingConnection(connectionAParent, hitConnection);
+                        RemoveExistingConnection(hitConnectionParent, connectionA);
+                        PlayerLine = null;
+                        isDrawingLine = false;
+                    }
+                }
+            }
+        }
+        else if (PlayerLine != null)
+        {
+            Destroy(PlayerLine);
+
+            PlayerLine = null;
+            isDrawingLine = false;
+        }
+    }
+    void RemoveExistingConnection(Item parentItem, GameObject connection)
+    {
+        Connection existingConnection = parentItem.connections.Find(c => c.connectedObject.GetComponent<Dot>().id == connection.GetComponent<Dot>().id);
+        if (existingConnection != null)
+        {
+            Destroy(existingConnection.ConnectionLine);
+            parentItem.connections.Remove(existingConnection);
         }
     }
     private void OnRightClick()
     {
-        BreakObject();
+        if(objectPrefab.name == "Hammer")
+        {
+            BreakObject();
+        }
     }
+
     private void OnR()
     {
         Debug.Log("R pressed");
@@ -225,4 +394,5 @@ public class Building : MonoBehaviour
         {
             previewBlock.transform.Rotate(0, 90, 0);
         }
-    }   }
+    }
+}

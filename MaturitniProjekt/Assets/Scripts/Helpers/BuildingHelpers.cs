@@ -8,28 +8,35 @@ namespace Assets.Scripts
     {
         public static void SetTransparentMaterial(Renderer renderer, bool obstructed)
         {
-            Material BrightRed = new Material(Shader.Find("Standard"));
+            Material BrightRed = new Material(Shader.Find("Universal Render Pipeline/Lit"));
             BrightRed.color = Color.red;
+
             Material material = renderer.material;
 
-            material.SetFloat("_Mode", 3);
-            material.SetOverrideTag("RenderType", "Transparent");
-            material.SetInt("_SrcBlend", (int)UnityEngine.Rendering.BlendMode.SrcAlpha);
-            material.SetInt("_DstBlend", (int)UnityEngine.Rendering.BlendMode.OneMinusSrcAlpha);
-            material.SetInt("_ZWrite", 0);
-            material.DisableKeyword("_ALPHATEST_ON");
-            material.EnableKeyword("_ALPHABLEND_ON");
-            material.DisableKeyword("_ALPHAPREMULTIPLY_ON");
-            material.renderQueue = 3000;
+            material.SetFloat("_Surface", 1); 
+            material.SetFloat("_Blend", 0); 
+            material.SetFloat("_SrcBlend", (float)UnityEngine.Rendering.BlendMode.SrcAlpha);
+            material.SetFloat("_DstBlend", (float)UnityEngine.Rendering.BlendMode.OneMinusSrcAlpha);
+            material.SetFloat("_ZWrite", 0);
+            material.EnableKeyword("_SURFACE_TYPE_TRANSPARENT");
+            material.renderQueue = (int)UnityEngine.Rendering.RenderQueue.Transparent;
 
             Color color = material.color;
-            color.a = 0.7f;
+            color.a = 0.5f; 
+            material.color = color;
+
             if (obstructed)
             {
                 renderer.material = BrightRed;
             }
-
-            material.color = color;
+        }
+        public static GameObject GenerateLine(GameObject linePrefab, Vector3 start, Vector3 end)
+        {
+            GameObject line = GameObject.Instantiate(linePrefab);
+            LineRenderer lineRenderer = line.GetComponent<LineRenderer>();
+            lineRenderer.SetPosition(0, start);
+            lineRenderer.SetPosition(1, end);
+            return line;
         }
         public static GameObject EditingCube(GameObject parent)
         {
@@ -44,6 +51,10 @@ namespace Assets.Scripts
         public static bool IsHoldingTool(GameObject objectPrefab)
         {
             return objectPrefab.GetComponent<Item>().isTool;
+        }
+        public static Vector3 VectorRound(Vector3 vector)
+        {
+            return new Vector3((float)Math.Round(vector.x * 2) / 2, (float)Math.Round(vector.y * 2) / 2, (float)Math.Round(vector.z * 2) / 2);
         }
     }
 }

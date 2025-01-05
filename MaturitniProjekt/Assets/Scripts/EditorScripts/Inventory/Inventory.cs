@@ -1,9 +1,10 @@
 using System.Collections.Generic;
+using System.Linq.Expressions;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
-
+using Assets.Scripts;
 public class Inventory : MonoBehaviour, EditorInputSystem.IEditorActions
 {
     private EditorInputSystem inputSystem;
@@ -11,6 +12,7 @@ public class Inventory : MonoBehaviour, EditorInputSystem.IEditorActions
     public GameObject ToolsPanel;
     public GameObject MainInventory;
     public GameObject hotBarPanel;
+    public GameObject ToolSlot;
     [HideInInspector]public static int lastInventorySlot = 0;
 
     private void Awake()
@@ -47,7 +49,6 @@ public class Inventory : MonoBehaviour, EditorInputSystem.IEditorActions
         }
 
         GameObject[] prefabs = Resources.LoadAll<GameObject>(prefabFolder);
-        Debug.Log(prefabs.Length);
         for (int i = 0; i < inventorySlots.Count; i++)
         {
             GameObject slot = inventorySlots[i];
@@ -92,6 +93,7 @@ public class Inventory : MonoBehaviour, EditorInputSystem.IEditorActions
                 key = 9;
             }
             Debug.Log($"Number key pressed: {key}");
+            BuildManager.buildMode = BuildModes.build;
             GameObject LastSlot = hotBarPanel.transform.GetChild(lastInventorySlot).gameObject;
             GameObject hotBarSlot = hotBarPanel.transform.GetChild(key).gameObject;
 
@@ -103,11 +105,30 @@ public class Inventory : MonoBehaviour, EditorInputSystem.IEditorActions
             lastInventorySlot = key;
             if(hotBarSlot.transform.childCount > 0)
             {
+                if(ToolSlot.transform.childCount > 0)
+                {
+                    Destroy(ToolSlot.transform.GetChild(0).gameObject);
+                }
                 var prefabName = hotBarSlotImage.transform.GetChild(0).name;
                 GameObject buildingPrefab = Resources.Load<GameObject>($"Prefabs/Building/{prefabName}");
                 if (buildingPrefab == null)
                 {
                     buildingPrefab = Resources.Load<GameObject>($"Prefabs/Tools/{prefabName}");
+                    GameObject Tool = Instantiate(buildingPrefab, ToolSlot.transform.position, Quaternion.identity);
+                    Tool.transform.SetParent(ToolSlot.transform);
+                    Tool.transform.localPosition = Vector3.zero;
+                    Tool.transform.localRotation = buildingPrefab.transform.rotation;
+                    switch (buildingPrefab.name)
+                    {
+                        case "Drill":
+                            BuildManager.buildMode = BuildModes.rotation;
+                            break;
+                        case "Wrench":
+                            BuildManager.buildMode = BuildModes.logic;
+                            break;
+                        default:
+                            break;
+                    }
                 }
                 Building.objectPrefab = buildingPrefab;
             }
