@@ -4,11 +4,12 @@ using System.IO;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using TMPro;
-
+using Assets.Scripts;
 public class AddLevel : MonoBehaviour
 {
     public GameObject AddLevelUI;
     public TMP_InputField inputField;
+    public GameObject coopCheckbox;
     private string levelName;
 
     void Start()
@@ -34,12 +35,12 @@ public class AddLevel : MonoBehaviour
 
     public void CreateNewLevel()
     {
+        bool isCoop = coopCheckbox.GetComponent<Checkbox>().isChecked;
         if (string.IsNullOrEmpty(levelName))
         {
             Debug.Log("Level name is null or empty");
             return;
         }
-
         Debug.Log("Creating new level: " + levelName);
 
         string newGuid = Guid.NewGuid().ToString();
@@ -56,6 +57,7 @@ public class AddLevel : MonoBehaviour
         LevelData newLevelData = new LevelData
         {
             name = levelName,
+            isCoop = isCoop,
             objects = templateData.objects
         };
 
@@ -76,17 +78,4 @@ public class AddLevel : MonoBehaviour
         SceneManager.LoadScene("EditorScene");
     }
 
-    [Serializable]
-    public class LevelData
-    {
-        public string name;
-        public List<ObjectData> objects;
-    }
-
-    [Serializable]
-    public class ObjectData
-    {
-        public string name;
-        public Vector3 position;
-    }
 }

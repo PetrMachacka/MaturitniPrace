@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 776474969156338950}
   - component: {fileID: 2531067979642962510}
   - component: {fileID: 7654438663905762524}
-  - component: {fileID: 5754297322959915818}
+  - component: {fileID: 7001837443439019231}
   m_Layer: 0
   m_Name: Cylinder (1)
   m_TagString: Untagged
@@ -84,8 +84,8 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!136 &5754297322959915818
-CapsuleCollider:
+--- !u!64 &7001837443439019231
+MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -102,11 +102,10 @@ CapsuleCollider:
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5000001
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &5200377762170136165
 GameObject:
   m_ObjectHideFlags: 0
@@ -118,7 +117,7 @@ GameObject:
   - component: {fileID: 2538023849961593301}
   - component: {fileID: 826091129933716548}
   - component: {fileID: 1938867450449772437}
-  - component: {fileID: 5730688232869377501}
+  - component: {fileID: 3553024116824332474}
   m_Layer: 0
   m_Name: Cylinder
   m_TagString: Untagged
@@ -191,8 +190,8 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!136 &5730688232869377501
-CapsuleCollider:
+--- !u!64 &3553024116824332474
+MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -209,11 +208,10 @@ CapsuleCollider:
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5000001
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &8403933653976372843
 GameObject:
   m_ObjectHideFlags: 0
@@ -309,7 +307,8 @@ MonoBehaviour:
   Rotating: 0
   isLogic: 1
   isInput: 1
-  connectedGameObjects: []
+  connections: []
+  isSpawn: 0
 --- !u!1001 &446997800674462147
 PrefabInstance:
   m_ObjectHideFlags: 0

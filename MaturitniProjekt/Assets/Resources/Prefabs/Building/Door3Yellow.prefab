@@ -463,6 +463,7 @@ MonoBehaviour:
   isLogic: 1
   isInput: 0
   connections: []
+  isSpawn: 0
 --- !u!1001 &238565939089408426
 PrefabInstance:
   m_ObjectHideFlags: 0

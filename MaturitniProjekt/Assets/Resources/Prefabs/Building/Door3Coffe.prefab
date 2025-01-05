@@ -136,6 +136,7 @@ MonoBehaviour:
   isLogic: 1
   isInput: 0
   connections: []
+  isSpawn: 0
 --- !u!1 &5054341690491911362
 GameObject:
   m_ObjectHideFlags: 0

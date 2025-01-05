@@ -49,10 +49,12 @@ public class LevelMenu : MonoBehaviour
             rectTransform.anchoredPosition = new Vector2(rectTransform.anchoredPosition.x, -((rectTransform.rect.height + 3) * index) - rectTransform.rect.height / 2 - 5);
         }
 
-        TextMeshProUGUI textComponent = button.GetComponentInChildren<TextMeshProUGUI>();
-        if (textComponent != null)
+        TextMeshProUGUI nameHolder = button.transform.Find("Name").GetComponent<TextMeshProUGUI>();
+        TextMeshProUGUI CoopHolder = button.transform.Find("CoopHolder").GetComponent<TextMeshProUGUI>();
+        if (nameHolder != null)
         {
-            textComponent.text = levelData.name;
+            nameHolder.text = levelData.name;
+            CoopHolder.text = levelData.isCoop ? "Coop" : "Single";
         }
     }
     public async void Workshop(){

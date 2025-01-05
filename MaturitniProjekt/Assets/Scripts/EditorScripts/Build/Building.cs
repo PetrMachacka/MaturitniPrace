@@ -263,7 +263,7 @@ public class Building : MonoBehaviour
                         spawnCounter++;
                     }
                 }
-                if (spawnCounter > 0)
+                if (spawnCounter > (LoadLevel.isCoop ? 1 : 0))
                 {
                     Debug.Log("Only one spawn allowed");
                     return;

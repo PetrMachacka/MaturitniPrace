@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 33864592307117116}
   - component: {fileID: 23771980650361632}
   - component: {fileID: -5903652228832958961}
+  - component: {fileID: -5353034383937457145}
   m_Layer: 0
   m_Name: ForestLadder 1
   m_TagString: Untagged
@@ -96,6 +97,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ce1c8e553f07864a9e5059c7d709652, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Tool: 0
+  isTool: 0
   TwoBlocks: 1
   Rotating: 0
+  isLogic: 0
+  isInput: 0
+  connections: []
+  isSpawn: 0
+--- !u!64 &-5353034383937457145
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1045710228479616}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300000, guid: 063e70de915dd8843afde64c2c744ef5, type: 3}

@@ -200,7 +200,8 @@ MonoBehaviour:
   Rotating: 0
   isLogic: 1
   isInput: 1
-  connectedGameObjects: []
+  connections: []
+  isSpawn: 0
 --- !u!1 &8545905177155674666
 GameObject:
   m_ObjectHideFlags: 0

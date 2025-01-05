@@ -4,18 +4,29 @@ using System.IO;
 using Unity.VisualScripting;
 using UnityEngine;
 using Assets.Scripts;
+using UnityEngine.TextCore.Text;
 public class LoadLevel : MonoBehaviour
 {
     public static string selectedGuid;
     private string prefabsPath = "Prefabs/Building";
     [SerializeField] private bool EditingCubes = false;
+    public LoadLevelMode loadLevelMode = LoadLevelMode.Build;
     private GameObject lineFolder;
+    public static bool isCoop = false;
+    public GameObject CharacterA;
+    public GameObject CharacterB; 
     public class LineConnection
     {
         public GameObject InputObject;
         public Vector3 positionB;
     }
+    public enum LoadLevelMode
+    {
+        Build,
+        Play
+    }
     public GameObject linePrefab;
+    public static List<Vector3> PlayerSpawns = new List<Vector3>();
     void Start()
     {
         bool newLevel = PlayerPrefs.GetInt("NewLevelInt", 0) == 1;
@@ -68,7 +79,7 @@ public class LoadLevel : MonoBehaviour
 
         string json = File.ReadAllText(filePath);
         LevelData levelData = JsonUtility.FromJson<LevelData>(json);
-
+        isCoop = levelData.isCoop;
         GameObject buildFolder = GameObject.Find("Build");
         if (buildFolder == null)
         {
@@ -80,6 +91,10 @@ public class LoadLevel : MonoBehaviour
         {
             GameObject newObject = null;
             string prefabPath = Path.Combine(prefabsPath, obj.name);
+            if(obj.name == "SpawnBlockA")
+            {
+                PlayerSpawns.Add(obj.position);
+            }
             GameObject prefab = Resources.Load<GameObject>(prefabPath);
             if (prefab != null)
             {
@@ -119,9 +134,13 @@ public class LoadLevel : MonoBehaviour
         foreach (var connection in connections)
         {
             Debug.Log(connection.positionB);
+            GameObject line = null;
             GameObject Dot = connection.InputObject.transform.Find("ConnectingDot").gameObject;
-            GameObject line = BuilidingHelpers.GenerateLine(linePrefab, Dot.transform.position, connection.positionB);
-            line.transform.SetParent(lineFolder.transform);
+            if(loadLevelMode == LoadLevelMode.Build)
+            {
+                line = BuilidingHelpers.GenerateLine(linePrefab, Dot.transform.position, connection.positionB);
+                line.transform.SetParent(lineFolder.transform);
+            }
             GameObject connectedObject = null;
             foreach (Transform child in buildFolder.transform)
             {
@@ -137,9 +156,22 @@ public class LoadLevel : MonoBehaviour
                 Connection ObjectConnection = new Connection()
                 {
                     connectedObject = connectedObject.transform.Find("ConnectedDot").gameObject,
-                    ConnectionLine = line
+                    ConnectionLine = loadLevelMode == LoadLevelMode.Build ? line : null
                 };
                 connection.InputObject.GetComponent<Item>().connections.Add(ObjectConnection);
+            }
+        }
+        if(loadLevelMode == LoadLevelMode.Play)
+        {
+            int counter = 0;
+            foreach (var spawn in PlayerSpawns)
+            {
+                if(counter == 0)
+                    CharacterA.transform.position = spawn;
+                else{
+                    CharacterB.transform.position = spawn;
+                }
+                counter++;
             }
         }
     }
