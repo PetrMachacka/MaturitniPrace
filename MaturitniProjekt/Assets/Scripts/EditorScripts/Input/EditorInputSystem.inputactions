@@ -699,45 +699,9 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "ESCAPE",
-                    "type": "Button",
-                    "id": "8bfe6f7a-3248-44b6-a768-0954af04bb2b",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
-                    "name": "Photo",
-                    "type": "Button",
-                    "id": "4d884655-3339-407d-88e0-8f8f684e4651",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
-                    "name": "NumberKeys",
-                    "type": "PassThrough",
-                    "id": "96ea1675-661d-4632-8b7b-c22f9c37687e",
-                    "expectedControlType": "",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": true
-                },
-                {
                     "name": "E",
                     "type": "Button",
                     "id": "f455da5a-c5bd-43a0-9af8-63b463d080a5",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
-                    "name": "R",
-                    "type": "Button",
-                    "id": "0f22fd22-a665-4a8f-b2af-343fff91e9cf",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -855,155 +819,12 @@
                 },
                 {
                     "name": "",
-                    "id": "1bf5a4d8-0805-418b-bf1c-707a8b8dfb03",
-                    "path": "<Keyboard>/escape",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "ESCAPE",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "2737909f-0c90-4366-b818-52256cf10c3d",
-                    "path": "<Keyboard>/#(P)",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Photo",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "64f1caaf-7bd6-41d4-8823-d4b8645c140a",
-                    "path": "<Keyboard>/1",
-                    "interactions": "Press",
-                    "processors": "Scale(factor=0)",
-                    "groups": "",
-                    "action": "NumberKeys",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "7ad6f7ad-058e-493b-91c3-9ddbac4e4b93",
-                    "path": "<Keyboard>/2",
-                    "interactions": "Press",
-                    "processors": "Scale",
-                    "groups": "",
-                    "action": "NumberKeys",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "acf6f990-42b3-439a-8cf4-5730f222870a",
-                    "path": "<Keyboard>/3",
-                    "interactions": "Press",
-                    "processors": "Scale(factor=2)",
-                    "groups": "",
-                    "action": "NumberKeys",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "c3ca21c6-c8b5-40bf-87af-6ba38643e166",
-                    "path": "<Keyboard>/4",
-                    "interactions": "Press",
-                    "processors": "Scale(factor=3)",
-                    "groups": "",
-                    "action": "NumberKeys",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "3c16ee4a-30c5-4e57-9a85-d24994cc9810",
-                    "path": "<Keyboard>/5",
-                    "interactions": "Press",
-                    "processors": "Scale(factor=4)",
-                    "groups": "",
-                    "action": "NumberKeys",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "e3431eb3-7ace-460a-83ea-4e9c03b23770",
-                    "path": "<Keyboard>/6",
-                    "interactions": "MultiTap",
-                    "processors": "Scale(factor=5)",
-                    "groups": "",
-                    "action": "NumberKeys",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "b532ffe6-8a7d-4fb8-a2e3-04fe5051adaa",
-                    "path": "<Keyboard>/7",
-                    "interactions": "Press",
-                    "processors": "Scale(factor=6)",
-                    "groups": "",
-                    "action": "NumberKeys",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "1d5e6cc9-ed2a-4785-b10f-c86cadd3a036",
-                    "path": "<Keyboard>/8",
-                    "interactions": "Press",
-                    "processors": "Scale(factor=7)",
-                    "groups": "",
-                    "action": "NumberKeys",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "4afcbdef-bc73-46bc-b3a4-c62e7196c157",
-                    "path": "<Keyboard>/9",
-                    "interactions": "Press",
-                    "processors": "Scale(factor=8)",
-                    "groups": "",
-                    "action": "NumberKeys",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "3bf9a314-2d12-429f-9cb8-45f8351e24b0",
-                    "path": "<Keyboard>/0",
-                    "interactions": "Press",
-                    "processors": "Scale(factor=9)",
-                    "groups": "",
-                    "action": "NumberKeys",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "bc3336a6-fd1d-4152-b45c-b8440b882c29",
                     "path": "<Keyboard>/e",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
                     "action": "E",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "d2686b8a-eff9-4229-8596-3e76b124cee4",
-                    "path": "<Keyboard>/r",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "R",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },

@@ -25,8 +25,6 @@ public class FPSController : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         rb.freezeRotation = true;
         editorInputSystem = new EditorInputSystem();
-
-        // Lock cursor
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
     }
@@ -97,16 +95,12 @@ public class FPSController : MonoBehaviour
     {
         editorInputSystem.CharacterController.Disable();
     }
-    private void OnESCAPE()
-    {
-        Debug.Log(Cursor.lockState.ToString());
-        if(Cursor.lockState == CursorLockMode.Locked)
-        {
-            Cursor.lockState = CursorLockMode.None;
+    private void OnESCAPE(){
+        if(Cursor.lockState == CursorLockMode.Locked){
             Cursor.visible = true;
+            Cursor.lockState = CursorLockMode.None;
         }
-        else
-        {
+        else{
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
         }

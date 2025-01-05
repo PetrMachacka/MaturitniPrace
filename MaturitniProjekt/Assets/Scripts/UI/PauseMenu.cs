@@ -17,7 +17,9 @@ public class PauseMenu : MonoBehaviour
     public static bool pictureMode = false;
     private void Start() {
         isPaused = false;
-        uploadMenu.SetActive(false);
+        if(uploadMenu){
+            uploadMenu.SetActive(false);
+        }
         pauseMenu.SetActive(false);
         Time.timeScale = 1f;
     }

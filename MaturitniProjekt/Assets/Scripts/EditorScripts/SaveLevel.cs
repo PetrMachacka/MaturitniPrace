@@ -6,7 +6,6 @@ using Assets.Scripts;
 public class SaveLevel : MonoBehaviour
 {
     private GameObject Folder;
-
     public void Start()
     {
         Folder = GameObject.Find("Build");
@@ -51,8 +50,10 @@ public class SaveLevel : MonoBehaviour
         LevelData levelData = new LevelData
         {
             name = existingName,
+            isCoop = false,
             objects = new List<ObjectData>()
         };
+        int numberOfSpawns = 0;
         List<Vector3> exitingPositions = new List<Vector3>();
         foreach (Transform child in Folder.transform)
         {
@@ -61,6 +62,14 @@ public class SaveLevel : MonoBehaviour
             foreach (Connection connection in child.GetComponent<Item>().connections)
             {
                 connectionPositions.Add(connection.connectedObject.transform.position);
+            }
+            if(child.GetComponent<Item>().isSpawn)
+            {
+                numberOfSpawns++;
+                if(numberOfSpawns > 1)
+                {
+                    levelData.isCoop = true;
+                }
             }
             ObjectData objectData = new()
             {
