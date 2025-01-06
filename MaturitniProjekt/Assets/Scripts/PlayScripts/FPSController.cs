@@ -6,7 +6,6 @@ public class FPSController : MonoBehaviour
     [SerializeField] private float walkingSpeed = 5f;
     [SerializeField] private float runningSpeed = 10f;
     [SerializeField] private float jumpForce = 8f;
-    [SerializeField] private float gravity = 20f;
     public Camera playerCamera;
     public float lookSpeed = 2.0f;
     public float lookXLimit = 45.0f;
@@ -85,16 +84,7 @@ public class FPSController : MonoBehaviour
     {
         cameraInput = inputValue.Get<Vector2>();
     }
-
-    private void OnEnable()
-    {
-        editorInputSystem.CharacterController.Enable();
-    }
-
-    private void OnDisable()
-    {
-        editorInputSystem.CharacterController.Disable();
-    }
+    
     private void OnESCAPE(){
         if(Cursor.lockState == CursorLockMode.Locked){
             Cursor.visible = true;

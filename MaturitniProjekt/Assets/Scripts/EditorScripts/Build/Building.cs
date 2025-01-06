@@ -46,7 +46,7 @@ public class Building : MonoBehaviour
         {
             // BUILD MODE
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            if (Physics.Raycast(ray, out hit, reach))
+            if (Physics.Raycast(ray, out hit, reach, LayerMask.GetMask("Edit")))
             {
                 HandleRaycastHit(hit);
             }
@@ -100,7 +100,6 @@ public class Building : MonoBehaviour
             if (newPosition != null && previewFolder != null)
             {
                 GameObject previousPreview = previewFolder.transform.childCount > 0 ? previewFolder.transform.GetChild(0).gameObject : null;
-                
                 if (previousPreview == null || previousPreview.transform.position != newPosition)
                 {
                     obstructed = false;
@@ -156,6 +155,7 @@ public class Building : MonoBehaviour
         {
             Destroy(previousPreview);
         }
+        Debug.Log(newPosition);
         GameObject newBlockPreview = Instantiate(objectPrefab, newPosition, Quaternion.Euler(0, basicRotation, 0));
         newBlockPreview.transform.SetParent(previewFolder.transform);
         if (objectPrefab.GetComponent<Item>().TwoBlocks)

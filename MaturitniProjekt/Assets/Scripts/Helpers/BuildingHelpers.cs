@@ -44,7 +44,7 @@ namespace Assets.Scripts
             cube.transform.SetParent(parent.transform);
             cube.transform.localPosition = Vector3.zero;
             cube.tag = "Edit";
-
+            cube.layer = 9;
             cube.GetComponent<Renderer>().enabled = false;
             return cube;
         }

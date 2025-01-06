@@ -4471,6 +4471,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 487867547903524501, guid: 99ab09e7a6c1cb24facba26ac649020d, type: 3}
+      propertyPath: sensX
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 487867547903524501, guid: 99ab09e7a6c1cb24facba26ac649020d, type: 3}
+      propertyPath: sensY
+      value: 200
+      objectReference: {fileID: 0}
     - target: {fileID: 982827595478409799, guid: 99ab09e7a6c1cb24facba26ac649020d, type: 3}
       propertyPath: linePrefab
       value: 

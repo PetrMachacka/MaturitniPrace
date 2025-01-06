@@ -425,7 +425,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2540698769490253098, guid: 828d62bc334de344d92f964a333e41de, type: 3}
       propertyPath: m_DefaultActionMap
-      value: CharacterKeyboard
+      value: 3dca36fb-0b49-4306-ab8f-dc216fbfb13e
       objectReference: {fileID: 0}
     - target: {fileID: 3081402270037017979, guid: 828d62bc334de344d92f964a333e41de, type: 3}
       propertyPath: m_LocalPosition.x
