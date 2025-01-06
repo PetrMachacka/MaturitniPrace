@@ -26,7 +26,7 @@ public class SaveLevel : MonoBehaviour
         Debug.Log(existingName);
         
         LevelData levelData = CollectLevelData(existingName);
-        Debug.Log(levelData.objects[0].name);
+        if(levelData == null) return;
         WriteLevelDataToFile(filePath, levelData);
     }
 
@@ -50,26 +50,22 @@ public class SaveLevel : MonoBehaviour
         LevelData levelData = new LevelData
         {
             name = existingName,
-            isCoop = false,
+            isCoop = LoadLevel.isCoop,
             objects = new List<ObjectData>()
         };
-        int numberOfSpawns = 0;
+        int spawnCount = 0;
         List<Vector3> exitingPositions = new List<Vector3>();
         foreach (Transform child in Folder.transform)
         {
+            if(child.gameObject.GetComponent<Item>().isSpawn)
+            {
+                spawnCount++;
+            }
             if(exitingPositions.Contains(child.position)) continue;
             List<Vector3> connectionPositions = new List<Vector3>();
             foreach (Connection connection in child.GetComponent<Item>().connections)
             {
                 connectionPositions.Add(connection.connectedObject.transform.position);
-            }
-            if(child.GetComponent<Item>().isSpawn)
-            {
-                numberOfSpawns++;
-                if(numberOfSpawns > 1)
-                {
-                    levelData.isCoop = true;
-                }
             }
             ObjectData objectData = new()
             {
@@ -80,6 +76,21 @@ public class SaveLevel : MonoBehaviour
             };
             levelData.objects.Add(objectData);
             exitingPositions.Add(child.position);
+        }
+        if(spawnCount < 2 && LoadLevel.isCoop)
+        {
+            Errors.ShowError("Not enough spawn points for coop mode.");
+            return null;
+        }
+        else if(spawnCount > 1 && !LoadLevel.isCoop)
+        {
+            Errors.ShowError("Only one spawn point is allowed in SinglePlayer.");
+            return null;
+        }
+        else if(spawnCount < 1)
+        {
+            Errors.ShowError("No spawn points found.");
+            return null;
         }
         return levelData;
     }

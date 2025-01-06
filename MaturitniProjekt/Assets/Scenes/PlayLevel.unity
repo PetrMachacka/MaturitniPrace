@@ -691,6 +691,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 241665806}
     - target: {fileID: 6677345537310708140, guid: dab3bdd3986761a4d92465dcfd1b1363, type: 3}
+      propertyPath: EditingCubes
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6677345537310708140, guid: dab3bdd3986761a4d92465dcfd1b1363, type: 3}
       propertyPath: loadLevelMode
       value: 1
       objectReference: {fileID: 0}
