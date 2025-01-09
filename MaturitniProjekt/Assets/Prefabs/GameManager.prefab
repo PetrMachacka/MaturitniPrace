@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3301050300074561659}
   - component: {fileID: 6677345537310708140}
   - component: {fileID: -3735988914832290171}
+  - component: {fileID: 2881448298948908605}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -76,6 +77,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ce807cc4f49b7e45b72f19bbf455ac4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  EditingCubes: 0
+  loadLevelMode: 0
+  CharacterA: {fileID: 0}
+  CharacterB: {fileID: 0}
+  linePrefab: {fileID: 0}
 --- !u!114 &-3735988914832290171
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -89,3 +95,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pauseMenu: {fileID: 0}
+  uploadMenu: {fileID: 0}
+  canvas: {fileID: 0}
+  imageCanvas: {fileID: 0}
+  levelNameText: {fileID: 0}
+--- !u!114 &2881448298948908605
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1090291232988726728}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd770f89808631c4f84b5f003225eea7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

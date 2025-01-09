@@ -50,4 +50,14 @@ namespace Assets.Scripts {
         public GameObject connectedObject;
         public GameObject ConnectionLine;
     }
+    public class Player
+    {
+        public string name;
+        public Devices device;
+    }
+    public enum Devices{
+        Keyboard,
+        Mouse,
+        Controller
+    }
 }
