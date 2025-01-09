@@ -10,6 +10,7 @@ using Unity.VisualScripting;
 using TMPro;
 public class SteamManager : MonoBehaviour
 {
+    public static string steamUser;
     private void Start()
     {
         SteamUGC.Download(3375074002);
@@ -19,6 +20,9 @@ public class SteamManager : MonoBehaviour
         try
         {
             Steamworks.SteamClient.Init(3336140);
+            steamUser = Steamworks.SteamClient.Name.ToString();
+
+            Debug.Log(steamUser);
         }
         catch (System.Exception e)
         {
@@ -37,7 +41,7 @@ public class SteamManager : MonoBehaviour
         Steamworks.SteamClient.RunCallbacks();
     }
 
-        public static async Task UploadLevelToSteamWorkshopAsync(string selectedLevel)
+    public static async Task UploadLevelToSteamWorkshopAsync(string selectedLevel)
     {
         string directoryPath = FileHelpers.GetFolderPathByGuid(selectedLevel);
         Debug.Log(directoryPath);

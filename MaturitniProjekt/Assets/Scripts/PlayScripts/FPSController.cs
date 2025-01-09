@@ -84,9 +84,8 @@ public class FPSController : MonoBehaviour
     {
         cameraInput = inputValue.Get<Vector2>();
     }
-    
+
     private void OnESCAPE(){
-        Errors.ShowError("Are you sure you want to exit?");
         if(Cursor.lockState == CursorLockMode.Locked){
             Cursor.visible = true;
             Cursor.lockState = CursorLockMode.None;
