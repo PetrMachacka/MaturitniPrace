@@ -170,4 +170,5 @@ public class Inventory : MonoBehaviour, EditorInputSystem.IEditorActions
     public void OnESCAPE(InputAction.CallbackContext context) { }
     public void OnPhoto(InputAction.CallbackContext context) { }
     public void OnR(InputAction.CallbackContext context) { }
+    public void OnAddPlayer(InputAction.CallbackContext contex) { }
 }

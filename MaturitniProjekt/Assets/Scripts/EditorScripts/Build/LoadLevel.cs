@@ -80,6 +80,11 @@ public class LoadLevel : MonoBehaviour
         string json = File.ReadAllText(filePath);
         LevelData levelData = JsonUtility.FromJson<LevelData>(json);
         isCoop = levelData.isCoop;
+        if(!isCoop && loadLevelMode == LoadLevelMode.Play)
+        {
+            CharacterB.SetActive(false);
+            CharacterA.transform.Find("Camera").GetComponent<Camera>().rect = new Rect(0, 0, 1, 1);
+        }
         GameObject buildFolder = GameObject.Find("Build");
         if (buildFolder == null)
         {

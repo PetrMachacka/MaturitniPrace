@@ -4,19 +4,27 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using System.Linq;
 using System;
-
+using Assets.Scripts;
+using System.Linq.Expressions;
 public class DevicesManager : MonoBehaviour
 {
-    public static List<InputDevice> devices = new List<InputDevice>();
+    public static List<DeviceTypes> devices = new List<DeviceTypes>();
+    private static bool hasDeletedPlayerPrefs = false;
 
     void Start()
     {
         InputSystem.onDeviceChange += OnDeviceChange;
-
+        if (!hasDeletedPlayerPrefs)
+        {
+            PlayerPrefs.DeleteKey("ConnectedDevices");
+            PlayerPrefs.DeleteKey("Coop");
+            PlayerPrefs.Save();
+            hasDeletedPlayerPrefs = true;
+        }
         foreach (var device in InputSystem.devices)
         {
             Debug.Log($"Connected device: {device.device}");
-            devices.Add(device);
+            devices.Add(ConvertToDeviceType(device));
         }
     }
 
@@ -27,30 +35,48 @@ public class DevicesManager : MonoBehaviour
         {
             case InputDeviceChange.Added:
                 Debug.Log($"Device connected: {device.displayName}");
-                devices.Add(device);
+                devices.Add(ConvertToDeviceType(device));
                 break;
             case InputDeviceChange.Removed:
             case InputDeviceChange.Disconnected:
                 Debug.Log($"Device disconnected: {device.displayName}");
                 Errors.ShowError("Device disconnected: " + device.displayName);
-                devices.Remove(device);
+                if(ConvertToDeviceType(device) == DeviceTypes.Controller)
+                {
+                    PlayerPrefs.SetInt("Coop", 0);
+                }
+                devices.Remove(ConvertToDeviceType(device));
                 break;
             case InputDeviceChange.Reconnected:
                 Debug.Log($"Device reconnected: {device.displayName}");
-                if (!devices.Contains(device))
+                Errors.ShowError("Device reconnected: " + device.displayName);
+                if (!devices.Contains(ConvertToDeviceType(device)))
                 {
-                    devices.Add(device);
+                    devices.Add(ConvertToDeviceType(device));
                 }
                 break;
         }
-        PlayerPrefs.SetString("ConnectedDevices", string.Join(",", devices.Select(d => d.displayName).ToArray()));
+        PlayerPrefs.SetString("ConnectedDevices", string.Join(",", devices.Select(d => d).ToArray()));
         PlayerPrefs.Save();
-        Debug.Log(PlayerPrefs.GetString("ConnectedDevices"));
     }
-
-    private void OnDestroy()
+    /*private bool AvailableDevice(DeviceTypes deviceType)
     {
-        // Unsubscribe from device change events
-        InputSystem.onDeviceChange -= OnDeviceChange;
+        return devices.Any(d => d.DeviceTypes == deviceType);
+    }*/
+    private DeviceTypes ConvertToDeviceType(InputDevice input)
+    {
+        switch (input.displayName.ToLower())
+        {
+            case "keyboard":
+                return DeviceTypes.Keyboard;
+            case "mouse":
+                return DeviceTypes.Mouse;
+            default:
+                if (input.displayName.ToLower().Contains("controller"))
+                {
+                    return DeviceTypes.Controller;
+                }
+                throw new ArgumentException($"Unknown device type: {input.displayName}");
+        }
     }
 }

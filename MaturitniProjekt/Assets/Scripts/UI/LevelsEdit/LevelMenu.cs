@@ -51,10 +51,12 @@ public class LevelMenu : MonoBehaviour
 
         TextMeshProUGUI nameHolder = button.transform.Find("Name").GetComponent<TextMeshProUGUI>();
         TextMeshProUGUI CoopHolder = button.transform.Find("CoopHolder").GetComponent<TextMeshProUGUI>();
+        LevelButtonScript buttonScript = button.GetComponent<LevelButtonScript>();
         if (nameHolder != null)
         {
             nameHolder.text = levelData.name;
             CoopHolder.text = levelData.isCoop ? "Coop" : "Single";
+            buttonScript.isCoop = levelData.isCoop;
         }
     }
     public async void Workshop(){

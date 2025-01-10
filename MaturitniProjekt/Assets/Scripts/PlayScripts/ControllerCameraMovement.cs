@@ -18,14 +18,14 @@ public class ControllerCameraMovement : MonoBehaviour
     private void OnEnable()
     {
         editorInputSystem.CharacterController.Enable();
-        editorInputSystem.CharacterController.CameraControl.performed += OnCameraControl;
-        editorInputSystem.CharacterController.CameraControl.canceled += OnCameraControl;
+        editorInputSystem.CharacterController.Camera.performed += OnCameraControl;
+        editorInputSystem.CharacterController.Camera.canceled += OnCameraControl;
     }
 
     private void OnDisable()
     {
-        editorInputSystem.CharacterController.CameraControl.performed -= OnCameraControl;
-        editorInputSystem.CharacterController.CameraControl.canceled -= OnCameraControl;
+        editorInputSystem.CharacterController.Camera.performed -= OnCameraControl;
+        editorInputSystem.CharacterController.Camera.canceled -= OnCameraControl;
         editorInputSystem.CharacterController.Disable();
     }
 

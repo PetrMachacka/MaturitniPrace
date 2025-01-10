@@ -8,7 +8,7 @@ public class FPSController : MonoBehaviour
     [SerializeField] private float jumpForce = 8f;
     public Camera playerCamera;
     public float lookSpeed = 2.0f;
-    public float lookXLimit = 45.0f;
+    public float lookXLimit = 60f;
     public bool isController = false;
     private Rigidbody rb;
     private EditorInputSystem editorInputSystem;

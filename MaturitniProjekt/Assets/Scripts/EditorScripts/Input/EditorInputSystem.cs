@@ -98,6 +98,15 @@ public partial class @EditorInputSystem: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""AddPlayer"",
+                    ""type"": ""Button"",
+                    ""id"": ""5936355a-35be-4633-8e58-df379e5a6873"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -351,6 +360,17 @@ public partial class @EditorInputSystem: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""R"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""88e3c10d-cfdc-41dc-a06d-8113bbfea352"",
+                    ""path"": ""<Gamepad>/buttonSouth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""AddPlayer"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -721,33 +741,6 @@ public partial class @EditorInputSystem: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""ESCAPE"",
-                    ""type"": ""Button"",
-                    ""id"": ""8bfe6f7a-3248-44b6-a768-0954af04bb2b"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                },
-                {
-                    ""name"": ""Photo"",
-                    ""type"": ""Button"",
-                    ""id"": ""4d884655-3339-407d-88e0-8f8f684e4651"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                },
-                {
-                    ""name"": ""NumberKeys"",
-                    ""type"": ""PassThrough"",
-                    ""id"": ""96ea1675-661d-4632-8b7b-c22f9c37687e"",
-                    ""expectedControlType"": """",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": true
-                },
-                {
                     ""name"": ""E"",
                     ""type"": ""Button"",
                     ""id"": ""f455da5a-c5bd-43a0-9af8-63b463d080a5"",
@@ -757,22 +750,13 @@ public partial class @EditorInputSystem: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""R"",
-                    ""type"": ""Button"",
-                    ""id"": ""0f22fd22-a665-4a8f-b2af-343fff91e9cf"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                },
-                {
-                    ""name"": ""CameraControl"",
-                    ""type"": ""Button"",
+                    ""name"": ""Camera"",
+                    ""type"": ""Value"",
                     ""id"": ""9f801aed-5a28-4743-9376-47b3344d6ace"",
-                    ""expectedControlType"": ""Button"",
+                    ""expectedControlType"": ""Vector2"",
                     ""processors"": """",
                     ""interactions"": """",
-                    ""initialStateCheck"": false
+                    ""initialStateCheck"": true
                 }
             ],
             ""bindings"": [
@@ -877,138 +861,6 @@ public partial class @EditorInputSystem: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""1bf5a4d8-0805-418b-bf1c-707a8b8dfb03"",
-                    ""path"": ""<Keyboard>/escape"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""ESCAPE"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""2737909f-0c90-4366-b818-52256cf10c3d"",
-                    ""path"": ""<Keyboard>/#(P)"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Photo"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""64f1caaf-7bd6-41d4-8823-d4b8645c140a"",
-                    ""path"": ""<Keyboard>/1"",
-                    ""interactions"": ""Press"",
-                    ""processors"": ""Scale(factor=0)"",
-                    ""groups"": """",
-                    ""action"": ""NumberKeys"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""7ad6f7ad-058e-493b-91c3-9ddbac4e4b93"",
-                    ""path"": ""<Keyboard>/2"",
-                    ""interactions"": ""Press"",
-                    ""processors"": ""Scale"",
-                    ""groups"": """",
-                    ""action"": ""NumberKeys"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""acf6f990-42b3-439a-8cf4-5730f222870a"",
-                    ""path"": ""<Keyboard>/3"",
-                    ""interactions"": ""Press"",
-                    ""processors"": ""Scale(factor=2)"",
-                    ""groups"": """",
-                    ""action"": ""NumberKeys"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""c3ca21c6-c8b5-40bf-87af-6ba38643e166"",
-                    ""path"": ""<Keyboard>/4"",
-                    ""interactions"": ""Press"",
-                    ""processors"": ""Scale(factor=3)"",
-                    ""groups"": """",
-                    ""action"": ""NumberKeys"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""3c16ee4a-30c5-4e57-9a85-d24994cc9810"",
-                    ""path"": ""<Keyboard>/5"",
-                    ""interactions"": ""Press"",
-                    ""processors"": ""Scale(factor=4)"",
-                    ""groups"": """",
-                    ""action"": ""NumberKeys"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""e3431eb3-7ace-460a-83ea-4e9c03b23770"",
-                    ""path"": ""<Keyboard>/6"",
-                    ""interactions"": ""MultiTap"",
-                    ""processors"": ""Scale(factor=5)"",
-                    ""groups"": """",
-                    ""action"": ""NumberKeys"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""b532ffe6-8a7d-4fb8-a2e3-04fe5051adaa"",
-                    ""path"": ""<Keyboard>/7"",
-                    ""interactions"": ""Press"",
-                    ""processors"": ""Scale(factor=6)"",
-                    ""groups"": """",
-                    ""action"": ""NumberKeys"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""1d5e6cc9-ed2a-4785-b10f-c86cadd3a036"",
-                    ""path"": ""<Keyboard>/8"",
-                    ""interactions"": ""Press"",
-                    ""processors"": ""Scale(factor=7)"",
-                    ""groups"": """",
-                    ""action"": ""NumberKeys"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""4afcbdef-bc73-46bc-b3a4-c62e7196c157"",
-                    ""path"": ""<Keyboard>/9"",
-                    ""interactions"": ""Press"",
-                    ""processors"": ""Scale(factor=8)"",
-                    ""groups"": """",
-                    ""action"": ""NumberKeys"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""3bf9a314-2d12-429f-9cb8-45f8351e24b0"",
-                    ""path"": ""<Keyboard>/0"",
-                    ""interactions"": ""Press"",
-                    ""processors"": ""Scale(factor=9)"",
-                    ""groups"": """",
-                    ""action"": ""NumberKeys"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
                     ""id"": ""bc3336a6-fd1d-4152-b45c-b8440b882c29"",
                     ""path"": ""<Keyboard>/e"",
                     ""interactions"": """",
@@ -1019,79 +871,57 @@ public partial class @EditorInputSystem: IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": false
                 },
                 {
-                    ""name"": """",
-                    ""id"": ""d2686b8a-eff9-4229-8596-3e76b124cee4"",
-                    ""path"": ""<Keyboard>/r"",
+                    ""name"": ""2D Vector"",
+                    ""id"": ""eab8fb4f-5941-4b25-9545-e188f7010638"",
+                    ""path"": ""2DVector(mode=2)"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""R"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": ""1D Axis"",
-                    ""id"": ""42e05337-8942-43c4-92b3-9fac68f78e13"",
-                    ""path"": ""1DAxis"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""CameraControl"",
+                    ""action"": ""Camera"",
                     ""isComposite"": true,
                     ""isPartOfComposite"": false
                 },
                 {
-                    ""name"": ""Negative"",
-                    ""id"": ""60a4a9e4-6e24-47a8-8bfa-c173900b045d"",
-                    ""path"": ""<Gamepad>/rightStick/down"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""CameraControl"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""Positive"",
-                    ""id"": ""3f03e4a4-f931-4635-94e4-5f9a6873c8c8"",
+                    ""name"": ""up"",
+                    ""id"": ""e602f9b4-2343-4471-a68b-bef9e147a920"",
                     ""path"": ""<Gamepad>/rightStick/up"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""CameraControl"",
+                    ""action"": ""Camera"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
                 },
                 {
-                    ""name"": ""1D Axis"",
-                    ""id"": ""6a2aa46a-bc44-4523-a3cb-0a591cd53eb2"",
-                    ""path"": ""1DAxis"",
+                    ""name"": ""down"",
+                    ""id"": ""5e3ccc76-2908-44c6-94f9-28cce3252e7d"",
+                    ""path"": ""<Gamepad>/rightStick/down"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""CameraControl"",
-                    ""isComposite"": true,
-                    ""isPartOfComposite"": false
+                    ""action"": ""Camera"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
                 },
                 {
-                    ""name"": ""Negative"",
-                    ""id"": ""855c5469-7629-4b85-a5d4-4707fec39481"",
+                    ""name"": ""left"",
+                    ""id"": ""9422317d-71b4-4046-a8a7-67dd5e8746f9"",
                     ""path"": ""<Gamepad>/rightStick/left"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""CameraControl"",
+                    ""action"": ""Camera"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
                 },
                 {
-                    ""name"": ""Positive"",
-                    ""id"": ""68841aee-4277-44d4-8d78-69dceeb31360"",
+                    ""name"": ""right"",
+                    ""id"": ""d5cee3b1-2710-46cb-83e0-39b2af570940"",
                     ""path"": ""<Gamepad>/rightStick/right"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""CameraControl"",
+                    ""action"": ""Camera"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
                 }
@@ -1110,6 +940,7 @@ public partial class @EditorInputSystem: IInputActionCollection2, IDisposable
         m_Editor_NumberKeys = m_Editor.FindAction("NumberKeys", throwIfNotFound: true);
         m_Editor_E = m_Editor.FindAction("E", throwIfNotFound: true);
         m_Editor_R = m_Editor.FindAction("R", throwIfNotFound: true);
+        m_Editor_AddPlayer = m_Editor.FindAction("AddPlayer", throwIfNotFound: true);
         // CharacterKeyboard
         m_CharacterKeyboard = asset.FindActionMap("CharacterKeyboard", throwIfNotFound: true);
         m_CharacterKeyboard_Movement = m_CharacterKeyboard.FindAction("Movement", throwIfNotFound: true);
@@ -1125,12 +956,8 @@ public partial class @EditorInputSystem: IInputActionCollection2, IDisposable
         m_CharacterController_Movement = m_CharacterController.FindAction("Movement", throwIfNotFound: true);
         m_CharacterController_LeftClick = m_CharacterController.FindAction("LeftClick", throwIfNotFound: true);
         m_CharacterController_RightClick = m_CharacterController.FindAction("RightClick", throwIfNotFound: true);
-        m_CharacterController_ESCAPE = m_CharacterController.FindAction("ESCAPE", throwIfNotFound: true);
-        m_CharacterController_Photo = m_CharacterController.FindAction("Photo", throwIfNotFound: true);
-        m_CharacterController_NumberKeys = m_CharacterController.FindAction("NumberKeys", throwIfNotFound: true);
         m_CharacterController_E = m_CharacterController.FindAction("E", throwIfNotFound: true);
-        m_CharacterController_R = m_CharacterController.FindAction("R", throwIfNotFound: true);
-        m_CharacterController_CameraControl = m_CharacterController.FindAction("CameraControl", throwIfNotFound: true);
+        m_CharacterController_Camera = m_CharacterController.FindAction("Camera", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -1200,6 +1027,7 @@ public partial class @EditorInputSystem: IInputActionCollection2, IDisposable
     private readonly InputAction m_Editor_NumberKeys;
     private readonly InputAction m_Editor_E;
     private readonly InputAction m_Editor_R;
+    private readonly InputAction m_Editor_AddPlayer;
     public struct EditorActions
     {
         private @EditorInputSystem m_Wrapper;
@@ -1212,6 +1040,7 @@ public partial class @EditorInputSystem: IInputActionCollection2, IDisposable
         public InputAction @NumberKeys => m_Wrapper.m_Editor_NumberKeys;
         public InputAction @E => m_Wrapper.m_Editor_E;
         public InputAction @R => m_Wrapper.m_Editor_R;
+        public InputAction @AddPlayer => m_Wrapper.m_Editor_AddPlayer;
         public InputActionMap Get() { return m_Wrapper.m_Editor; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -1245,6 +1074,9 @@ public partial class @EditorInputSystem: IInputActionCollection2, IDisposable
             @R.started += instance.OnR;
             @R.performed += instance.OnR;
             @R.canceled += instance.OnR;
+            @AddPlayer.started += instance.OnAddPlayer;
+            @AddPlayer.performed += instance.OnAddPlayer;
+            @AddPlayer.canceled += instance.OnAddPlayer;
         }
 
         private void UnregisterCallbacks(IEditorActions instance)
@@ -1273,6 +1105,9 @@ public partial class @EditorInputSystem: IInputActionCollection2, IDisposable
             @R.started -= instance.OnR;
             @R.performed -= instance.OnR;
             @R.canceled -= instance.OnR;
+            @AddPlayer.started -= instance.OnAddPlayer;
+            @AddPlayer.performed -= instance.OnAddPlayer;
+            @AddPlayer.canceled -= instance.OnAddPlayer;
         }
 
         public void RemoveCallbacks(IEditorActions instance)
@@ -1399,12 +1234,8 @@ public partial class @EditorInputSystem: IInputActionCollection2, IDisposable
     private readonly InputAction m_CharacterController_Movement;
     private readonly InputAction m_CharacterController_LeftClick;
     private readonly InputAction m_CharacterController_RightClick;
-    private readonly InputAction m_CharacterController_ESCAPE;
-    private readonly InputAction m_CharacterController_Photo;
-    private readonly InputAction m_CharacterController_NumberKeys;
     private readonly InputAction m_CharacterController_E;
-    private readonly InputAction m_CharacterController_R;
-    private readonly InputAction m_CharacterController_CameraControl;
+    private readonly InputAction m_CharacterController_Camera;
     public struct CharacterControllerActions
     {
         private @EditorInputSystem m_Wrapper;
@@ -1412,12 +1243,8 @@ public partial class @EditorInputSystem: IInputActionCollection2, IDisposable
         public InputAction @Movement => m_Wrapper.m_CharacterController_Movement;
         public InputAction @LeftClick => m_Wrapper.m_CharacterController_LeftClick;
         public InputAction @RightClick => m_Wrapper.m_CharacterController_RightClick;
-        public InputAction @ESCAPE => m_Wrapper.m_CharacterController_ESCAPE;
-        public InputAction @Photo => m_Wrapper.m_CharacterController_Photo;
-        public InputAction @NumberKeys => m_Wrapper.m_CharacterController_NumberKeys;
         public InputAction @E => m_Wrapper.m_CharacterController_E;
-        public InputAction @R => m_Wrapper.m_CharacterController_R;
-        public InputAction @CameraControl => m_Wrapper.m_CharacterController_CameraControl;
+        public InputAction @Camera => m_Wrapper.m_CharacterController_Camera;
         public InputActionMap Get() { return m_Wrapper.m_CharacterController; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -1436,24 +1263,12 @@ public partial class @EditorInputSystem: IInputActionCollection2, IDisposable
             @RightClick.started += instance.OnRightClick;
             @RightClick.performed += instance.OnRightClick;
             @RightClick.canceled += instance.OnRightClick;
-            @ESCAPE.started += instance.OnESCAPE;
-            @ESCAPE.performed += instance.OnESCAPE;
-            @ESCAPE.canceled += instance.OnESCAPE;
-            @Photo.started += instance.OnPhoto;
-            @Photo.performed += instance.OnPhoto;
-            @Photo.canceled += instance.OnPhoto;
-            @NumberKeys.started += instance.OnNumberKeys;
-            @NumberKeys.performed += instance.OnNumberKeys;
-            @NumberKeys.canceled += instance.OnNumberKeys;
             @E.started += instance.OnE;
             @E.performed += instance.OnE;
             @E.canceled += instance.OnE;
-            @R.started += instance.OnR;
-            @R.performed += instance.OnR;
-            @R.canceled += instance.OnR;
-            @CameraControl.started += instance.OnCameraControl;
-            @CameraControl.performed += instance.OnCameraControl;
-            @CameraControl.canceled += instance.OnCameraControl;
+            @Camera.started += instance.OnCamera;
+            @Camera.performed += instance.OnCamera;
+            @Camera.canceled += instance.OnCamera;
         }
 
         private void UnregisterCallbacks(ICharacterControllerActions instance)
@@ -1467,24 +1282,12 @@ public partial class @EditorInputSystem: IInputActionCollection2, IDisposable
             @RightClick.started -= instance.OnRightClick;
             @RightClick.performed -= instance.OnRightClick;
             @RightClick.canceled -= instance.OnRightClick;
-            @ESCAPE.started -= instance.OnESCAPE;
-            @ESCAPE.performed -= instance.OnESCAPE;
-            @ESCAPE.canceled -= instance.OnESCAPE;
-            @Photo.started -= instance.OnPhoto;
-            @Photo.performed -= instance.OnPhoto;
-            @Photo.canceled -= instance.OnPhoto;
-            @NumberKeys.started -= instance.OnNumberKeys;
-            @NumberKeys.performed -= instance.OnNumberKeys;
-            @NumberKeys.canceled -= instance.OnNumberKeys;
             @E.started -= instance.OnE;
             @E.performed -= instance.OnE;
             @E.canceled -= instance.OnE;
-            @R.started -= instance.OnR;
-            @R.performed -= instance.OnR;
-            @R.canceled -= instance.OnR;
-            @CameraControl.started -= instance.OnCameraControl;
-            @CameraControl.performed -= instance.OnCameraControl;
-            @CameraControl.canceled -= instance.OnCameraControl;
+            @Camera.started -= instance.OnCamera;
+            @Camera.performed -= instance.OnCamera;
+            @Camera.canceled -= instance.OnCamera;
         }
 
         public void RemoveCallbacks(ICharacterControllerActions instance)
@@ -1512,6 +1315,7 @@ public partial class @EditorInputSystem: IInputActionCollection2, IDisposable
         void OnNumberKeys(InputAction.CallbackContext context);
         void OnE(InputAction.CallbackContext context);
         void OnR(InputAction.CallbackContext context);
+        void OnAddPlayer(InputAction.CallbackContext context);
     }
     public interface ICharacterKeyboardActions
     {
@@ -1529,11 +1333,7 @@ public partial class @EditorInputSystem: IInputActionCollection2, IDisposable
         void OnMovement(InputAction.CallbackContext context);
         void OnLeftClick(InputAction.CallbackContext context);
         void OnRightClick(InputAction.CallbackContext context);
-        void OnESCAPE(InputAction.CallbackContext context);
-        void OnPhoto(InputAction.CallbackContext context);
-        void OnNumberKeys(InputAction.CallbackContext context);
         void OnE(InputAction.CallbackContext context);
-        void OnR(InputAction.CallbackContext context);
-        void OnCameraControl(InputAction.CallbackContext context);
+        void OnCamera(InputAction.CallbackContext context);
     }
 }

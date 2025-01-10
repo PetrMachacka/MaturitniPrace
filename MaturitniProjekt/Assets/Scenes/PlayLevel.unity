@@ -423,6 +423,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 787629859690458457, guid: 828d62bc334de344d92f964a333e41de, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 787629859690458457, guid: 828d62bc334de344d92f964a333e41de, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2540698769490253098, guid: 828d62bc334de344d92f964a333e41de, type: 3}
       propertyPath: m_DefaultActionMap
       value: 3dca36fb-0b49-4306-ab8f-dc216fbfb13e
@@ -471,6 +479,14 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5643776646754611572, guid: 828d62bc334de344d92f964a333e41de, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5643776646754611572, guid: 828d62bc334de344d92f964a333e41de, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5822775410387601476, guid: 828d62bc334de344d92f964a333e41de, type: 3}
       propertyPath: orthographic
       value: 0
@@ -486,6 +502,10 @@ PrefabInstance:
     - target: {fileID: 5822775410387601476, guid: 828d62bc334de344d92f964a333e41de, type: 3}
       propertyPath: m_FocalLength
       value: 20.78461
+      objectReference: {fileID: 0}
+    - target: {fileID: 5822775410387601476, guid: 828d62bc334de344d92f964a333e41de, type: 3}
+      propertyPath: m_CullingMask.m_Bits
+      value: 3063
       objectReference: {fileID: 0}
     - target: {fileID: 5822775410387601476, guid: 828d62bc334de344d92f964a333e41de, type: 3}
       propertyPath: m_projectionMatrixMode
@@ -968,6 +988,14 @@ PrefabInstance:
     - target: {fileID: 3081402270037017979, guid: 828d62bc334de344d92f964a333e41de, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5643776646754611572, guid: 828d62bc334de344d92f964a333e41de, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 5822775410387601476, guid: 828d62bc334de344d92f964a333e41de, type: 3}
+      propertyPath: m_CullingMask.m_Bits
+      value: 2039
       objectReference: {fileID: 0}
     - target: {fileID: 5822775410387601476, guid: 828d62bc334de344d92f964a333e41de, type: 3}
       propertyPath: m_NormalizedViewPortRect.x

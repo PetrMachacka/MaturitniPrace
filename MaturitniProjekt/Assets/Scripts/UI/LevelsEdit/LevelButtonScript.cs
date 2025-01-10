@@ -4,6 +4,7 @@ using UnityEngine.SceneManagement;
 
 public class LevelButtonScript : MonoBehaviour
 {
+    public bool isCoop;
     public void SelectLevel()
     {
         string levelGuid = gameObject.name;
@@ -35,6 +36,18 @@ public class LevelButtonScript : MonoBehaviour
     }
     public void PlayLevel()
     {
+        Debug.Log(PlayerPrefs.GetInt("Coop"));
+        Debug.Log(isCoop);
+        if(isCoop && PlayerPrefs.GetInt("Coop") == 0)
+        {
+            Errors.ShowError("You need 2 Players for COOP.");
+            return;
+        }
+        else if(!isCoop && PlayerPrefs.GetInt("Coop") == 1)
+        {
+            Errors.ShowError("You need 1 Player for Single Player.");
+            return;
+        }
         string levelGuid = gameObject.name;
         Debug.Log("Playing Level GUID: " + levelGuid);
         PlayerPrefs.SetString("SelectedLevel", levelGuid);
