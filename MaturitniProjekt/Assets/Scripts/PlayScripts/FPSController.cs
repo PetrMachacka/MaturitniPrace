@@ -21,6 +21,7 @@ public class FPSController : MonoBehaviour
 
     void Start()
     {
+        lookSpeed = lookSpeed * PlayerPrefs.GetFloat("Sensitivity");
         rb = GetComponent<Rigidbody>();
         rb.freezeRotation = true;
         editorInputSystem = new EditorInputSystem();

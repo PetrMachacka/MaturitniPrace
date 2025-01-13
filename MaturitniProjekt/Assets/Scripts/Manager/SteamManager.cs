@@ -12,9 +12,41 @@ public class SteamManager : MonoBehaviour
 {
     public static string steamUser;
     public static string steamId;
+    private const string AppId = "3336140";
+    public static List<String> folderNames = new List<string>();
+    public static string workshopPath;
+    public static string steamDownloadPath;
     private void Start()
     {
+        workshopPath = GetSteamWorkshopPath();
+        ListDownloaded();
         SteamUGC.Download(3375074002);
+    }
+    public static void ListDownloaded(){
+        if (!string.IsNullOrEmpty(workshopPath))
+        {
+            steamDownloadPath = Path.Combine(workshopPath, AppId);
+
+            if (Directory.Exists(steamDownloadPath))
+            {
+            Debug.Log($"Steam Workshop directory for App ID {AppId} found: {steamDownloadPath}");
+
+            string[] directories = Directory.GetDirectories(steamDownloadPath);
+
+            foreach (string directory in directories)
+            {
+                folderNames.Add(Path.GetFileName(directory));
+            }
+            }
+            else
+            {
+            Debug.LogWarning($"Steam Workshop directory for App ID {AppId} not found.");
+            }
+        }
+        else
+        {
+            Debug.LogError("Steam installation directory could not be located.");
+        }
     }
     private void Awake()
     {
@@ -69,6 +101,7 @@ public class SteamManager : MonoBehaviour
         var result = await editor
             .WithTitle(levelData.name)
             .WithDescription("Description")
+            .WithTag(levelData.isCoop ? "Coop" : "Singleplayer")
             .WithTag("Map")
             .WithPreviewFile(Path.Combine(directoryPath, "preview.png"))
             .WithContent(directoryPath)
@@ -88,11 +121,19 @@ public class SteamManager : MonoBehaviour
         }
     }
 
-    public static async Task<Steamworks.Ugc.ResultPage?> GetLevelListWorkshop(WorkshopSearchOptions searchOptions, int page = 1, string textSearch = null)
-    {
+    public static async Task<Steamworks.Ugc.ResultPage?> GetLevelListWorkshop(int page = 1, string textSearch = null)
+    {   
+        
+        WorkshopSearchOptions searchOptions = Filters.searchOption;
+        Debug.Log(Filters.searchOption.ToString());
         var query = Steamworks.Ugc.Query.Items
-            .WithTag("Map")
             .MatchAnyTag();
+        if(Filters.isCoop)
+        {
+            query = query.WithTag("Coop");
+            Debug.Log("Coop");
+        }
+
         if(searchOptions == WorkshopSearchOptions.SortByDate)
         {
             query = query.RankedByPublicationDate();
@@ -115,10 +156,10 @@ public class SteamManager : MonoBehaviour
         }
 
         var result = await query.GetPageAsync(page);
-        
+        Debug.Log(result.Value.TotalCount);
         return  result;
     }
-    public static async void DownloadByID( Steamworks.Ugc.Item steamItem)
+    public static async Task DownloadByID(Steamworks.Ugc.Item steamItem)
     {
         await steamItem.Subscribe();
         Debug.Log(steamItem.Id);
@@ -129,9 +170,9 @@ public class SteamManager : MonoBehaviour
         var result = await Steamworks.Ugc.Item.GetAsync(id);
         return result;
     }
-    public static void DeleteItem(string id)
+    public static async void DeleteItem(Steamworks.Ugc.Item? item)
     {
-        Steamworks.SteamUGC.DeleteFileAsync(ulong.Parse(id));
+        await Steamworks.SteamUGC.DeleteFileAsync(item.Value.Id);
     }
 
     class ProgressClass : IProgress<float>
@@ -147,5 +188,32 @@ public class SteamManager : MonoBehaviour
             Debug.Log( value );
         }
     }
+    private string GetSteamWorkshopPath()
+    {
+        string steamPath = "";
+
+        // Default paths for different operating systems
+        if (Application.platform == RuntimePlatform.WindowsPlayer || Application.platform == RuntimePlatform.WindowsEditor)
+        {
+            steamPath = Environment.GetFolderPath(Environment.SpecialFolder.ProgramFilesX86);
+            steamPath = Path.Combine(steamPath, "Steam", "steamapps", "workshop", "content");
+        }
+        else if (Application.platform == RuntimePlatform.OSXPlayer || Application.platform == RuntimePlatform.OSXEditor)
+        {
+            steamPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Personal), "Library", "Application Support", "Steam", "steamapps", "workshop", "content");
+        }
+        else if (Application.platform == RuntimePlatform.LinuxPlayer)
+        {
+            steamPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Personal), ".steam", "steam", "steamapps", "workshop", "content");
+        }
+
+        if (Directory.Exists(steamPath))
+        {
+            return steamPath;
+        }
+
+        return null;
+    }
+
 }
 

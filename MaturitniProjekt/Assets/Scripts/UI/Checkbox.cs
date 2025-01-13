@@ -9,6 +9,7 @@ public class Checkbox : MonoBehaviour
 
     public void Toggle()
     {
+        Debug.Log("Toggled");
         isChecked = !isChecked;
         checkmark.SetActive(isChecked);
     }

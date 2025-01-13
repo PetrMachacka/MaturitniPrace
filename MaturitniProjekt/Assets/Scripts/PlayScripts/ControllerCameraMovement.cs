@@ -12,6 +12,7 @@ public class ControllerCameraMovement : MonoBehaviour
 
     private void Awake()
     {
+        lookSpeed = lookSpeed * PlayerPrefs.GetFloat("Sensitivity");
         editorInputSystem = new EditorInputSystem();
     }
 

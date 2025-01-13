@@ -9,6 +9,7 @@ public class Menu : MonoBehaviour
     public GameObject LevelEditSelection;
     public GameObject LevelPlaySelection;
     public GameObject LevelPlayCommunitySelection;
+    public GameObject Settings;
     private void Start()
     {
         switch (PlayerPrefs.GetString("OpenMenu"))
@@ -63,6 +64,17 @@ public class Menu : MonoBehaviour
         {
             LevelPlayCommunitySelection.SetActive(true);
             PlayerPrefs.SetString("OpenMenu", "CommunityPlaySelection");
+        }
+    }
+    public void SettingsMenu()
+    {
+        if(Settings.activeSelf)
+        {
+            Settings.SetActive(false);
+        }
+        else
+        {
+            Settings.SetActive(true);
         }
     }
 }

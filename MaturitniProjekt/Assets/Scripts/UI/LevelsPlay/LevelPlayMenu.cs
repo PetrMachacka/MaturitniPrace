@@ -6,16 +6,19 @@ using TMPro;
 using Assets.Scripts;
 using Steamworks.Data;
 using System.Linq;
+using System.Threading.Tasks;
 
 public class LevelPlayMenu : MonoBehaviour
 {
     private int itemsPerPage = 6;
     public GameObject buttonPrefab;
+    public GameObject downloadedPrefab;
     public TextMeshProUGUI pageText;
-    private int _page = 1;
-    void Start()
+    public static int _page = 1;
+    private async void Start()
     {
-        LoadWorkshopLevels(_page);
+        _page = PlayerPrefs.GetInt("Page", 1);
+        await LoadWorkshopLevels(_page);
     }
     private void ClearChildren(Transform parent)
     {
@@ -26,8 +29,15 @@ public class LevelPlayMenu : MonoBehaviour
     }
     void CreateButton(Steamworks.Ugc.Item item, int index)
     {
-        GameObject button = Instantiate(buttonPrefab, transform);
-        button.name = Path.GetFileNameWithoutExtension(item.Id.ToString());
+        string name = Path.GetFileNameWithoutExtension(item.Id.ToString());
+        GameObject button;
+        if(SteamManager.folderNames.Contains(name)){
+            button = Instantiate(downloadedPrefab, transform);
+        }
+        else{
+            button = Instantiate(buttonPrefab, transform);
+        }
+        button.name = name;
 
         RectTransform rectTransform = button.GetComponent<RectTransform>();
         if (rectTransform != null)
@@ -42,7 +52,8 @@ public class LevelPlayMenu : MonoBehaviour
             { "Rating", item.Score.ToString() },
             { "Author", item.Owner.Name },
             { "Date", item.Updated.ToShortDateString() },
-            { "Downloads", item.NumSubscriptions.ToString() }
+            { "Downloads", item.NumSubscriptions.ToString() },
+            { "Mode", item.HasTag("Coop") ? "Coop" : "Single" }
         };
 
         foreach (var textComponent in textComponents)
@@ -53,7 +64,7 @@ public class LevelPlayMenu : MonoBehaviour
             }
         }
     }
-   public async void LoadWorkshopLevels(int page)
+   public async Task LoadWorkshopLevels(int page)
     {
         ClearChildren(transform);
         pageText.text = $"{page}";
@@ -62,7 +73,7 @@ public class LevelPlayMenu : MonoBehaviour
         int steamPage = (totalItems / itemsPerPageSteam) + 1;
         int startIndex = totalItems % itemsPerPageSteam;
 
-        var result = await SteamManager.GetLevelListWorkshop(WorkshopSearchOptions.SortByDate, steamPage);
+        var result = await SteamManager.GetLevelListWorkshop(steamPage);
         if (!result.HasValue)
         {
             Debug.LogError("Failed to get workshop levels.");
@@ -74,24 +85,24 @@ public class LevelPlayMenu : MonoBehaviour
         {
             if (index >= startIndex && index < startIndex + itemsPerPage)
             {
-                Debug.Log($"Title: {item.Title}, Description: {item.Description}, ID: {item.Id}");
                 CreateButton(item, index - startIndex);
             }
             index++;
         }
-        Debug.Log($"Total items: {index}");
     }
-    public void NextPage()
+    public async void NextPage()
     {
         _page++;
-        LoadWorkshopLevels(_page);
+        PlayerPrefs.SetInt("Page", _page);
+        await LoadWorkshopLevels(_page);
     }
-    public void PreviousPage()
+    public async void PreviousPage()
     {
         if(_page > 1)
         {
             _page--;
-            LoadWorkshopLevels(_page);
+            PlayerPrefs.SetInt("Page", _page);
+            await LoadWorkshopLevels(_page);
         }
     }
 }

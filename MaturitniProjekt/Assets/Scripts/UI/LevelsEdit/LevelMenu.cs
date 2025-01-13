@@ -59,14 +59,6 @@ public class LevelMenu : MonoBehaviour
             buttonScript.isCoop = levelData.isCoop;
         }
     }
-    public async void Workshop(){
-        var result = await SteamManager.GetLevelListWorkshop(WorkshopSearchOptions.SortByDate, 1);
 
-        foreach (var item in result.Value.Entries)
-        {
-            Debug.Log($"Title: {item.Title}, Description: {item.Description}, ID: {item.Id}");
-            SteamManager.DownloadByID(item);
-        }
-    }
 }
 

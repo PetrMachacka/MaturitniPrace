@@ -29,7 +29,6 @@ public class LoadLevel : MonoBehaviour
     public static List<Vector3> PlayerSpawns = new List<Vector3>();
     void Start()
     {
-        bool newLevel = PlayerPrefs.GetInt("NewLevelInt", 0) == 1;
         string selectedGuid = PlayerPrefs.GetString("SelectedLevel", "DefaultLevel");
         Debug.Log("Loaded Level GUID: " + selectedGuid);
         lineFolder = GameObject.Find("Lines");
@@ -56,6 +55,11 @@ public class LoadLevel : MonoBehaviour
 
     private string GetLevelDirectoryPath(string levelsPath, string selectedGuid)
     {
+        if(PlayerPrefs.GetInt("SteamDownloads") == 1)
+        {
+            PlayerPrefs.SetInt("SteamDownloads", 0);
+            return SteamManager.steamDownloadPath + "/" + selectedGuid;
+        }
         string[] directories = Directory.GetDirectories(levelsPath);
 
         foreach (string directory in directories)
