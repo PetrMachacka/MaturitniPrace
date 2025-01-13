@@ -10,9 +10,15 @@ public class DevicesManager : MonoBehaviour
 {
     public static List<DeviceTypes> devices = new List<DeviceTypes>();
     private static bool hasDeletedPlayerPrefs = false;
-
+    private bool openMenuCleared = false;
     void Start()
     {
+        if(!openMenuCleared)
+        {
+            PlayerPrefs.SetString("OpenMenu", "");
+            PlayerPrefs.Save();
+            openMenuCleared = true;
+        }
         InputSystem.onDeviceChange += OnDeviceChange;
         if (!hasDeletedPlayerPrefs)
         {

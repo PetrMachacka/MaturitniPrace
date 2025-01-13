@@ -11,6 +11,7 @@ using TMPro;
 public class SteamManager : MonoBehaviour
 {
     public static string steamUser;
+    public static string steamId;
     private void Start()
     {
         SteamUGC.Download(3375074002);
@@ -21,7 +22,7 @@ public class SteamManager : MonoBehaviour
         {
             Steamworks.SteamClient.Init(3336140);
             steamUser = Steamworks.SteamClient.Name.ToString();
-
+            steamId = Steamworks.SteamClient.SteamId.ToString();
             Debug.Log(steamUser);
         }
         catch (System.Exception e)
@@ -127,6 +128,10 @@ public class SteamManager : MonoBehaviour
     {
         var result = await Steamworks.Ugc.Item.GetAsync(id);
         return result;
+    }
+    public static void DeleteItem(string id)
+    {
+        Steamworks.SteamUGC.DeleteFileAsync(ulong.Parse(id));
     }
 
     class ProgressClass : IProgress<float>

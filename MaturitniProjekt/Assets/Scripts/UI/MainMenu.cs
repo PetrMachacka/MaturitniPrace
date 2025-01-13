@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq.Expressions;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -8,6 +9,21 @@ public class Menu : MonoBehaviour
     public GameObject LevelEditSelection;
     public GameObject LevelPlaySelection;
     public GameObject LevelPlayCommunitySelection;
+    private void Start()
+    {
+        switch (PlayerPrefs.GetString("OpenMenu"))
+        {
+            case "PlaySelection":
+                LevelPlaySelection.SetActive(true);
+                break;
+            case "EditSelection":
+                LevelEditSelection.SetActive(true);
+                break;
+            case "CommunityPlaySelection":
+                LevelPlayCommunitySelection.SetActive(true);
+                break;
+        }
+    }
 
     public void QuitGame()
     {
@@ -22,6 +38,7 @@ public class Menu : MonoBehaviour
         else
         {
             LevelPlaySelection.SetActive(true);
+            PlayerPrefs.SetString("OpenMenu", "PlaySelection");
         }
     }
     public void EditSelection()
@@ -33,6 +50,7 @@ public class Menu : MonoBehaviour
         else
         {
             LevelEditSelection.SetActive(true);
+            PlayerPrefs.SetString("OpenMenu", "EditSelection");
         }
     }
     public void PlayCommunitySelection()
@@ -44,6 +62,7 @@ public class Menu : MonoBehaviour
         else
         {
             LevelPlayCommunitySelection.SetActive(true);
+            PlayerPrefs.SetString("OpenMenu", "CommunityPlaySelection");
         }
     }
 }
