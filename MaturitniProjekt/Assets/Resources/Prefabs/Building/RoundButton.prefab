@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2531067979642962510}
   - component: {fileID: 7654438663905762524}
   - component: {fileID: 7584298255301931949}
+  - component: {fileID: 1370964281905074205}
   m_Layer: 0
   m_Name: Cylinder (1)
   m_TagString: Untagged
@@ -107,6 +108,19 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
+--- !u!114 &1370964281905074205
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 967983625163324757}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 718e423b7529ab74fa69dbaa053bc354, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ButtonScript: {fileID: -2585002609253341012}
 --- !u!1 &5200377762170136165
 GameObject:
   m_ObjectHideFlags: 0
@@ -310,6 +324,7 @@ MonoBehaviour:
   isInput: 1
   connections: []
   isSpawn: 0
+  Activated: 0
 --- !u!114 &-2585002609253341012
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -323,8 +338,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Activate: 0
-  Trigger: {fileID: 967983625163324757}
-  item: {fileID: 0}
+  deactivateAfter: 1
 --- !u!1001 &446997800674462147
 PrefabInstance:
   m_ObjectHideFlags: 0
