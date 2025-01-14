@@ -7,6 +7,7 @@ using UnityEngine;
 public class Dot : MonoBehaviour
 {
     [HideInInspector] public Guid id;
+    public GameObject ActivateObject;
     private void Start()
     {
         id = Guid.NewGuid();

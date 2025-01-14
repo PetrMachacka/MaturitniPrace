@@ -116,6 +116,7 @@ GameObject:
   - component: {fileID: 3131428877518894827}
   - component: {fileID: 8627948806592254467}
   - component: {fileID: -1595009041947064740}
+  - component: {fileID: 8084572171169065166}
   m_Layer: 0
   m_Name: SquareButton
   m_TagString: Untagged
@@ -202,6 +203,21 @@ MonoBehaviour:
   isInput: 1
   connections: []
   isSpawn: 0
+--- !u!114 &8084572171169065166
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5468741185709872623}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85aa05c71350b2845bd5632c4bb139b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Activate: 0
+  Trigger: {fileID: 3292164955000589354}
+  item: {fileID: 0}
 --- !u!1 &8545905177155674666
 GameObject:
   m_ObjectHideFlags: 0

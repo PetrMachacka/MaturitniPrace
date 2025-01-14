@@ -299,11 +299,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 731917776111cfd4e8e238be7a676f44, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  open: 0
+  Activate: 0
   smooth: 1
-  asource: {fileID: 0}
-  openDoor: {fileID: 8300000, guid: 44b63b0db16ce624b97e45ebde0a0971, type: 3}
-  closeDoor: {fileID: 8300000, guid: bc37ad25465405a428a26ff0facd9a7b, type: 3}
+  Block: {fileID: 5467156497831405304}
 --- !u!1 &2269418418259601334
 GameObject:
   m_ObjectHideFlags: 0
@@ -464,6 +462,7 @@ MonoBehaviour:
   isInput: 0
   connections: []
   isSpawn: 0
+  Activated: 0
 --- !u!1001 &238565939089408426
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -478,8 +477,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2167536939646162617, guid: 2e3b33533a39c5f41a75a8dbefffa8e3, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2868428212015936976, guid: 2e3b33533a39c5f41a75a8dbefffa8e3, type: 3}
+      propertyPath: ActivateObject
+      value: 
+      objectReference: {fileID: 5467156497831405304}
     - target: {fileID: 6687046859297808154, guid: 2e3b33533a39c5f41a75a8dbefffa8e3, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.21505378

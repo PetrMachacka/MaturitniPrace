@@ -119,6 +119,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ce1c8e553f07864a9e5059c7d709652, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Tool: 0
+  isTool: 0
   TwoBlocks: 0
   Rotating: 0
+  isLogic: 0
+  isInput: 0
+  connections: []
+  isSpawn: 0
