@@ -8,7 +8,7 @@ public class BuildButton : MonoBehaviour
 {
     public bool Activate;
     private Item item;
-    public bool deactivateAfter = false;
+    public bool WillDeactivate = false;
     private void Start()
     {
         item = GetComponent<Item>();
@@ -24,18 +24,19 @@ public class BuildButton : MonoBehaviour
                 {
                     Item ActiveObject = i.connectedObject.GetComponent<Dot>().ActivateObject.GetComponent<Item>();
                     Debug.Log(ActiveObject.name);
-                    ActiveObject.Activated = true;
+                    ActiveObject.ActivatedItem = true;
                 }
             }
         }
-        else if(deactivateAfter)
+        else if(WillDeactivate)
         {
+            Debug.Log(WillDeactivate);
             foreach (Connection i in item.connections)
             {
                 if (i.connectedObject != null)
                 {
                     Item ActiveObject = i.connectedObject.GetComponent<Dot>().ActivateObject.GetComponent<Item>();
-                    ActiveObject.Activated = false;
+                    ActiveObject.ActivatedItem = false;
                 }
             }
         }

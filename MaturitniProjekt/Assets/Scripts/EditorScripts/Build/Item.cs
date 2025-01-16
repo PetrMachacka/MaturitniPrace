@@ -21,7 +21,7 @@ public class Item : MonoBehaviour
     [Header("Other")]
     [SerializeField] public bool isSpawn = false;
     private GameObject ConnectionDot;
-    public bool Activated = false;
+    public bool ActivatedItem;
 
     private void Start(){
         if(isLogic)

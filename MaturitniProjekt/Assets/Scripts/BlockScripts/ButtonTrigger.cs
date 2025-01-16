@@ -10,6 +10,7 @@ public class ButtonTrigger : MonoBehaviour
         if (ButtonScript != null)
         {
             ButtonScript.Activate = true;
+            
         }
     }
 

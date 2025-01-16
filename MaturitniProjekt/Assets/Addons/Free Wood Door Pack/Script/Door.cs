@@ -4,7 +4,6 @@ using UnityEngine;
 
 
 public class Door : MonoBehaviour {
-	public bool Activate;
 	public float smooth = 1.0f;
 	float DoorOpenAngle = -90.0f;
     float DoorCloseAngle = 0.0f;
@@ -17,7 +16,7 @@ public class Door : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (item.Activated)
+		if (item.ActivatedItem)
 		{
             var target = Quaternion.Euler (0, DoorOpenAngle, 0);
             transform.localRotation = Quaternion.Slerp(transform.localRotation, target, Time.deltaTime * 5 * smooth);
