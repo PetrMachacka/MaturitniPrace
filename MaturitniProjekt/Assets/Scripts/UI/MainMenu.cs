@@ -60,7 +60,7 @@ public class Menu : MonoBehaviour
         {
             LevelPlayCommunitySelection.SetActive(false);
         }
-        else
+        else if(SteamManager.isSteamActive)
         {
             LevelPlayCommunitySelection.SetActive(true);
             PlayerPrefs.SetString("OpenMenu", "CommunityPlaySelection");

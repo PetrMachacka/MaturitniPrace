@@ -16,11 +16,22 @@ public class SteamManager : MonoBehaviour
     public static List<String> folderNames = new List<string>();
     public static string workshopPath;
     public static string steamDownloadPath;
+    public static bool isSteamActive;
     private void Start()
     {
         workshopPath = GetSteamWorkshopPath();
         ListDownloaded();
-        SteamUGC.Download(3375074002);
+        
+        try
+        {
+            SteamUGC.Download(3375074002);
+            isSteamActive = true;
+        }
+        catch (Exception e)
+        {
+            Debug.LogError(e.Message);
+            isSteamActive = false;
+        }
     }
     public static void ListDownloaded(){
         if (!string.IsNullOrEmpty(workshopPath))
