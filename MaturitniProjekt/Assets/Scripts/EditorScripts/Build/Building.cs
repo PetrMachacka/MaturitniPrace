@@ -131,21 +131,25 @@ public class Building : MonoBehaviour
 
     private void ToolPreview()
     {
-        if(objectPrefab.name == "Hammer" && hitObject != lastHitObject && hitObject != null && lastHitObject != null)
+        if(hitObject != lastHitObject && hitObject != null && lastHitObject != null)
         {
             Renderer renderer = hitObject.transform.parent.GetComponent<Renderer>();
             Renderer LastRenderer = lastHitObject.transform.parent.GetComponent<Renderer>();
-            if (LastRenderer != null)
+            if(objectPrefab.name == "Hammer")
             {
-                Color originalColor = LastRenderer.material.color;
-                LastRenderer.material.color = originalColor / 1.3f;
+                if (LastRenderer != null)
+                {
+                    Color originalColor = LastRenderer.material.color;
+                    LastRenderer.material.color = originalColor / 1.3f;
+                }
+                if (renderer != null)
+                {
+                    Debug.Log(hitObject.name);
+                    Color originalColor = renderer.material.color;
+                    renderer.material.color = originalColor * 1.3f;
+                }
             }
-            if (renderer != null)
-            {
-                Debug.Log(hitObject.name);
-                Color originalColor = renderer.material.color;
-                renderer.material.color = originalColor * 1.3f;
-            }
+
         }
     }
 

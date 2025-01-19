@@ -11,8 +11,6 @@ GameObject:
   - component: {fileID: 9014869892449712704}
   - component: {fileID: 3368085701249399928}
   - component: {fileID: 1384165183904130298}
-  - component: {fileID: 8155139114306770096}
-  - component: {fileID: 7165311444273994691}
   m_Layer: 0
   m_Name: Top
   m_TagString: Untagged
@@ -85,40 +83,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &8155139114306770096
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3292164955000589354}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1.1, y: 1, z: 1.1}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &7165311444273994691
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3292164955000589354}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 718e423b7529ab74fa69dbaa053bc354, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ButtonScript: {fileID: 8084572171169065166}
 --- !u!1 &5468741185709872623
 GameObject:
   m_ObjectHideFlags: 0
@@ -131,6 +95,7 @@ GameObject:
   - component: {fileID: 8627948806592254467}
   - component: {fileID: -1595009041947064740}
   - component: {fileID: 8084572171169065166}
+  - component: {fileID: 8276322513969759574}
   m_Layer: 0
   m_Name: SquareButton
   m_TagString: Untagged
@@ -230,8 +195,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85aa05c71350b2845bd5632c4bb139b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Activate: 0
   WillDeactivate: 1
+  ButtonTop: {fileID: 9014869892449712704}
+  ActivatedItem: 0
+--- !u!65 &8276322513969759574
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5468741185709872623}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 0.34, z: 1}
+  m_Center: {x: 0, y: -0.28, z: 0}
 --- !u!1 &8545905177155674666
 GameObject:
   m_ObjectHideFlags: 0
@@ -335,8 +322,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1, y: 0.46, z: 1}
+  m_Center: {x: 0, y: -0.27, z: 0}
 --- !u!1001 &3277440375084648841
 PrefabInstance:
   m_ObjectHideFlags: 0
