@@ -29,6 +29,7 @@ public class Building : MonoBehaviour
     private bool isDrawingLine = false;
     private GameObject connectionA;
     private GameObject lineFolder;
+    private Renderer coloredObject;
     void Start()
     {
         editorInputSystem = new EditorInputSystem();
@@ -112,12 +113,13 @@ public class Building : MonoBehaviour
                     {
                         BlockPreview(newPosition.Value, previousPreview);
                     }
+
                 }
             }
+
             lastHitObject = hitObject;
         }
     }
-
     private void ResetPreview()
     {
         foreach (Transform child in previewFolder.transform)
@@ -127,27 +129,29 @@ public class Building : MonoBehaviour
         previewBlock = new GameObject();
         previewBlock.transform.SetParent(previewFolder.transform);
         previewBlock.name = "Reset";
+        coloredObject.material.color = coloredObject.material.color / 1.3f;
+        coloredObject = null;
     }
 
     private void ToolPreview()
     {
-        if(hitObject != lastHitObject && hitObject != null && lastHitObject != null)
+        if(hitObject != null && lastHitObject != null)
         {
             Renderer renderer = hitObject.transform.parent.GetComponent<Renderer>();
-            Renderer LastRenderer = lastHitObject.transform.parent.GetComponent<Renderer>();
             if(objectPrefab.name == "Hammer")
             {
-                if (LastRenderer != null)
-                {
-                    Color originalColor = LastRenderer.material.color;
-                    LastRenderer.material.color = originalColor / 1.3f;
-                }
                 if (renderer != null)
                 {
                     Debug.Log(hitObject.name);
                     Color originalColor = renderer.material.color;
                     renderer.material.color = originalColor * 1.3f;
+                    coloredObject = renderer;
                 }
+            }
+            if (lastHitObject != null && coloredObject != null)
+            {
+                coloredObject.material.color = coloredObject.material.color / 1.3f;
+                coloredObject = null;
             }
 
         }

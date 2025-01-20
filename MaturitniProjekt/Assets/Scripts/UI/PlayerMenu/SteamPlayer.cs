@@ -8,6 +8,13 @@ public class SteamPlayer : MonoBehaviour
     private void Start()
     {
         text = transform.GetComponentInChildren<TextMeshProUGUI>();
-        text.text = SteamManager.steamUser;
+        if (SteamManager.steamUser != null)
+        {
+            text.text = SteamManager.steamUser;
+        }
+        else
+        {
+            text.text = "Player1";
+        }
     }
 }
