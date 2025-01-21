@@ -1376,6 +1376,7 @@ MonoBehaviour:
   MainInventory: {fileID: 1848433996}
   hotBarPanel: {fileID: 40317721}
   ToolSlot: {fileID: 124605099}
+  Building: {fileID: 1545775112}
 --- !u!1 &277035535
 GameObject:
   m_ObjectHideFlags: 0
@@ -8072,6 +8073,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6853319006809568735, guid: 99ab09e7a6c1cb24facba26ac649020d, type: 3}
   m_PrefabInstance: {fileID: 864936456}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1545775112 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 982827595478409799, guid: 99ab09e7a6c1cb24facba26ac649020d, type: 3}
+  m_PrefabInstance: {fileID: 864936456}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 89426245}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ed25efe6507ee94fb2428ef860c5be5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1552711509
 GameObject:
   m_ObjectHideFlags: 0

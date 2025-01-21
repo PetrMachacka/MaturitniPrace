@@ -120,7 +120,7 @@ public class Building : MonoBehaviour
             lastHitObject = hitObject;
         }
     }
-    private void ResetPreview()
+    public void ResetPreview()
     {
         foreach (Transform child in previewFolder.transform)
         {
@@ -129,7 +129,9 @@ public class Building : MonoBehaviour
         previewBlock = new GameObject();
         previewBlock.transform.SetParent(previewFolder.transform);
         previewBlock.name = "Reset";
-        coloredObject.material.color = coloredObject.material.color / 1.3f;
+        if (coloredObject != null){
+            coloredObject.material.color = coloredObject.material.color / 1.3f;
+        }
         coloredObject = null;
     }
 
@@ -138,6 +140,11 @@ public class Building : MonoBehaviour
         if(hitObject != null && lastHitObject != null)
         {
             Renderer renderer = hitObject.transform.parent.GetComponent<Renderer>();
+            if (lastHitObject != null && coloredObject != null)
+            {
+                coloredObject.material.color = coloredObject.material.color / 1.3f;
+                coloredObject = null;
+            }
             if(objectPrefab.name == "Hammer")
             {
                 if (renderer != null)
@@ -148,11 +155,7 @@ public class Building : MonoBehaviour
                     coloredObject = renderer;
                 }
             }
-            if (lastHitObject != null && coloredObject != null)
-            {
-                coloredObject.material.color = coloredObject.material.color / 1.3f;
-                coloredObject = null;
-            }
+
 
         }
     }

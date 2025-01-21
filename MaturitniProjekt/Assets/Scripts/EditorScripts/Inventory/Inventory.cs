@@ -13,6 +13,7 @@ public class Inventory : MonoBehaviour, EditorInputSystem.IEditorActions
     public GameObject MainInventory;
     public GameObject hotBarPanel;
     public GameObject ToolSlot;
+    public Building Building;
     [HideInInspector]public static int lastInventorySlot = 0;
 
     private void Awake()
@@ -81,6 +82,7 @@ public class Inventory : MonoBehaviour, EditorInputSystem.IEditorActions
 
     public void OnNumberKeys(InputAction.CallbackContext context)
     {
+
         Color originalColor = new Color(247f / 255f, 233f / 255f, 118f / 255f, 154f / 255f);
         if (context.performed)
         {
@@ -103,15 +105,15 @@ public class Inventory : MonoBehaviour, EditorInputSystem.IEditorActions
             lastSlotImage.enabled = false;
             hotBarSlotImage.enabled = true;
             lastInventorySlot = key;
+            if(ToolSlot.transform.childCount > 0)
+            {
+                Destroy(ToolSlot.transform.GetChild(0).gameObject);
+            }
             if(hotBarSlot.transform.childCount > 0)
             {
-                if(ToolSlot.transform.childCount > 0)
-                {
-                    Destroy(ToolSlot.transform.GetChild(0).gameObject);
-                }
                 var prefabName = hotBarSlotImage.transform.GetChild(0).name;
                 GameObject buildingPrefab = Resources.Load<GameObject>($"Prefabs/Building/{prefabName}");
-                if (buildingPrefab == null)
+                if (buildingPrefab == null && prefabName != null)
                 {
                     buildingPrefab = Resources.Load<GameObject>($"Prefabs/Tools/{prefabName}");
                     GameObject Tool = Instantiate(buildingPrefab, ToolSlot.transform.position, Quaternion.identity);
