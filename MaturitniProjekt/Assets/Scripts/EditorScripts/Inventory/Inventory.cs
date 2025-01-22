@@ -134,6 +134,7 @@ public class Inventory : MonoBehaviour, EditorInputSystem.IEditorActions
                 }
                 Building.objectPrefab = buildingPrefab;
             }
+            Building.ResetPreview();
         }
     }
     public void OnE(InputAction.CallbackContext context)

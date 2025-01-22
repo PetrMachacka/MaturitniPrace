@@ -30,9 +30,9 @@ public class BuildButton : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
+        ToggleButton();
         if(WillDeactivate)
         {
-            ToggleButton();
             Debug.Log(WillDeactivate);
             foreach (Connection i in item.connections)
             {
@@ -51,7 +51,7 @@ public class BuildButton : MonoBehaviour
             ButtonTop.localPosition -= new Vector3(0, 0.05f, 0);
             Activated = true;
         }
-        else if(WillDeactivate)
+        else
         {
             ButtonTop.localPosition += new Vector3(0, 0.05f, 0);
             Activated = false;

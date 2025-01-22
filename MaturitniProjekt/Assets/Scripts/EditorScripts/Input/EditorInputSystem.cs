@@ -926,6 +926,34 @@ public partial class @EditorInputSystem: IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": true
                 }
             ]
+        },
+        {
+            ""name"": ""MainMenu"",
+            ""id"": ""9c6b91fc-53da-42f6-96f5-8a7c482856fe"",
+            ""actions"": [
+                {
+                    ""name"": ""Exit"",
+                    ""type"": ""Button"",
+                    ""id"": ""1a646bc4-3b9b-4db2-b0c6-2f43cbfd1380"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""c7390776-c78d-497e-b5d0-04f6c53e0963"",
+                    ""path"": ""<Keyboard>/escape"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Exit"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
         }
     ],
     ""controlSchemes"": []
@@ -958,6 +986,9 @@ public partial class @EditorInputSystem: IInputActionCollection2, IDisposable
         m_CharacterController_RightClick = m_CharacterController.FindAction("RightClick", throwIfNotFound: true);
         m_CharacterController_E = m_CharacterController.FindAction("E", throwIfNotFound: true);
         m_CharacterController_Camera = m_CharacterController.FindAction("Camera", throwIfNotFound: true);
+        // MainMenu
+        m_MainMenu = asset.FindActionMap("MainMenu", throwIfNotFound: true);
+        m_MainMenu_Exit = m_MainMenu.FindAction("Exit", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -1305,6 +1336,52 @@ public partial class @EditorInputSystem: IInputActionCollection2, IDisposable
         }
     }
     public CharacterControllerActions @CharacterController => new CharacterControllerActions(this);
+
+    // MainMenu
+    private readonly InputActionMap m_MainMenu;
+    private List<IMainMenuActions> m_MainMenuActionsCallbackInterfaces = new List<IMainMenuActions>();
+    private readonly InputAction m_MainMenu_Exit;
+    public struct MainMenuActions
+    {
+        private @EditorInputSystem m_Wrapper;
+        public MainMenuActions(@EditorInputSystem wrapper) { m_Wrapper = wrapper; }
+        public InputAction @Exit => m_Wrapper.m_MainMenu_Exit;
+        public InputActionMap Get() { return m_Wrapper.m_MainMenu; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(MainMenuActions set) { return set.Get(); }
+        public void AddCallbacks(IMainMenuActions instance)
+        {
+            if (instance == null || m_Wrapper.m_MainMenuActionsCallbackInterfaces.Contains(instance)) return;
+            m_Wrapper.m_MainMenuActionsCallbackInterfaces.Add(instance);
+            @Exit.started += instance.OnExit;
+            @Exit.performed += instance.OnExit;
+            @Exit.canceled += instance.OnExit;
+        }
+
+        private void UnregisterCallbacks(IMainMenuActions instance)
+        {
+            @Exit.started -= instance.OnExit;
+            @Exit.performed -= instance.OnExit;
+            @Exit.canceled -= instance.OnExit;
+        }
+
+        public void RemoveCallbacks(IMainMenuActions instance)
+        {
+            if (m_Wrapper.m_MainMenuActionsCallbackInterfaces.Remove(instance))
+                UnregisterCallbacks(instance);
+        }
+
+        public void SetCallbacks(IMainMenuActions instance)
+        {
+            foreach (var item in m_Wrapper.m_MainMenuActionsCallbackInterfaces)
+                UnregisterCallbacks(item);
+            m_Wrapper.m_MainMenuActionsCallbackInterfaces.Clear();
+            AddCallbacks(instance);
+        }
+    }
+    public MainMenuActions @MainMenu => new MainMenuActions(this);
     public interface IEditorActions
     {
         void OnMovement(InputAction.CallbackContext context);
@@ -1335,5 +1412,9 @@ public partial class @EditorInputSystem: IInputActionCollection2, IDisposable
         void OnRightClick(InputAction.CallbackContext context);
         void OnE(InputAction.CallbackContext context);
         void OnCamera(InputAction.CallbackContext context);
+    }
+    public interface IMainMenuActions
+    {
+        void OnExit(InputAction.CallbackContext context);
     }
 }

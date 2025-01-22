@@ -75,6 +75,8 @@ public class LoadLevel : MonoBehaviour
 
     private void LoadLevelData(string filePath)
     {
+        Building.objectPrefab = null;
+        BuildManager.buildMode = BuildModes.build;
         if (!File.Exists(filePath))
         {
             Debug.LogError("Level data file not found: " + filePath);

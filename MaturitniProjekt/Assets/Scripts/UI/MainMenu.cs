@@ -23,6 +23,9 @@ public class Menu : MonoBehaviour
             case "CommunityPlaySelection":
                 LevelPlayCommunitySelection.SetActive(true);
                 break;
+            case "Settings":
+                Settings.SetActive(true);
+                break;
         }
     }
 
@@ -75,6 +78,25 @@ public class Menu : MonoBehaviour
         else
         {
             Settings.SetActive(true);
+            PlayerPrefs.SetString("OpenMenu", "Settings");
+        }
+    }
+    private void OnExit(){
+        switch (PlayerPrefs.GetString("OpenMenu"))
+        {
+            case "PlaySelection":
+                LevelPlaySelection.SetActive(false);
+                break;
+            case "EditSelection":
+                LevelEditSelection.SetActive(false);
+                break;
+            case "CommunityPlaySelection":
+                LevelPlayCommunitySelection.SetActive(false);
+                LevelPlaySelection.SetActive(false);
+                break;
+            case "Settings":
+                Settings.SetActive(false);
+                break;
         }
     }
 }
