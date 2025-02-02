@@ -149,7 +149,6 @@ public class Building : MonoBehaviour
             {
                 if (renderer != null)
                 {
-                    Debug.Log(hitObject.name);
                     Color originalColor = renderer.material.color;
                     renderer.material.color = originalColor * 1.3f;
                     coloredObject = renderer;
@@ -301,7 +300,17 @@ public class Building : MonoBehaviour
     {
         if (hitObject != null)
         {
-            Destroy(hitObject.transform.parent.gameObject);
+            GameObject objectToBreak = hitObject.transform.parent.gameObject;
+            bool isInput = objectToBreak.GetComponent<Item>().isInput;
+            if (isInput)
+            {
+                foreach (Connection connection in objectToBreak.GetComponent<Item>().connections)
+                {
+                    Debug.Log(connection.ConnectionLine.name);
+                    Destroy(connection.ConnectionLine);
+                }
+            }
+            Destroy(objectToBreak);
         }
     }
 
