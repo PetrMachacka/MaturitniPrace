@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 5725539253957348070}
   m_Layer: 0
   m_Name: ForestLadder
-  m_TagString: Untagged
+  m_TagString: ladder
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -91,7 +91,7 @@ MeshCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 394703717459270406}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 13cf2f902f3023b4fa25e4b025cf8480, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -118,7 +118,7 @@ GameObject:
   - component: {fileID: 8722732934205236067}
   m_Layer: 0
   m_Name: ForestLadder 2
-  m_TagString: Untagged
+  m_TagString: ladder
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -158,3 +158,4 @@ MonoBehaviour:
   isInput: 0
   connections: []
   isSpawn: 0
+  ActivatedItem: 0

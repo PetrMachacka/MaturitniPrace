@@ -29,6 +29,7 @@ public class LoadLevel : MonoBehaviour
     public static List<Vector3> PlayerSpawns = new List<Vector3>();
     void Start()
     {
+        PlayerSpawns.Clear();
         string selectedGuid = PlayerPrefs.GetString("SelectedLevel", "DefaultLevel");
         Debug.Log("Loaded Level GUID: " + selectedGuid);
         lineFolder = GameObject.Find("Lines");
@@ -144,6 +145,10 @@ public class LoadLevel : MonoBehaviour
         // Connect All Objects
         foreach (var connection in connections)
         {
+            if(connection.InputObject.GetComponentInParent<Item>().isInput == false)
+            {
+                continue;
+            }
             Debug.Log(connection.positionB);
             GameObject line = null;
             GameObject Dot = connection.InputObject.transform.Find("ConnectingDot").gameObject;
@@ -170,11 +175,13 @@ public class LoadLevel : MonoBehaviour
                     ConnectionLine = loadLevelMode == LoadLevelMode.Build ? line : null
                 };
                 connection.InputObject.GetComponent<Item>().connections.Add(ObjectConnection);
+                connectedObject.GetComponent<Item>().connections.Add(ObjectConnection);
             }
         }
         if(loadLevelMode == LoadLevelMode.Play)
         {
             int counter = 0;
+            Debug.Log(PlayerSpawns.Count);
             foreach (var spawn in PlayerSpawns)
             {
                 if(counter == 0)

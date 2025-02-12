@@ -179,6 +179,9 @@ public class Building : MonoBehaviour
                 }
             }
         }
+        
+        if(newPosition.y <= -5) obstructed = true;
+
         Renderer blockRenderer = newBlockPreview.GetComponent<Renderer>();
         if (blockRenderer != null)
         {
@@ -301,14 +304,10 @@ public class Building : MonoBehaviour
         if (hitObject != null)
         {
             GameObject objectToBreak = hitObject.transform.parent.gameObject;
-            bool isInput = objectToBreak.GetComponent<Item>().isInput;
-            if (isInput)
+            foreach (Connection connection in objectToBreak.GetComponent<Item>().connections)
             {
-                foreach (Connection connection in objectToBreak.GetComponent<Item>().connections)
-                {
-                    Debug.Log(connection.ConnectionLine.name);
-                    Destroy(connection.ConnectionLine);
-                }
+                Debug.Log(connection.ConnectionLine.name);
+                Destroy(connection.ConnectionLine);
             }
             Destroy(objectToBreak);
         }
@@ -360,14 +359,8 @@ public class Building : MonoBehaviour
                         };
 
 
-                        if (connectionAIsInput)
-                        {
-                            connectionAParent.connections.Add(connection);
-                        }
-                        else
-                        {
-                            hitConnectionParent.connections.Add(connection);
-                        }
+                        connectionAParent.connections.Add(connection);
+                        hitConnectionParent.connections.Add(connection);
                         PlayerLine = null;
                         isDrawingLine = false;
                     }

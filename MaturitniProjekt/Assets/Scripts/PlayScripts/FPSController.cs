@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.InputSystem;
+using System.Threading.Tasks;
 
 public class FPSController : MonoBehaviour
 {
@@ -15,6 +16,9 @@ public class FPSController : MonoBehaviour
     private Vector3 movementInput;
     private Vector2 cameraInput;
     private float rotationX = 0;
+    private bool ladder = false;
+    private bool isExitingLadder = false;
+
 
     [HideInInspector]
     public bool canMove = true;
@@ -50,7 +54,6 @@ public class FPSController : MonoBehaviour
         }
 
     }
-
     void FixedUpdate()
     {
         if (canMove)
@@ -65,9 +68,13 @@ public class FPSController : MonoBehaviour
             {
                 rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
             }
+
+            if (ladder && Input.GetKey(KeyCode.Space))
+            {
+                rb.velocity = new Vector3(rb.velocity.x, walkingSpeed, rb.velocity.z);
+            }
         }
     }
-
     private bool IsGrounded()
     {
         return Physics.Raycast(transform.position, Vector3.down, 1.1f);
@@ -94,6 +101,28 @@ public class FPSController : MonoBehaviour
         else{
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
+        }
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+        Debug.Log(other.tag);
+        if (other.CompareTag("ladder"))
+        {
+            ladder = true;
+            isExitingLadder = false;
+        }
+    }
+
+    private async void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("ladder"))
+        {
+            isExitingLadder = true;
+            await Task.Delay(300);
+            if (isExitingLadder)
+            {
+                ladder = false;
+            }
         }
     }
 }
