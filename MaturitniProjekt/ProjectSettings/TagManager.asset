@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Edit
   - ladder
+  - Character
   layers:
   - Default
   - TransparentFX

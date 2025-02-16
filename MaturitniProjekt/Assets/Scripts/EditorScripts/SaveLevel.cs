@@ -54,12 +54,17 @@ public class SaveLevel : MonoBehaviour
             objects = new List<ObjectData>()
         };
         int spawnCount = 0;
+        int endCount = 0;
         List<Vector3> exitingPositions = new List<Vector3>();
         foreach (Transform child in Folder.transform)
         {
             if(child.gameObject.GetComponent<Item>().isSpawn)
             {
                 spawnCount++;
+            }
+            if(child.gameObject.GetComponent<Item>().isEnd)
+            {
+                endCount++;
             }
             if(exitingPositions.Contains(child.position)) continue;
             List<Vector3> connectionPositions = new List<Vector3>();
@@ -90,6 +95,16 @@ public class SaveLevel : MonoBehaviour
         else if(spawnCount < 1)
         {
             Errors.ShowError("No spawn points found.");
+            return null;
+        }
+        else if(endCount < 1)
+        {
+            Errors.ShowError("No end points found.");
+            return null;
+        }
+        else if(endCount > 1)
+        {
+            Errors.ShowError("Only one end point is allowed.");
             return null;
         }
         return levelData;

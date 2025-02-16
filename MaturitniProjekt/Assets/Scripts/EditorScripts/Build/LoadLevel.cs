@@ -7,14 +7,6 @@ using Assets.Scripts;
 using UnityEngine.TextCore.Text;
 public class LoadLevel : MonoBehaviour
 {
-    public static string selectedGuid;
-    private string prefabsPath = "Prefabs/Building";
-    [SerializeField] private bool EditingCubes = false;
-    public LoadLevelMode loadLevelMode = LoadLevelMode.Build;
-    private GameObject lineFolder;
-    public static bool isCoop = false;
-    public GameObject CharacterA;
-    public GameObject CharacterB; 
     public class LineConnection
     {
         public GameObject InputObject;
@@ -25,6 +17,14 @@ public class LoadLevel : MonoBehaviour
         Build,
         Play
     }
+    public static string selectedGuid;
+    private string prefabsPath = "Prefabs/Building";
+    [SerializeField] private bool EditingCubes = false;
+    public LoadLevelMode loadLevelMode = LoadLevelMode.Build;
+    private GameObject lineFolder;
+    public static bool isCoop = false;
+    public GameObject CharacterA;
+    public GameObject CharacterB; 
     public GameObject linePrefab;
     public static List<Vector3> PlayerSpawns = new List<Vector3>();
     void Start()
@@ -112,7 +112,8 @@ public class LoadLevel : MonoBehaviour
             {
                 newObject = Instantiate(prefab, obj.position, obj.rotation);
                 newObject.transform.SetParent(buildFolder.transform);
-                if(EditingCubes)
+                if (prefab.name == "SpawnBlockA" && loadLevelMode == LoadLevelMode.Play) newObject.GetComponent<Renderer>().enabled = false;
+                if (EditingCubes)
                 {
                     if(prefab.GetComponent<Item>().TwoBlocks)
                     {

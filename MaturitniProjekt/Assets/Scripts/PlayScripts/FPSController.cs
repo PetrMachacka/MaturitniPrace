@@ -105,7 +105,6 @@ public class FPSController : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log(other.tag);
         if (other.CompareTag("ladder"))
         {
             ladder = true;

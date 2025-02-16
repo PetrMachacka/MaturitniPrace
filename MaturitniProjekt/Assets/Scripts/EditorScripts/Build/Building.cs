@@ -282,6 +282,22 @@ public class Building : MonoBehaviour
                     return;
                 }
             }
+            if (objectPrefab.GetComponent<Item>().isEnd)
+            {
+                int endCounter = 0;
+                foreach (Transform child in Folder.transform)
+                {
+                    if (child.GetComponent<Item>().isEnd)
+                    {
+                        endCounter++;
+                    }
+                }
+                if (endCounter > 0)
+                {
+                    Debug.Log("Only one end allowed");
+                    return;
+                }
+            }
             GameObject newObject = Instantiate(objectPrefab, newPosition.Value, Quaternion.Euler(0, newRotation.Value, 0));
             newObject.transform.SetParent(Folder.transform);
 

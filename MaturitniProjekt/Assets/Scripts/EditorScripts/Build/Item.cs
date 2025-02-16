@@ -20,6 +20,8 @@ public class Item : MonoBehaviour
     [SerializeField] public List<Connection> connections = new List<Connection>();
     [Header("Other")]
     [SerializeField] public bool isSpawn = false;
+    [SerializeField] public bool isEnd = false;
+
     private GameObject ConnectionDot;
     public bool ActivatedItem;
 
