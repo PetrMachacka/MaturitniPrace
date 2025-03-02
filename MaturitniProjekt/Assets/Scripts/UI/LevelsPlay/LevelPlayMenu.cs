@@ -38,7 +38,7 @@ public class LevelPlayMenu : MonoBehaviour
             button = Instantiate(buttonPrefab, transform);
         }
         button.name = name;
-
+        button.GetComponent<LevelPlayButton>().ImageURL = item.PreviewImageUrl;
         RectTransform rectTransform = button.GetComponent<RectTransform>();
         if (rectTransform != null)
         {

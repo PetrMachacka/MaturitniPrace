@@ -4,21 +4,22 @@ using UnityEngine;
 
 public class EditorCamera : MonoBehaviour
 {
-    public float sensX;
-    public float sensY;
 
     public Transform orientation;
-
+    public float lookSpeed = 200f;
     float xRotation;
     float yRotation;
-
+    private void Start()
+    {
+        lookSpeed = lookSpeed * PlayerPrefs.GetFloat("Sensitivity");
+    }
     private void Update()
     {
         if(!PauseMenu.isPaused){
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
-            float mouseX = Input.GetAxisRaw("Mouse X") * Time.deltaTime * sensX * 5;
-            float mouseY = Input.GetAxisRaw("Mouse Y") * Time.deltaTime * sensY * 5;
+            float mouseX = Input.GetAxisRaw("Mouse X") * Time.deltaTime * lookSpeed * 5;
+            float mouseY = Input.GetAxisRaw("Mouse Y") * Time.deltaTime * lookSpeed * 5;
 
             yRotation += mouseX;
 

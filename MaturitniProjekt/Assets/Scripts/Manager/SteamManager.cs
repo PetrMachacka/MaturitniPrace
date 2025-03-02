@@ -167,6 +167,10 @@ public class SteamManager : MonoBehaviour
         }
 
         var result = await query.GetPageAsync(page);
+        foreach (var item in result.Value.Entries)
+        {
+            Debug.Log(item.PreviewImageUrl);
+        }
         Debug.Log(result.Value.TotalCount);
         return  result;
     }

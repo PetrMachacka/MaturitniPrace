@@ -35,12 +35,10 @@ public class Settings : MonoBehaviour
     {
         sensitivity = SensitivitySlider.GetComponent<Slider>().value;
         PlayerPrefs.SetFloat("Sensitivity", sensitivity);
-        Debug.Log(sensitivity);
     }
     public void GetControllerSliderValue()
     {
         controllerSensitivity = ControllerSensitivitySlider.GetComponent<Slider>().value;
         PlayerPrefs.SetFloat("ControllerSensitivity", controllerSensitivity);
-        Debug.Log(controllerSensitivity);
     }
 }

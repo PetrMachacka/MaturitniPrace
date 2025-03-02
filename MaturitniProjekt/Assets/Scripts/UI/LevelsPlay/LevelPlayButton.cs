@@ -3,12 +3,14 @@ using UnityEngine;
 using System.IO;
 using UnityEngine.SceneManagement;
 using System.Threading.Tasks;
-
+using UnityEngine.Networking;
+using UnityEngine.UI;
 public class LevelPlayButton : MonoBehaviour
 {
     public GameObject DeleteButton;
     public GameObject DownloadButton;
     private Steamworks.Ugc.Item? item;
+    public string ImageURL;
     [SerializeField] private bool isDownloaded = false;
     private async void Start()
     {
@@ -65,10 +67,42 @@ public class LevelPlayButton : MonoBehaviour
         }
         await Refresh();
     }
-    public void GetPreviewPicture(){
-        var preview = item.Value.PreviewImageUrl;
-        Debug.Log(item.Value.Title);
-        Debug.Log(preview);
+    public async void GetPreviewPicture()
+    {
+        if (!string.IsNullOrEmpty(ImageURL))
+        {
+            using (UnityWebRequest webRequest = UnityWebRequestTexture.GetTexture(ImageURL))
+            {
+                var operation = webRequest.SendWebRequest();
+
+                while (!operation.isDone)
+                {
+                    await Task.Yield();
+                }
+
+                if (webRequest.result == UnityWebRequest.Result.ConnectionError || webRequest.result == UnityWebRequest.Result.ProtocolError)
+                {
+                    Debug.LogError(webRequest.error);
+                }
+                else
+                {
+                    Texture2D texture = DownloadHandlerTexture.GetContent(webRequest);
+                    GameObject previewImageObject = GameObject.Find("PreviewImage");
+                    if (previewImageObject != null)
+                    {
+                        Image previewImage = previewImageObject.GetComponent<Image>();
+                        if (previewImage != null)
+                        {
+                            previewImage.sprite = Sprite.Create(texture, new Rect(0, 0, texture.width, texture.height), new Vector2(0.5f, 0.5f));
+                        }
+                    }
+                }
+            }
+        }
+        else
+        {
+            Debug.LogWarning("ImageURL is empty or null.");
+        }
     }
     private async Task Refresh(){
         await GameObject.Find("LevelSelection").GetComponent<LevelPlayMenu>().LoadWorkshopLevels(PlayerPrefs.GetInt("Page", 1));
