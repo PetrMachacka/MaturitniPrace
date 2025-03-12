@@ -13,6 +13,7 @@ public class PauseMenu : MonoBehaviour
     public GameObject canvas;
     public GameObject imageCanvas;
     public TextMeshPro levelNameText;
+    public GameObject MainInventory;
     public static bool isPaused = false;
     public static bool pictureMode = false;
     private void Start() {
@@ -30,7 +31,12 @@ public class PauseMenu : MonoBehaviour
     }
     private void TogglePauseMenu(){
         Debug.Log("TogglePauseMenu");   
-        if(!pauseMenu.activeSelf){
+        if(MainInventory != null && MainInventory.activeSelf){
+            MainInventory.SetActive(false);
+            Time.timeScale = 1f;
+            PauseMenu.isPaused = false;
+        }
+        else if(!pauseMenu.activeSelf){
             pauseMenu.SetActive(true);
             Time.timeScale = 0f;
             isPaused = true;

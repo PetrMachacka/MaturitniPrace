@@ -47,9 +47,9 @@ public class LevelPlayButton : MonoBehaviour
         }
         if(isDownloaded){
             PlayerPrefs.SetInt("SteamDownloads", 1);
+            PlayerPrefs.SetString("SelectedLevel", id);
+            SceneManager.LoadScene("PlayLevel");
         }
-        PlayerPrefs.SetString("SelectedLevel", id);
-        SceneManager.LoadScene("PlayLevel");
     }
     public async void UnPublish(){
         Debug.Log(item.Value.Title);

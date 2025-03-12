@@ -58,7 +58,6 @@ public class LoadLevel : MonoBehaviour
     {
         if(PlayerPrefs.GetInt("SteamDownloads") == 1)
         {
-            PlayerPrefs.SetInt("SteamDownloads", 0);
             return SteamManager.steamDownloadPath + "/" + selectedGuid;
         }
         string[] directories = Directory.GetDirectories(levelsPath);

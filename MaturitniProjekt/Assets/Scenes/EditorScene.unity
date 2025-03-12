@@ -6356,6 +6356,10 @@ PrefabInstance:
       propertyPath: imageCanvas
       value: 
       objectReference: {fileID: 1190845527}
+    - target: {fileID: -3735988914832290171, guid: dab3bdd3986761a4d92465dcfd1b1363, type: 3}
+      propertyPath: MainInventory
+      value: 
+      objectReference: {fileID: 1848433996}
     - target: {fileID: 1090291232988726728, guid: dab3bdd3986761a4d92465dcfd1b1363, type: 3}
       propertyPath: m_Name
       value: GameManager

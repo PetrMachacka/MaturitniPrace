@@ -10,6 +10,8 @@ public class LevelButtonScript : MonoBehaviour
         string levelGuid = gameObject.name;
         Debug.Log("Selected Level GUID: " + levelGuid);
         PlayerPrefs.SetString("SelectedLevel", levelGuid);
+        PlayerPrefs.SetInt("SteamDownloads", 0);
+
         PlayerPrefs.Save();
         
         SceneManager.LoadScene("EditorScene");
@@ -51,6 +53,8 @@ public class LevelButtonScript : MonoBehaviour
         string levelGuid = gameObject.name;
         Debug.Log("Playing Level GUID: " + levelGuid);
         PlayerPrefs.SetString("SelectedLevel", levelGuid);
+        PlayerPrefs.SetInt("SteamDownloads", 0);
+
         PlayerPrefs.Save();
 
         SceneManager.LoadScene("PlayLevel");

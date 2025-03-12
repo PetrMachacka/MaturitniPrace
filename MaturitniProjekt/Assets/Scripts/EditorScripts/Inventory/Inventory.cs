@@ -146,17 +146,28 @@ public class Inventory : MonoBehaviour, EditorInputSystem.IEditorActions
                 MainInventory.SetActive(false);
                 Time.timeScale = 1f;
                 PauseMenu.isPaused = false;
-                inputSystem.Editor.ESCAPE.Enable();
             }
             else if(!MainInventory.activeSelf && !PauseMenu.isPaused)
             {
                 MainInventory.SetActive(true);
                 Time.timeScale = 0f;
                 PauseMenu.isPaused = true;
-                inputSystem.Editor.ESCAPE.Disable();
             }
         }
     }
+    public void OnESCAPE(InputAction.CallbackContext context) 
+    {
+        if (context.performed)
+        {
+            if(MainInventory.activeSelf)
+            {
+                MainInventory.SetActive(false);
+                Time.timeScale = 1f;
+                PauseMenu.isPaused = false;
+            }
+        }
+    }
+
     public void SelectTools()
     {
         BlocksPanel.SetActive(false);
@@ -170,7 +181,6 @@ public class Inventory : MonoBehaviour, EditorInputSystem.IEditorActions
     public void OnMovement(InputAction.CallbackContext context) { }
     public void OnLeftClick(InputAction.CallbackContext context) { }
     public void OnRightClick(InputAction.CallbackContext context) { }
-    public void OnESCAPE(InputAction.CallbackContext context) { }
     public void OnPhoto(InputAction.CallbackContext context) { }
     public void OnR(InputAction.CallbackContext context) { }
     public void OnAddPlayer(InputAction.CallbackContext contex) { }
