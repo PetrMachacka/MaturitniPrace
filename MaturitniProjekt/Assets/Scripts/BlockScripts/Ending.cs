@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
+using Assets.Scripts;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Ending : MonoBehaviour
 {
@@ -12,7 +14,10 @@ public class Ending : MonoBehaviour
     {
         GameObject manager = GameObject.Find("GameManager");
         LoadLevel loadLevelScript = manager.GetComponent<LoadLevel>();
-        finishMenu = loadLevelScript.GetComponent<PlayManager>().FinishUI;
+        if(SceneManager.GetActiveScene().name == "PlayLevel")
+        {
+            finishMenu = loadLevelScript.GetComponent<PlayManager>().FinishUI;
+        }
         if(LoadLevel.isCoop)
         {
             camera1 = loadLevelScript.CharacterA.transform.Find("Camera").GetComponent<Camera>();

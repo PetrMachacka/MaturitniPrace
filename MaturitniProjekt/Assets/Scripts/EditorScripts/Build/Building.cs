@@ -320,9 +320,24 @@ public class Building : MonoBehaviour
         if (hitObject != null)
         {
             GameObject objectToBreak = hitObject.transform.parent.gameObject;
+            Transform connectingDot = objectToBreak.transform.Find("ConnectingDot");
+            connectingDot = objectToBreak.transform.Find("ConnectedDot");
+
+            if (connectingDot != null)
+            {
+                Debug.Log(connectingDot.name);
+            }
             foreach (Connection connection in objectToBreak.GetComponent<Item>().connections)
             {
-                Debug.Log(connection.ConnectionLine.name);
+                Item OtherConnections = connection.connectedObject.GetComponentInParent<Item>();
+                foreach(Connection connection1 in OtherConnections.connections)
+                {
+                    if(connection1.connectedObject.GetComponent<Dot>().id == connectingDot.GetComponent<Dot>().id)
+                    {
+                        connection1.connectedObject.GetComponentInParent<Item>().connections.Remove(connection1);
+                    }
+                }
+                
                 Destroy(connection.ConnectionLine);
             }
             Destroy(objectToBreak);
