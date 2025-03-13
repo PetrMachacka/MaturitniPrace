@@ -12,6 +12,7 @@ public class Death : MonoBehaviour
         if (deathUI != null)
         {
             deathUI.SetActive(true);
+            PauseMenu.pictureMode = true;
         }
     }
 }

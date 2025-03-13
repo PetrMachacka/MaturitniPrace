@@ -179,6 +179,18 @@ public class SteamManager : MonoBehaviour
         await steamItem.Subscribe();
         Debug.Log(steamItem.Id);
         SteamUGC.Download(steamItem.Id);
+        Debug.Log("Downloading");
+        /*SteamUGC.OnDownloadItemResult += (result) =>
+        {
+            if (result == Steamworks.Result.OK)
+            {
+                Debug.Log("Downloaded");
+            }
+            else
+            {
+                Debug.LogError("Download failed: " + result);
+            }
+        };*/
     }
     public static async Task<Steamworks.Ugc.Item?> GetItemByID(ulong id)
     {

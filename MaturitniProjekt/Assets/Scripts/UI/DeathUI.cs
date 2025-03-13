@@ -29,6 +29,7 @@ public class DeathUI : MonoBehaviour
     public void RestartLevel()
     {
         SceneManager.LoadScene("PlayLevel");
+        PauseMenu.pictureMode = false;
     }
 }
 

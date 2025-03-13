@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 using System.Threading.Tasks;
 using UnityEngine.Networking;
 using UnityEngine.UI;
+using Steamworks;
 public class LevelPlayButton : MonoBehaviour
 {
     public GameObject DeleteButton;
@@ -25,12 +26,23 @@ public class LevelPlayButton : MonoBehaviour
     }
     public async void DownloadLevel()
     {
+        Debug.Log("Downloading " + gameObject.name);
         if (item.HasValue)
         {
             await SteamManager.DownloadByID(item.Value);
+            SteamManager.folderNames.Add(gameObject.name);
+            SteamUGC.OnDownloadItemResult += async (result) =>
+            {
+                if (result == Steamworks.Result.OK)
+                {
+                    await Refresh();
+                }
+                else
+                {
+                    Debug.LogError("Download failed: " + result);
+                }
+            };
         }
-        SteamManager.folderNames.Add(gameObject.name);
-        await Refresh();
     }
     public void PlayLevel(){
         string id = gameObject.name;

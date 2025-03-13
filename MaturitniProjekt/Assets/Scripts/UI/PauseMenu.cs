@@ -81,6 +81,7 @@ public class PauseMenu : MonoBehaviour
     }
     public void LevelsButton()
     {
+        PauseMenu.pictureMode = false;
         PlayerPrefs.DeleteKey("SelectedLevel");
         PlayerPrefs.Save();
         SceneManager.LoadScene("Levels");

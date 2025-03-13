@@ -68,5 +68,6 @@ public class Ending : MonoBehaviour
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
         finishMenu.SetActive(true);
+        PauseMenu.pictureMode = true;
     }
 }

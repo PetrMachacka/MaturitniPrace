@@ -71,7 +71,7 @@ public class AddLevel : MonoBehaviour
 
         string filePath = Path.Combine(levelsPath, "levelData.json");
         File.WriteAllText(filePath, json);
-
+        PlayerPrefs.SetInt("SteamDownloads", 0);
         PlayerPrefs.SetString("SelectedLevel", newGuid);
         PlayerPrefs.Save();
 

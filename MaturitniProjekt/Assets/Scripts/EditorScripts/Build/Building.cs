@@ -341,6 +341,11 @@ public class Building : MonoBehaviour
     private void OnLeftClick()
     {
         if (PauseMenu.isPaused || !objectPrefab) return;
+        if(objectPrefab.name == "Hammer")
+        {
+            BreakObject();
+            return;
+        }
         if (BuilidingHelpers.IsHoldingTool(objectPrefab))
         {
             UseTool();
@@ -415,13 +420,6 @@ public class Building : MonoBehaviour
         {
             Destroy(existingConnection.ConnectionLine);
             parentItem.connections.Remove(existingConnection);
-        }
-    }
-    private void OnRightClick()
-    {
-        if(objectPrefab.name == "Hammer")
-        {
-            BreakObject();
         }
     }
 

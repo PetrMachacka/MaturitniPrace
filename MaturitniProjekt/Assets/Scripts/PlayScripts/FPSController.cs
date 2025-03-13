@@ -5,7 +5,6 @@ using System.Threading.Tasks;
 public class FPSController : MonoBehaviour
 {
     [SerializeField] private float walkingSpeed = 5f;
-    [SerializeField] private float runningSpeed = 10f;
     [SerializeField] private float jumpForce = 8f;
     public Camera playerCamera;
     public float lookSpeed = 2.0f;
@@ -60,7 +59,7 @@ public class FPSController : MonoBehaviour
         {
             Vector3 forwardMovement = transform.forward * movementInput.z;
             Vector3 rightMovement = transform.right * movementInput.x;
-            Vector3 movement = (forwardMovement + rightMovement) * (Input.GetKey(KeyCode.LeftShift) ? runningSpeed : walkingSpeed);
+            Vector3 movement = (forwardMovement + rightMovement) * walkingSpeed;
 
             rb.velocity = new Vector3(movement.x, rb.velocity.y, movement.z);
 
@@ -77,7 +76,7 @@ public class FPSController : MonoBehaviour
     }
     private bool IsGrounded()
     {
-        return Physics.Raycast(transform.position, Vector3.down, 1.1f);
+        return Physics.Raycast(transform.position, Vector3.down, 1.2f);
     }
 
     private void OnMovement(InputValue inputValue)

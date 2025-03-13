@@ -105,6 +105,7 @@ public class Inventory : MonoBehaviour, EditorInputSystem.IEditorActions
             lastSlotImage.enabled = false;
             hotBarSlotImage.enabled = true;
             lastInventorySlot = key;
+            Building.objectPrefab = null;
             if(ToolSlot.transform.childCount > 0)
             {
                 Destroy(ToolSlot.transform.GetChild(0).gameObject);

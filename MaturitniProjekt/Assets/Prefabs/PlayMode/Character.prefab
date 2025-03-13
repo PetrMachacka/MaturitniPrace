@@ -238,8 +238,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   walkingSpeed: 4
-  runningSpeed: 6
-  jumpForce: 3
+  jumpForce: 17
   playerCamera: {fileID: 5822775410387601476}
   lookSpeed: 2
   lookXLimit: 45
@@ -295,7 +294,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7812703159111755744}
   serializedVersion: 4
-  m_Mass: 3
+  m_Mass: 20
   m_Drag: 0
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}

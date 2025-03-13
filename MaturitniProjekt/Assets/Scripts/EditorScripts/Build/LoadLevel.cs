@@ -58,6 +58,7 @@ public class LoadLevel : MonoBehaviour
     {
         if(PlayerPrefs.GetInt("SteamDownloads") == 1)
         {
+            Debug.Log(SteamManager.steamDownloadPath + "/" + selectedGuid);
             return SteamManager.steamDownloadPath + "/" + selectedGuid;
         }
         string[] directories = Directory.GetDirectories(levelsPath);
@@ -124,7 +125,7 @@ public class LoadLevel : MonoBehaviour
                     }
                     BuilidingHelpers.EditingCube(newObject);
                 }
-                Debug.Log($"Instantiated {obj.name} at {obj.position}");
+                //Debug.Log($"Instantiated {obj.name} at {obj.position}");
             }
             else
             {
