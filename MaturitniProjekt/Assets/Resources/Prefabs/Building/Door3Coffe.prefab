@@ -137,7 +137,8 @@ MonoBehaviour:
   isInput: 0
   connections: []
   isSpawn: 0
-  Activated: 0
+  isEnd: 0
+  ActivatedItem: 0
 --- !u!1 &5054341690491911362
 GameObject:
   m_ObjectHideFlags: 0
@@ -349,12 +350,11 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5054341690491911362}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 731917776111cfd4e8e238be7a676f44, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Activate: 0
   smooth: 1
   Block: {fileID: 3755543704871092913}
 --- !u!1 &7104552760845682515

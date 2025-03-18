@@ -1,6 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -10,6 +7,7 @@ public class Settings : MonoBehaviour
     [SerializeField] public GameObject ControllerSensitivitySlider;
     [SerializeField] private float sensitivity = 1;
     [SerializeField] private float controllerSensitivity = 1;
+
     private void Start()
     {
         if (!PlayerPrefs.HasKey("Sensitivity"))
