@@ -34,7 +34,7 @@ public class LoadLevel : MonoBehaviour
         Debug.Log("Loaded Level GUID: " + selectedGuid);
         lineFolder = GameObject.Find("Lines");
 
-        string levelsPath = Path.Combine(Application.persistentDataPath, "Levels");
+        string levelsPath = Application.persistentDataPath;
 
         if (!Directory.Exists(levelsPath))
         {
@@ -56,10 +56,17 @@ public class LoadLevel : MonoBehaviour
 
     private string GetLevelDirectoryPath(string levelsPath, string selectedGuid)
     {
-        if(PlayerPrefs.GetInt("SteamDownloads") == 1)
+        int SteamDownloads = PlayerPrefs.GetInt("SteamDownloads");
+        if(SteamDownloads == 0){
+            levelsPath = Path.Combine(levelsPath, "Levels");
+        }
+        if(SteamDownloads == 1)
         {
             Debug.Log(SteamManager.steamDownloadPath + "/" + selectedGuid);
             return SteamManager.steamDownloadPath + "/" + selectedGuid;
+        }
+        if(SteamDownloads == 2){
+            levelsPath = Path.Combine(levelsPath, "Campaign");
         }
         string[] directories = Directory.GetDirectories(levelsPath);
 

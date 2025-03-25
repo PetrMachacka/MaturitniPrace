@@ -10,6 +10,7 @@ public class Menu : MonoBehaviour
     public GameObject LevelPlaySelection;
     public GameObject LevelPlayCommunitySelection;
     public GameObject Settings;
+    public GameObject CampaignLevels;
     private void Start()
     {
         switch (PlayerPrefs.GetString("OpenMenu"))
@@ -21,10 +22,13 @@ public class Menu : MonoBehaviour
                 LevelEditSelection.SetActive(true);
                 break;
             case "CommunityPlaySelection":
-                LevelPlayCommunitySelection.SetActive(true);
+                LevelPlaySelection.SetActive(true);
                 break;
             case "Settings":
                 Settings.SetActive(true);
+                break;
+            case "CampaignSelection":
+                CampaignLevels.SetActive(true);
                 break;
         }
     }
@@ -69,6 +73,18 @@ public class Menu : MonoBehaviour
             PlayerPrefs.SetString("OpenMenu", "CommunityPlaySelection");
         }
     }
+    public void CampaignSelection()
+    {
+        if(CampaignLevels.activeSelf)
+        {
+            CampaignLevels.SetActive(false);
+        }
+        else
+        {
+            CampaignLevels.SetActive(true);
+            PlayerPrefs.SetString("OpenMenu", "CampaignSelection");
+        }
+    }
     public void SettingsMenu()
     {
         if(Settings.activeSelf)
@@ -81,6 +97,7 @@ public class Menu : MonoBehaviour
             PlayerPrefs.SetString("OpenMenu", "Settings");
         }
     }
+
     private void OnExit(){
         switch (PlayerPrefs.GetString("OpenMenu"))
         {
