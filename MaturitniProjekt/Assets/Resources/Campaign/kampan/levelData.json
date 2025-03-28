@@ -1,0 +1,5923 @@
+{
+    "name": "Kampaň",
+    "isCoop": false,
+    "steamId": "3447717650",
+    "objects": [
+        {
+            "name": "Cube",
+            "position": {
+                "x": 2.0,
+                "y": 2.0,
+                "z": 2.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestGround02",
+            "position": {
+                "x": 2.0,
+                "y": 2.0,
+                "z": 3.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestGround02",
+            "position": {
+                "x": 2.0,
+                "y": 2.0,
+                "z": 4.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestGround02",
+            "position": {
+                "x": 2.0,
+                "y": 2.0,
+                "z": 5.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestGround02",
+            "position": {
+                "x": 2.0,
+                "y": 2.0,
+                "z": 6.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestGround02",
+            "position": {
+                "x": 2.0,
+                "y": 2.0,
+                "z": 7.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestGround02",
+            "position": {
+                "x": 3.0,
+                "y": 2.0,
+                "z": 2.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestGround02",
+            "position": {
+                "x": 4.0,
+                "y": 2.0,
+                "z": 2.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestGround02",
+            "position": {
+                "x": 5.0,
+                "y": 2.0,
+                "z": 2.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestGround02",
+            "position": {
+                "x": 6.0,
+                "y": 2.0,
+                "z": 2.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestGround02",
+            "position": {
+                "x": 7.0,
+                "y": 2.0,
+                "z": 2.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestGround02",
+            "position": {
+                "x": 2.0,
+                "y": 2.0,
+                "z": 1.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestGround02",
+            "position": {
+                "x": 2.0,
+                "y": 2.0,
+                "z": 0.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestGround02",
+            "position": {
+                "x": 2.0,
+                "y": 2.0,
+                "z": -1.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestGround02",
+            "position": {
+                "x": 2.0,
+                "y": 2.0,
+                "z": -2.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestGround02",
+            "position": {
+                "x": 2.0,
+                "y": 2.0,
+                "z": -3.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestGround02",
+            "position": {
+                "x": 1.0,
+                "y": 2.0,
+                "z": 2.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestGround02",
+            "position": {
+                "x": 0.0,
+                "y": 2.0,
+                "z": 2.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestGround02",
+            "position": {
+                "x": -1.0,
+                "y": 2.0,
+                "z": 2.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestGround02",
+            "position": {
+                "x": -2.0,
+                "y": 2.0,
+                "z": 2.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestGround02",
+            "position": {
+                "x": -3.0,
+                "y": 2.0,
+                "z": 2.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestGround02",
+            "position": {
+                "x": 1.0,
+                "y": 2.0,
+                "z": 3.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestGround02",
+            "position": {
+                "x": 0.0,
+                "y": 2.0,
+                "z": 3.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestGround02",
+            "position": {
+                "x": 0.0,
+                "y": 2.0,
+                "z": 4.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestGround02",
+            "position": {
+                "x": -1.0,
+                "y": 2.0,
+                "z": 4.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestGround02",
+            "position": {
+                "x": -1.0,
+                "y": 2.0,
+                "z": 5.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestGround02",
+            "position": {
+                "x": 1.0,
+                "y": 2.0,
+                "z": 4.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestGround02",
+            "position": {
+                "x": 1.0,
+                "y": 2.0,
+                "z": 5.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestGround02",
+            "position": {
+                "x": 1.0,
+                "y": 2.0,
+                "z": 6.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestGround02",
+            "position": {
+                "x": 0.0,
+                "y": 2.0,
+                "z": 5.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestGround02",
+            "position": {
+                "x": -1.0,
+                "y": 2.0,
+                "z": 3.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestGround02",
+            "position": {
+                "x": -2.0,
+                "y": 2.0,
+                "z": 3.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestGround02",
+            "position": {
+                "x": 0.0,
+                "y": 2.0,
+                "z": 6.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestGround02",
+            "position": {
+                "x": -2.0,
+                "y": 2.0,
+                "z": 4.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestGround02",
+            "position": {
+                "x": 3.0,
+                "y": 2.0,
+                "z": 5.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestGround02",
+            "position": {
+                "x": 4.0,
+                "y": 2.0,
+                "z": 5.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestGround02",
+            "position": {
+                "x": 3.0,
+                "y": 2.0,
+                "z": 4.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestGround02",
+            "position": {
+                "x": 4.0,
+                "y": 2.0,
+                "z": 4.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestGround02",
+            "position": {
+                "x": 5.0,
+                "y": 2.0,
+                "z": 4.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestGround02",
+            "position": {
+                "x": 3.0,
+                "y": 2.0,
+                "z": 3.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestGround02",
+            "position": {
+                "x": 4.0,
+                "y": 2.0,
+                "z": 3.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestGround02",
+            "position": {
+                "x": 5.0,
+                "y": 2.0,
+                "z": 3.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestGround02",
+            "position": {
+                "x": 6.0,
+                "y": 2.0,
+                "z": 3.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestGround02",
+            "position": {
+                "x": 3.0,
+                "y": 2.0,
+                "z": 6.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestGround02",
+            "position": {
+                "x": 4.0,
+                "y": 2.0,
+                "z": 6.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestGround02",
+            "position": {
+                "x": 6.0,
+                "y": 2.0,
+                "z": 4.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestGround02",
+            "position": {
+                "x": 5.0,
+                "y": 2.0,
+                "z": 5.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestGround02",
+            "position": {
+                "x": 6.0,
+                "y": 2.0,
+                "z": 1.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestGround02",
+            "position": {
+                "x": 6.0,
+                "y": 2.0,
+                "z": 0.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestGround02",
+            "position": {
+                "x": 5.0,
+                "y": 2.0,
+                "z": 1.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestGround02",
+            "position": {
+                "x": 5.0,
+                "y": 2.0,
+                "z": 0.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestGround02",
+            "position": {
+                "x": 5.0,
+                "y": 2.0,
+                "z": -1.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestGround02",
+            "position": {
+                "x": 4.0,
+                "y": 2.0,
+                "z": 1.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestGround02",
+            "position": {
+                "x": 4.0,
+                "y": 2.0,
+                "z": 0.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestGround02",
+            "position": {
+                "x": 4.0,
+                "y": 2.0,
+                "z": -1.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestGround02",
+            "position": {
+                "x": 3.0,
+                "y": 2.0,
+                "z": 1.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestGround02",
+            "position": {
+                "x": 3.0,
+                "y": 2.0,
+                "z": 0.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestGround02",
+            "position": {
+                "x": 3.0,
+                "y": 2.0,
+                "z": -1.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestGround02",
+            "position": {
+                "x": 3.0,
+                "y": 2.0,
+                "z": -2.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestGround02",
+            "position": {
+                "x": 4.0,
+                "y": 2.0,
+                "z": -2.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestGround02",
+            "position": {
+                "x": 1.0,
+                "y": 2.0,
+                "z": 1.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestGround02",
+            "position": {
+                "x": 0.0,
+                "y": 2.0,
+                "z": 1.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestGround02",
+            "position": {
+                "x": -1.0,
+                "y": 2.0,
+                "z": 1.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestGround02",
+            "position": {
+                "x": 1.0,
+                "y": 2.0,
+                "z": 0.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestGround02",
+            "position": {
+                "x": 0.0,
+                "y": 2.0,
+                "z": 0.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestGround02",
+            "position": {
+                "x": -1.0,
+                "y": 2.0,
+                "z": 0.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestGround02",
+            "position": {
+                "x": -2.0,
+                "y": 2.0,
+                "z": 1.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestGround02",
+            "position": {
+                "x": 1.0,
+                "y": 2.0,
+                "z": -1.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestGround02",
+            "position": {
+                "x": 1.0,
+                "y": 2.0,
+                "z": -2.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestGround02",
+            "position": {
+                "x": 0.0,
+                "y": 2.0,
+                "z": -2.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestGround02",
+            "position": {
+                "x": -2.0,
+                "y": 2.0,
+                "z": 0.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestGround02",
+            "position": {
+                "x": 0.0,
+                "y": 2.0,
+                "z": -1.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestGround02",
+            "position": {
+                "x": -1.0,
+                "y": 2.0,
+                "z": -1.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestGround02",
+            "position": {
+                "x": 2.0,
+                "y": 3.0,
+                "z": -3.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestGround02",
+            "position": {
+                "x": 1.0,
+                "y": 3.0,
+                "z": -2.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestGround02",
+            "position": {
+                "x": 0.0,
+                "y": 3.0,
+                "z": -2.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestGround02",
+            "position": {
+                "x": -1.0,
+                "y": 3.0,
+                "z": -1.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestGround02",
+            "position": {
+                "x": -2.0,
+                "y": 3.0,
+                "z": 0.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestGround02",
+            "position": {
+                "x": -2.0,
+                "y": 3.0,
+                "z": 1.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestGround02",
+            "position": {
+                "x": -3.0,
+                "y": 3.0,
+                "z": 2.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestGround02",
+            "position": {
+                "x": -2.0,
+                "y": 3.0,
+                "z": 3.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestGround02",
+            "position": {
+                "x": -2.0,
+                "y": 3.0,
+                "z": 4.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+            },
+            "connectionData": []
+        },
+        {
+            "name": "Door3Yellow",
+            "position": {
+                "x": 3.0,
+                "y": 3.5,
+                "z": 6.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+            },
+            "connectionData": [
+                {
+                    "x": 3.0,
+                    "y": 3.5,
+                    "z": 6.0
+                }
+            ]
+        },
+        {
+            "name": "ForestGround02",
+            "position": {
+                "x": 2.0,
+                "y": 3.0,
+                "z": 6.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestGround02",
+            "position": {
+                "x": 2.0,
+                "y": 3.0,
+                "z": 7.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestGround02",
+            "position": {
+                "x": 4.0,
+                "y": 3.0,
+                "z": 6.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestGround02",
+            "position": {
+                "x": 4.0,
+                "y": 3.0,
+                "z": 5.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestGround02",
+            "position": {
+                "x": 5.0,
+                "y": 3.0,
+                "z": 5.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestGround02",
+            "position": {
+                "x": 6.0,
+                "y": 3.0,
+                "z": 4.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestGround02",
+            "position": {
+                "x": 5.0,
+                "y": 3.0,
+                "z": 4.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestGround02",
+            "position": {
+                "x": 6.0,
+                "y": 3.0,
+                "z": 3.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+            },
+            "connectionData": []
+        },
+        {
+            "name": "Door3Yellow",
+            "position": {
+                "x": 7.0,
+                "y": 3.5,
+                "z": 2.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.7071068286895752,
+                "z": 0.0,
+                "w": 0.7071068286895752
+            },
+            "connectionData": [
+                {
+                    "x": 7.0,
+                    "y": 3.5,
+                    "z": 2.0
+                }
+            ]
+        },
+        {
+            "name": "ForestGround02",
+            "position": {
+                "x": 7.0,
+                "y": 3.0,
+                "z": 3.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.7071068286895752,
+                "z": 0.0,
+                "w": 0.7071068286895752
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestGround02",
+            "position": {
+                "x": 7.0,
+                "y": 3.0,
+                "z": 1.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.7071068286895752,
+                "z": 0.0,
+                "w": 0.7071068286895752
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestGround02",
+            "position": {
+                "x": 7.0,
+                "y": 3.0,
+                "z": 0.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.7071068286895752,
+                "z": 0.0,
+                "w": 0.7071068286895752
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestGround02",
+            "position": {
+                "x": 1.0,
+                "y": 3.0,
+                "z": 6.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.7071068286895752,
+                "z": 0.0,
+                "w": 0.7071068286895752
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestGround02",
+            "position": {
+                "x": 0.0,
+                "y": 3.0,
+                "z": 6.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.7071068286895752,
+                "z": 0.0,
+                "w": 0.7071068286895752
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestGround02",
+            "position": {
+                "x": -1.0,
+                "y": 3.0,
+                "z": 6.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.7071068286895752,
+                "z": 0.0,
+                "w": 0.7071068286895752
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestGround02",
+            "position": {
+                "x": -1.0,
+                "y": 3.0,
+                "z": 5.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.7071068286895752,
+                "z": 0.0,
+                "w": 0.7071068286895752
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestGround02",
+            "position": {
+                "x": -2.0,
+                "y": 3.0,
+                "z": 5.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.7071068286895752,
+                "z": 0.0,
+                "w": 0.7071068286895752
+            },
+            "connectionData": []
+        },
+        {
+            "name": "SpawnBlockA",
+            "position": {
+                "x": 2.0,
+                "y": 3.5,
+                "z": 2.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.7071068286895752,
+                "z": 0.0,
+                "w": 0.7071068286895752
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestGround02",
+            "position": {
+                "x": 8.0,
+                "y": 2.0,
+                "z": 2.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.7071068286895752,
+                "z": 0.0,
+                "w": 0.7071068286895752
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestGround02",
+            "position": {
+                "x": 9.0,
+                "y": 2.0,
+                "z": 2.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.7071068286895752,
+                "z": 0.0,
+                "w": 0.7071068286895752
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestGround02",
+            "position": {
+                "x": 10.0,
+                "y": 2.0,
+                "z": 2.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.7071068286895752,
+                "z": 0.0,
+                "w": 0.7071068286895752
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestGround02",
+            "position": {
+                "x": 11.0,
+                "y": 2.0,
+                "z": 2.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.7071068286895752,
+                "z": 0.0,
+                "w": 0.7071068286895752
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestGround02",
+            "position": {
+                "x": 12.0,
+                "y": 2.0,
+                "z": 2.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.7071068286895752,
+                "z": 0.0,
+                "w": 0.7071068286895752
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestGround02",
+            "position": {
+                "x": 13.0,
+                "y": 2.0,
+                "z": 2.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.7071068286895752,
+                "z": 0.0,
+                "w": 0.7071068286895752
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestGround02",
+            "position": {
+                "x": 14.0,
+                "y": 2.0,
+                "z": 2.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.7071068286895752,
+                "z": 0.0,
+                "w": 0.7071068286895752
+            },
+            "connectionData": []
+        },
+        {
+            "name": "Ending",
+            "position": {
+                "x": 14.0,
+                "y": 3.5,
+                "z": 2.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.7071068286895752,
+                "z": 0.0,
+                "w": 0.7071068286895752
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestGround02",
+            "position": {
+                "x": 2.0,
+                "y": 4.0,
+                "z": 6.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.7071068286895752,
+                "z": 0.0,
+                "w": 0.7071068286895752
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestGround02",
+            "position": {
+                "x": 1.0,
+                "y": 4.0,
+                "z": 6.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.7071068286895752,
+                "z": 0.0,
+                "w": 0.7071068286895752
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestGround02",
+            "position": {
+                "x": 0.0,
+                "y": 4.0,
+                "z": 6.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.7071068286895752,
+                "z": 0.0,
+                "w": 0.7071068286895752
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestGround02",
+            "position": {
+                "x": -1.0,
+                "y": 4.0,
+                "z": 6.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.7071068286895752,
+                "z": 0.0,
+                "w": 0.7071068286895752
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestGround02",
+            "position": {
+                "x": 2.0,
+                "y": 4.0,
+                "z": 7.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.7071068286895752,
+                "z": 0.0,
+                "w": 0.7071068286895752
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestGround02",
+            "position": {
+                "x": 4.0,
+                "y": 3.0,
+                "z": 7.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.7071068286895752,
+                "z": 0.0,
+                "w": 0.7071068286895752
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestGround02",
+            "position": {
+                "x": 4.0,
+                "y": 2.0,
+                "z": 7.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.7071068286895752,
+                "z": 0.0,
+                "w": 0.7071068286895752
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestGround02",
+            "position": {
+                "x": 3.0,
+                "y": 2.0,
+                "z": 7.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.7071068286895752,
+                "z": 0.0,
+                "w": 0.7071068286895752
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestGround02",
+            "position": {
+                "x": 5.0,
+                "y": 2.0,
+                "z": -2.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.7071068286895752,
+                "z": 0.0,
+                "w": 0.7071068286895752
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestGround02",
+            "position": {
+                "x": 6.0,
+                "y": 2.0,
+                "z": -2.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.7071068286895752,
+                "z": 0.0,
+                "w": 0.7071068286895752
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestGround02",
+            "position": {
+                "x": 5.0,
+                "y": 3.0,
+                "z": -1.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.7071068286895752,
+                "z": 0.0,
+                "w": 0.7071068286895752
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestGround02",
+            "position": {
+                "x": 3.0,
+                "y": 3.0,
+                "z": -3.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.7071068286895752,
+                "z": 0.0,
+                "w": 0.7071068286895752
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestGround02",
+            "position": {
+                "x": 4.0,
+                "y": 3.0,
+                "z": -3.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.7071068286895752,
+                "z": 0.0,
+                "w": 0.7071068286895752
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestGround02",
+            "position": {
+                "x": 5.0,
+                "y": 3.0,
+                "z": -3.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.7071068286895752,
+                "z": 0.0,
+                "w": 0.7071068286895752
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestGround02",
+            "position": {
+                "x": 5.0,
+                "y": 4.0,
+                "z": -1.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.7071068286895752,
+                "z": 0.0,
+                "w": 0.7071068286895752
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestBlock01",
+            "position": {
+                "x": -1.0,
+                "y": 4.0,
+                "z": 5.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.7071068286895752,
+                "z": 0.0,
+                "w": 0.7071068286895752
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestBlock01",
+            "position": {
+                "x": -2.0,
+                "y": 4.0,
+                "z": 5.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.7071068286895752,
+                "z": 0.0,
+                "w": 0.7071068286895752
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestBlock01",
+            "position": {
+                "x": -2.0,
+                "y": 4.0,
+                "z": 4.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.7071068286895752,
+                "z": 0.0,
+                "w": 0.7071068286895752
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestBlock01",
+            "position": {
+                "x": -2.0,
+                "y": 4.0,
+                "z": 3.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.7071068286895752,
+                "z": 0.0,
+                "w": 0.7071068286895752
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestBlock01",
+            "position": {
+                "x": -3.0,
+                "y": 4.0,
+                "z": 2.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.7071068286895752,
+                "z": 0.0,
+                "w": 0.7071068286895752
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestBlock01",
+            "position": {
+                "x": -2.0,
+                "y": 4.0,
+                "z": 1.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.7071068286895752,
+                "z": 0.0,
+                "w": 0.7071068286895752
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestBlock01",
+            "position": {
+                "x": -2.0,
+                "y": 4.0,
+                "z": 0.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.7071068286895752,
+                "z": 0.0,
+                "w": 0.7071068286895752
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestBlock01",
+            "position": {
+                "x": -1.0,
+                "y": 4.0,
+                "z": -1.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.7071068286895752,
+                "z": 0.0,
+                "w": 0.7071068286895752
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestBlock01",
+            "position": {
+                "x": 0.0,
+                "y": 4.0,
+                "z": -2.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.7071068286895752,
+                "z": 0.0,
+                "w": 0.7071068286895752
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestBlock01",
+            "position": {
+                "x": 1.0,
+                "y": 4.0,
+                "z": -2.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.7071068286895752,
+                "z": 0.0,
+                "w": 0.7071068286895752
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestBlock01",
+            "position": {
+                "x": 2.0,
+                "y": 4.0,
+                "z": -3.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.7071068286895752,
+                "z": 0.0,
+                "w": 0.7071068286895752
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestBlock01",
+            "position": {
+                "x": 3.0,
+                "y": 4.0,
+                "z": -3.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.7071068286895752,
+                "z": 0.0,
+                "w": 0.7071068286895752
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestBlock01",
+            "position": {
+                "x": 4.0,
+                "y": 4.0,
+                "z": -3.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.7071068286895752,
+                "z": 0.0,
+                "w": 0.7071068286895752
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestBlock01",
+            "position": {
+                "x": 5.0,
+                "y": 4.0,
+                "z": -3.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.7071068286895752,
+                "z": 0.0,
+                "w": 0.7071068286895752
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestBlock01",
+            "position": {
+                "x": 6.0,
+                "y": 3.0,
+                "z": -1.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.7071068286895752,
+                "z": 0.0,
+                "w": 0.7071068286895752
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestBlock01",
+            "position": {
+                "x": 6.0,
+                "y": 4.0,
+                "z": -1.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.7071068286895752,
+                "z": 0.0,
+                "w": 0.7071068286895752
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestBlock01",
+            "position": {
+                "x": 7.0,
+                "y": 3.0,
+                "z": -1.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.7071068286895752,
+                "z": 0.0,
+                "w": 0.7071068286895752
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestBlock01",
+            "position": {
+                "x": 7.0,
+                "y": 4.0,
+                "z": -1.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.7071068286895752,
+                "z": 0.0,
+                "w": 0.7071068286895752
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestBlock01",
+            "position": {
+                "x": 6.0,
+                "y": 3.0,
+                "z": -3.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.7071068286895752,
+                "z": 0.0,
+                "w": 0.7071068286895752
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestBlock01",
+            "position": {
+                "x": 6.0,
+                "y": 4.0,
+                "z": -3.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.7071068286895752,
+                "z": 0.0,
+                "w": 0.7071068286895752
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestBlock01",
+            "position": {
+                "x": 7.0,
+                "y": 2.0,
+                "z": -2.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.7071068286895752,
+                "z": 0.0,
+                "w": 0.7071068286895752
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestBlock01",
+            "position": {
+                "x": 8.0,
+                "y": 2.0,
+                "z": -2.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.7071068286895752,
+                "z": 0.0,
+                "w": 0.7071068286895752
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestBlock01",
+            "position": {
+                "x": 9.0,
+                "y": 2.0,
+                "z": -2.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.7071068286895752,
+                "z": 0.0,
+                "w": 0.7071068286895752
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestBlock01",
+            "position": {
+                "x": 8.0,
+                "y": 3.0,
+                "z": -1.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.7071068286895752,
+                "z": 0.0,
+                "w": 0.7071068286895752
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestBlock01",
+            "position": {
+                "x": 9.0,
+                "y": 3.0,
+                "z": -1.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.7071068286895752,
+                "z": 0.0,
+                "w": 0.7071068286895752
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestBlock01",
+            "position": {
+                "x": 10.0,
+                "y": 3.0,
+                "z": -1.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.7071068286895752,
+                "z": 0.0,
+                "w": 0.7071068286895752
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestBlock01",
+            "position": {
+                "x": 11.0,
+                "y": 3.0,
+                "z": -1.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.7071068286895752,
+                "z": 0.0,
+                "w": 0.7071068286895752
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestBlock01",
+            "position": {
+                "x": 12.0,
+                "y": 3.0,
+                "z": -1.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.7071068286895752,
+                "z": 0.0,
+                "w": 0.7071068286895752
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestBlock01",
+            "position": {
+                "x": 7.0,
+                "y": 3.0,
+                "z": -3.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.7071068286895752,
+                "z": 0.0,
+                "w": 0.7071068286895752
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestBlock01",
+            "position": {
+                "x": 8.0,
+                "y": 3.0,
+                "z": -3.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.7071068286895752,
+                "z": 0.0,
+                "w": 0.7071068286895752
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestBlock01",
+            "position": {
+                "x": 9.0,
+                "y": 3.0,
+                "z": -3.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.7071068286895752,
+                "z": 0.0,
+                "w": 0.7071068286895752
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestBlock01",
+            "position": {
+                "x": 12.0,
+                "y": 3.0,
+                "z": -2.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.7071068286895752,
+                "z": 0.0,
+                "w": 0.7071068286895752
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestBlock01",
+            "position": {
+                "x": 12.0,
+                "y": 3.0,
+                "z": -3.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.7071068286895752,
+                "z": 0.0,
+                "w": 0.7071068286895752
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestBlock01",
+            "position": {
+                "x": 12.0,
+                "y": 3.0,
+                "z": -4.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.7071068286895752,
+                "z": 0.0,
+                "w": 0.7071068286895752
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestBlock01",
+            "position": {
+                "x": 9.0,
+                "y": 4.0,
+                "z": -3.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.7071068286895752,
+                "z": 0.0,
+                "w": 0.7071068286895752
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestBlock01",
+            "position": {
+                "x": 9.0,
+                "y": 3.0,
+                "z": -4.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.7071068286895752,
+                "z": 0.0,
+                "w": 0.7071068286895752
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestBlock01",
+            "position": {
+                "x": 9.0,
+                "y": 4.0,
+                "z": -4.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.7071068286895752,
+                "z": 0.0,
+                "w": 0.7071068286895752
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestBlock01",
+            "position": {
+                "x": 9.0,
+                "y": 3.0,
+                "z": -5.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.7071068286895752,
+                "z": 0.0,
+                "w": 0.7071068286895752
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestBlock01",
+            "position": {
+                "x": 9.0,
+                "y": 2.0,
+                "z": -5.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.7071068286895752,
+                "z": 0.0,
+                "w": 0.7071068286895752
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestBlock01",
+            "position": {
+                "x": 10.0,
+                "y": 2.0,
+                "z": -5.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.7071068286895752,
+                "z": 0.0,
+                "w": 0.7071068286895752
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestBlock01",
+            "position": {
+                "x": 11.0,
+                "y": 2.0,
+                "z": -5.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.7071068286895752,
+                "z": 0.0,
+                "w": 0.7071068286895752
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestBlock01",
+            "position": {
+                "x": 12.0,
+                "y": 3.0,
+                "z": -5.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.7071068286895752,
+                "z": 0.0,
+                "w": 0.7071068286895752
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestBlock01",
+            "position": {
+                "x": 12.0,
+                "y": 2.0,
+                "z": -5.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.7071068286895752,
+                "z": 0.0,
+                "w": 0.7071068286895752
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestBlock01",
+            "position": {
+                "x": 12.0,
+                "y": 2.0,
+                "z": -2.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.7071068286895752,
+                "z": 0.0,
+                "w": 0.7071068286895752
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestBlock01",
+            "position": {
+                "x": 9.0,
+                "y": 4.0,
+                "z": -5.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.7071068286895752,
+                "z": 0.0,
+                "w": 0.7071068286895752
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestBlock01",
+            "position": {
+                "x": 9.0,
+                "y": 3.0,
+                "z": -6.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.7071068286895752,
+                "z": 0.0,
+                "w": 0.7071068286895752
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestBlock01",
+            "position": {
+                "x": 10.0,
+                "y": 3.0,
+                "z": -6.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.7071068286895752,
+                "z": 0.0,
+                "w": 0.7071068286895752
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestBlock01",
+            "position": {
+                "x": 11.0,
+                "y": 3.0,
+                "z": -6.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.7071068286895752,
+                "z": 0.0,
+                "w": 0.7071068286895752
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestBlock01",
+            "position": {
+                "x": 12.0,
+                "y": 3.0,
+                "z": -6.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.7071068286895752,
+                "z": 0.0,
+                "w": 0.7071068286895752
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestBlock01",
+            "position": {
+                "x": 9.0,
+                "y": 4.0,
+                "z": -6.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.7071068286895752,
+                "z": 0.0,
+                "w": 0.7071068286895752
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestBlock01",
+            "position": {
+                "x": 9.0,
+                "y": 5.0,
+                "z": -6.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.7071068286895752,
+                "z": 0.0,
+                "w": 0.7071068286895752
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestBlock01",
+            "position": {
+                "x": 7.0,
+                "y": 4.0,
+                "z": -3.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.7071068286895752,
+                "z": 0.0,
+                "w": 0.7071068286895752
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestBlock01",
+            "position": {
+                "x": 8.0,
+                "y": 4.0,
+                "z": -3.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.7071068286895752,
+                "z": 0.0,
+                "w": 0.7071068286895752
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestBlock01",
+            "position": {
+                "x": 6.0,
+                "y": 5.0,
+                "z": -3.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.7071068286895752,
+                "z": 0.0,
+                "w": 0.7071068286895752
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestBlock01",
+            "position": {
+                "x": 6.0,
+                "y": 5.0,
+                "z": -2.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.7071068286895752,
+                "z": 0.0,
+                "w": 0.7071068286895752
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestBlock01",
+            "position": {
+                "x": 7.0,
+                "y": 5.0,
+                "z": -2.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.7071068286895752,
+                "z": 0.0,
+                "w": 0.7071068286895752
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestBlock01",
+            "position": {
+                "x": 8.0,
+                "y": 5.0,
+                "z": -2.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.7071068286895752,
+                "z": 0.0,
+                "w": 0.7071068286895752
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestBlock01",
+            "position": {
+                "x": 9.0,
+                "y": 5.0,
+                "z": -2.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.7071068286895752,
+                "z": 0.0,
+                "w": 0.7071068286895752
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestBlock01",
+            "position": {
+                "x": 10.0,
+                "y": 5.0,
+                "z": -2.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.7071068286895752,
+                "z": 0.0,
+                "w": 0.7071068286895752
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestBlock01",
+            "position": {
+                "x": 11.0,
+                "y": 5.0,
+                "z": -2.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.7071068286895752,
+                "z": 0.0,
+                "w": 0.7071068286895752
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestBlock01",
+            "position": {
+                "x": 11.0,
+                "y": 6.0,
+                "z": -2.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.7071068286895752,
+                "z": 0.0,
+                "w": 0.7071068286895752
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestBlock01",
+            "position": {
+                "x": 10.0,
+                "y": 6.0,
+                "z": -2.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.7071068286895752,
+                "z": 0.0,
+                "w": 0.7071068286895752
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestBlock01",
+            "position": {
+                "x": 10.0,
+                "y": 6.0,
+                "z": -3.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.7071068286895752,
+                "z": 0.0,
+                "w": 0.7071068286895752
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestBlock01",
+            "position": {
+                "x": 10.0,
+                "y": 6.0,
+                "z": -4.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.7071068286895752,
+                "z": 0.0,
+                "w": 0.7071068286895752
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestBlock01",
+            "position": {
+                "x": 10.0,
+                "y": 6.0,
+                "z": -5.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.7071068286895752,
+                "z": 0.0,
+                "w": 0.7071068286895752
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestBlock01",
+            "position": {
+                "x": 10.0,
+                "y": 6.0,
+                "z": -6.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.7071068286895752,
+                "z": 0.0,
+                "w": 0.7071068286895752
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestBlock01",
+            "position": {
+                "x": 11.0,
+                "y": 6.0,
+                "z": -3.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.7071068286895752,
+                "z": 0.0,
+                "w": 0.7071068286895752
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestBlock01",
+            "position": {
+                "x": 11.0,
+                "y": 6.0,
+                "z": -4.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.7071068286895752,
+                "z": 0.0,
+                "w": 0.7071068286895752
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestBlock01",
+            "position": {
+                "x": 11.0,
+                "y": 6.0,
+                "z": -5.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.7071068286895752,
+                "z": 0.0,
+                "w": 0.7071068286895752
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestBlock01",
+            "position": {
+                "x": 11.0,
+                "y": 6.0,
+                "z": -6.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.7071068286895752,
+                "z": 0.0,
+                "w": 0.7071068286895752
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestBlock01",
+            "position": {
+                "x": 9.0,
+                "y": 5.0,
+                "z": -3.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.7071068286895752,
+                "z": 0.0,
+                "w": 0.7071068286895752
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestBlock01",
+            "position": {
+                "x": 9.0,
+                "y": 5.0,
+                "z": -4.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.7071068286895752,
+                "z": 0.0,
+                "w": 0.7071068286895752
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestBlock01",
+            "position": {
+                "x": 9.0,
+                "y": 5.0,
+                "z": -5.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.7071068286895752,
+                "z": 0.0,
+                "w": 0.7071068286895752
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestBlock01",
+            "position": {
+                "x": 8.0,
+                "y": 5.0,
+                "z": -3.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.7071068286895752,
+                "z": 0.0,
+                "w": 0.7071068286895752
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestBlock01",
+            "position": {
+                "x": 7.0,
+                "y": 5.0,
+                "z": -3.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.7071068286895752,
+                "z": 0.0,
+                "w": 0.7071068286895752
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestBlock01",
+            "position": {
+                "x": 7.0,
+                "y": 5.0,
+                "z": -1.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.7071068286895752,
+                "z": 0.0,
+                "w": 0.7071068286895752
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestBlock01",
+            "position": {
+                "x": 6.0,
+                "y": 5.0,
+                "z": -1.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.7071068286895752,
+                "z": 0.0,
+                "w": 0.7071068286895752
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestBlock01",
+            "position": {
+                "x": 8.0,
+                "y": 4.0,
+                "z": -1.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.7071068286895752,
+                "z": 0.0,
+                "w": 0.7071068286895752
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestBlock01",
+            "position": {
+                "x": 8.0,
+                "y": 5.0,
+                "z": -1.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.7071068286895752,
+                "z": 0.0,
+                "w": 0.7071068286895752
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestBlock01",
+            "position": {
+                "x": 9.0,
+                "y": 4.0,
+                "z": -1.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.7071068286895752,
+                "z": 0.0,
+                "w": 0.7071068286895752
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestBlock01",
+            "position": {
+                "x": 9.0,
+                "y": 5.0,
+                "z": -1.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.7071068286895752,
+                "z": 0.0,
+                "w": 0.7071068286895752
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestBlock01",
+            "position": {
+                "x": 10.0,
+                "y": 4.0,
+                "z": -1.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.7071068286895752,
+                "z": 0.0,
+                "w": 0.7071068286895752
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestBlock01",
+            "position": {
+                "x": 10.0,
+                "y": 5.0,
+                "z": -1.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.7071068286895752,
+                "z": 0.0,
+                "w": 0.7071068286895752
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestBlock01",
+            "position": {
+                "x": 11.0,
+                "y": 4.0,
+                "z": -1.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.7071068286895752,
+                "z": 0.0,
+                "w": 0.7071068286895752
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestBlock01",
+            "position": {
+                "x": 11.0,
+                "y": 5.0,
+                "z": -1.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.7071068286895752,
+                "z": 0.0,
+                "w": 0.7071068286895752
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestBlock01",
+            "position": {
+                "x": 12.0,
+                "y": 4.0,
+                "z": -1.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.7071068286895752,
+                "z": 0.0,
+                "w": 0.7071068286895752
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestBlock01",
+            "position": {
+                "x": 12.0,
+                "y": 5.0,
+                "z": -1.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.7071068286895752,
+                "z": 0.0,
+                "w": 0.7071068286895752
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestBlock01",
+            "position": {
+                "x": 12.0,
+                "y": 4.0,
+                "z": -2.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.7071068286895752,
+                "z": 0.0,
+                "w": 0.7071068286895752
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestBlock01",
+            "position": {
+                "x": 12.0,
+                "y": 5.0,
+                "z": -2.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.7071068286895752,
+                "z": 0.0,
+                "w": 0.7071068286895752
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestBlock01",
+            "position": {
+                "x": 12.0,
+                "y": 4.0,
+                "z": -3.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.7071068286895752,
+                "z": 0.0,
+                "w": 0.7071068286895752
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestBlock01",
+            "position": {
+                "x": 12.0,
+                "y": 5.0,
+                "z": -3.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.7071068286895752,
+                "z": 0.0,
+                "w": 0.7071068286895752
+            },
+            "connectionData": []
+        },
+        {
+            "name": "Sewer_Square",
+            "position": {
+                "x": 11.0,
+                "y": 2.0,
+                "z": -2.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.7071068286895752,
+                "z": 0.0,
+                "w": 0.7071068286895752
+            },
+            "connectionData": []
+        },
+        {
+            "name": "Sewer_Square",
+            "position": {
+                "x": 10.0,
+                "y": 2.0,
+                "z": -2.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.7071068286895752,
+                "z": 0.0,
+                "w": 0.7071068286895752
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestBlock02",
+            "position": {
+                "x": 10.0,
+                "y": 2.0,
+                "z": -1.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.7071068286895752,
+                "z": 0.0,
+                "w": 0.7071068286895752
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestBlock02",
+            "position": {
+                "x": 11.0,
+                "y": 2.0,
+                "z": -1.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.7071068286895752,
+                "z": 0.0,
+                "w": 0.7071068286895752
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestBlock02",
+            "position": {
+                "x": 12.0,
+                "y": 2.0,
+                "z": -1.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.7071068286895752,
+                "z": 0.0,
+                "w": 0.7071068286895752
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestBlock02",
+            "position": {
+                "x": 12.0,
+                "y": 4.0,
+                "z": -4.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.7071068286895752,
+                "z": 0.0,
+                "w": 0.7071068286895752
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestBlock02",
+            "position": {
+                "x": 12.0,
+                "y": 4.0,
+                "z": -6.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.7071068286895752,
+                "z": 0.0,
+                "w": 0.7071068286895752
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestBlock02",
+            "position": {
+                "x": 12.0,
+                "y": 6.0,
+                "z": -5.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.7071068286895752,
+                "z": 0.0,
+                "w": 0.7071068286895752
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestBlock02",
+            "position": {
+                "x": 12.0,
+                "y": 5.0,
+                "z": -5.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.7071068286895752,
+                "z": 0.0,
+                "w": 0.7071068286895752
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestBlock01",
+            "position": {
+                "x": 12.0,
+                "y": 5.0,
+                "z": -4.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.7071068286895752,
+                "z": 0.0,
+                "w": 0.7071068286895752
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestBlock01",
+            "position": {
+                "x": 12.0,
+                "y": 4.0,
+                "z": -5.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.7071068286895752,
+                "z": 0.0,
+                "w": 0.7071068286895752
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestBlock01",
+            "position": {
+                "x": 12.0,
+                "y": 5.0,
+                "z": -6.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.7071068286895752,
+                "z": 0.0,
+                "w": 0.7071068286895752
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestGroundDirt",
+            "position": {
+                "x": 4.0,
+                "y": 4.0,
+                "z": 5.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.7071068286895752,
+                "z": 0.0,
+                "w": 0.7071068286895752
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestGroundDirt",
+            "position": {
+                "x": 5.0,
+                "y": 4.0,
+                "z": 5.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.7071068286895752,
+                "z": 0.0,
+                "w": 0.7071068286895752
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestGroundDirt",
+            "position": {
+                "x": 5.0,
+                "y": 4.0,
+                "z": 4.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.7071068286895752,
+                "z": 0.0,
+                "w": 0.7071068286895752
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestGroundDirt",
+            "position": {
+                "x": 6.0,
+                "y": 4.0,
+                "z": 4.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.7071068286895752,
+                "z": 0.0,
+                "w": 0.7071068286895752
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestGroundDirt",
+            "position": {
+                "x": 6.0,
+                "y": 4.0,
+                "z": 3.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.7071068286895752,
+                "z": 0.0,
+                "w": 0.7071068286895752
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestGroundDirt",
+            "position": {
+                "x": 7.0,
+                "y": 4.0,
+                "z": 3.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.7071068286895752,
+                "z": 0.0,
+                "w": 0.7071068286895752
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestGroundDirt",
+            "position": {
+                "x": 7.0,
+                "y": 4.0,
+                "z": 0.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.7071068286895752,
+                "z": 0.0,
+                "w": 0.7071068286895752
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestGroundDirt",
+            "position": {
+                "x": 7.0,
+                "y": 4.0,
+                "z": 1.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.7071068286895752,
+                "z": 0.0,
+                "w": 0.7071068286895752
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestGroundDirt",
+            "position": {
+                "x": 6.0,
+                "y": 5.0,
+                "z": 3.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.7071068286895752,
+                "z": 0.0,
+                "w": 0.7071068286895752
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestGroundDirt",
+            "position": {
+                "x": 7.0,
+                "y": 5.0,
+                "z": 1.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.7071068286895752,
+                "z": 0.0,
+                "w": 0.7071068286895752
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestGroundDirt",
+            "position": {
+                "x": 7.0,
+                "y": 5.0,
+                "z": 0.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.7071068286895752,
+                "z": 0.0,
+                "w": 0.7071068286895752
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestGroundDirt",
+            "position": {
+                "x": 5.0,
+                "y": 5.0,
+                "z": 4.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.7071068286895752,
+                "z": 0.0,
+                "w": 0.7071068286895752
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestGroundDirt",
+            "position": {
+                "x": 4.0,
+                "y": 5.0,
+                "z": 5.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.7071068286895752,
+                "z": 0.0,
+                "w": 0.7071068286895752
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestGroundDirt",
+            "position": {
+                "x": 4.0,
+                "y": 4.0,
+                "z": 6.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.7071068286895752,
+                "z": 0.0,
+                "w": 0.7071068286895752
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestGroundDirt",
+            "position": {
+                "x": 4.0,
+                "y": 4.0,
+                "z": 7.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.7071068286895752,
+                "z": 0.0,
+                "w": 0.7071068286895752
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestGroundDirt",
+            "position": {
+                "x": 2.0,
+                "y": 5.0,
+                "z": 6.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.7071068286895752,
+                "z": 0.0,
+                "w": 0.7071068286895752
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestGroundDirt",
+            "position": {
+                "x": 1.0,
+                "y": 5.0,
+                "z": 6.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.7071068286895752,
+                "z": 0.0,
+                "w": 0.7071068286895752
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestGroundDirt",
+            "position": {
+                "x": 0.0,
+                "y": 5.0,
+                "z": 6.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.7071068286895752,
+                "z": 0.0,
+                "w": 0.7071068286895752
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestGroundDirt",
+            "position": {
+                "x": -1.0,
+                "y": 5.0,
+                "z": 6.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.7071068286895752,
+                "z": 0.0,
+                "w": 0.7071068286895752
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestGroundDirt",
+            "position": {
+                "x": -1.0,
+                "y": 5.0,
+                "z": 5.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.7071068286895752,
+                "z": 0.0,
+                "w": 0.7071068286895752
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestGroundDirt",
+            "position": {
+                "x": -2.0,
+                "y": 5.0,
+                "z": 5.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.7071068286895752,
+                "z": 0.0,
+                "w": 0.7071068286895752
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestGroundDirt",
+            "position": {
+                "x": -2.0,
+                "y": 5.0,
+                "z": 4.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.7071068286895752,
+                "z": 0.0,
+                "w": 0.7071068286895752
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestGroundDirt",
+            "position": {
+                "x": -2.0,
+                "y": 5.0,
+                "z": 3.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.7071068286895752,
+                "z": 0.0,
+                "w": 0.7071068286895752
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestGroundDirt",
+            "position": {
+                "x": -3.0,
+                "y": 5.0,
+                "z": 2.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.7071068286895752,
+                "z": 0.0,
+                "w": 0.7071068286895752
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestGroundDirt",
+            "position": {
+                "x": -2.0,
+                "y": 5.0,
+                "z": 1.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.7071068286895752,
+                "z": 0.0,
+                "w": 0.7071068286895752
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestGroundDirt",
+            "position": {
+                "x": -2.0,
+                "y": 5.0,
+                "z": 0.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.7071068286895752,
+                "z": 0.0,
+                "w": 0.7071068286895752
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestGroundDirt",
+            "position": {
+                "x": -1.0,
+                "y": 5.0,
+                "z": -1.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.7071068286895752,
+                "z": 0.0,
+                "w": 0.7071068286895752
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestGroundDirt",
+            "position": {
+                "x": 0.0,
+                "y": 5.0,
+                "z": -2.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.7071068286895752,
+                "z": 0.0,
+                "w": 0.7071068286895752
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestGroundDirt",
+            "position": {
+                "x": 1.0,
+                "y": 5.0,
+                "z": -2.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.7071068286895752,
+                "z": 0.0,
+                "w": 0.7071068286895752
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestGroundDirt",
+            "position": {
+                "x": 2.0,
+                "y": 5.0,
+                "z": -3.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.7071068286895752,
+                "z": 0.0,
+                "w": 0.7071068286895752
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestGroundDirt",
+            "position": {
+                "x": 3.0,
+                "y": 5.0,
+                "z": -3.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.7071068286895752,
+                "z": 0.0,
+                "w": 0.7071068286895752
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestGroundDirt",
+            "position": {
+                "x": 4.0,
+                "y": 5.0,
+                "z": -3.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.7071068286895752,
+                "z": 0.0,
+                "w": 0.7071068286895752
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestGroundDirt",
+            "position": {
+                "x": 5.0,
+                "y": 5.0,
+                "z": -3.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.7071068286895752,
+                "z": 0.0,
+                "w": 0.7071068286895752
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestGround02",
+            "position": {
+                "x": 11.0,
+                "y": 3.0,
+                "z": -7.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.7071068286895752,
+                "z": 0.0,
+                "w": 0.7071068286895752
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestGround02",
+            "position": {
+                "x": 10.0,
+                "y": 3.0,
+                "z": -7.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.7071068286895752,
+                "z": 0.0,
+                "w": 0.7071068286895752
+            },
+            "connectionData": []
+        },
+        {
+            "name": "RoundButton",
+            "position": {
+                "x": 11.0,
+                "y": 4.0,
+                "z": -7.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.7071068286895752,
+                "z": 0.0,
+                "w": 0.7071068286895752
+            },
+            "connectionData": [
+                {
+                    "x": 3.0,
+                    "y": 3.5,
+                    "z": 6.0
+                }
+            ]
+        },
+        {
+            "name": "ForestTreePineTall",
+            "position": {
+                "x": 5.0,
+                "y": 3.5,
+                "z": -2.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.7071068286895752,
+                "z": 0.0,
+                "w": 0.7071068286895752
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestTreePineTall",
+            "position": {
+                "x": 4.0,
+                "y": 3.5,
+                "z": -2.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.7071068286895752,
+                "z": 0.0,
+                "w": 0.7071068286895752
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestTreePineTall",
+            "position": {
+                "x": 4.0,
+                "y": 3.5,
+                "z": -1.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.7071068286895752,
+                "z": 0.0,
+                "w": 0.7071068286895752
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestTreePineTall",
+            "position": {
+                "x": 6.0,
+                "y": 3.5,
+                "z": 0.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.7071068286895752,
+                "z": 0.0,
+                "w": 0.7071068286895752
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestTreePineTall",
+            "position": {
+                "x": 5.0,
+                "y": 3.5,
+                "z": 0.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.7071068286895752,
+                "z": 0.0,
+                "w": 0.7071068286895752
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestTreePineTall",
+            "position": {
+                "x": 6.0,
+                "y": 3.5,
+                "z": 1.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.7071068286895752,
+                "z": 0.0,
+                "w": 0.7071068286895752
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestTreePineTall",
+            "position": {
+                "x": 6.0,
+                "y": 3.5,
+                "z": 2.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.7071068286895752,
+                "z": 0.0,
+                "w": 0.7071068286895752
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestTreePineTall",
+            "position": {
+                "x": 5.0,
+                "y": 3.5,
+                "z": 2.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.7071068286895752,
+                "z": 0.0,
+                "w": 0.7071068286895752
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestTreePineTall",
+            "position": {
+                "x": 5.0,
+                "y": 3.5,
+                "z": 3.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.7071068286895752,
+                "z": 0.0,
+                "w": 0.7071068286895752
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestTreePineTall",
+            "position": {
+                "x": 4.0,
+                "y": 3.5,
+                "z": 4.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.7071068286895752,
+                "z": 0.0,
+                "w": 0.7071068286895752
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestTreePineTall",
+            "position": {
+                "x": 3.0,
+                "y": 3.5,
+                "z": 5.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.7071068286895752,
+                "z": 0.0,
+                "w": 0.7071068286895752
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestTreePineTall",
+            "position": {
+                "x": 2.0,
+                "y": 3.5,
+                "z": 5.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.7071068286895752,
+                "z": 0.0,
+                "w": 0.7071068286895752
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestTreePineTall",
+            "position": {
+                "x": 1.0,
+                "y": 3.5,
+                "z": 5.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.7071068286895752,
+                "z": 0.0,
+                "w": 0.7071068286895752
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestTreePineTall",
+            "position": {
+                "x": 0.0,
+                "y": 3.5,
+                "z": 5.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.7071068286895752,
+                "z": 0.0,
+                "w": 0.7071068286895752
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestTreePineTall",
+            "position": {
+                "x": -1.0,
+                "y": 3.5,
+                "z": 4.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.7071068286895752,
+                "z": 0.0,
+                "w": 0.7071068286895752
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestTreePineTall",
+            "position": {
+                "x": -1.0,
+                "y": 3.5,
+                "z": 2.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.7071068286895752,
+                "z": 0.0,
+                "w": 0.7071068286895752
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestTreePineTall",
+            "position": {
+                "x": 0.0,
+                "y": 3.5,
+                "z": 3.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.7071068286895752,
+                "z": 0.0,
+                "w": 0.7071068286895752
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestTreePineTall",
+            "position": {
+                "x": 1.0,
+                "y": 3.5,
+                "z": 3.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.7071068286895752,
+                "z": 0.0,
+                "w": 0.7071068286895752
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestTreePineTall",
+            "position": {
+                "x": 2.0,
+                "y": 3.5,
+                "z": 4.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.7071068286895752,
+                "z": 0.0,
+                "w": 0.7071068286895752
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestTreePineTall",
+            "position": {
+                "x": 3.0,
+                "y": 3.5,
+                "z": 3.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.7071068286895752,
+                "z": 0.0,
+                "w": 0.7071068286895752
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestTreePineTall",
+            "position": {
+                "x": 4.0,
+                "y": 3.5,
+                "z": 1.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.7071068286895752,
+                "z": 0.0,
+                "w": 0.7071068286895752
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestTreePineTall",
+            "position": {
+                "x": 3.0,
+                "y": 3.5,
+                "z": 0.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.7071068286895752,
+                "z": 0.0,
+                "w": 0.7071068286895752
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestTreePineTall",
+            "position": {
+                "x": 2.0,
+                "y": 3.5,
+                "z": -1.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.7071068286895752,
+                "z": 0.0,
+                "w": 0.7071068286895752
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestTreePineTall",
+            "position": {
+                "x": 1.0,
+                "y": 3.5,
+                "z": 0.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.7071068286895752,
+                "z": 0.0,
+                "w": 0.7071068286895752
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestTreePineTall",
+            "position": {
+                "x": 0.0,
+                "y": 3.5,
+                "z": 1.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.7071068286895752,
+                "z": 0.0,
+                "w": 0.7071068286895752
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestTreePineTall",
+            "position": {
+                "x": -1.0,
+                "y": 3.5,
+                "z": 0.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.7071068286895752,
+                "z": 0.0,
+                "w": 0.7071068286895752
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestTreePineTall",
+            "position": {
+                "x": 0.0,
+                "y": 3.5,
+                "z": -1.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.7071068286895752,
+                "z": 0.0,
+                "w": 0.7071068286895752
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestGroundDirt",
+            "position": {
+                "x": 2.0,
+                "y": 5.0,
+                "z": 7.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestGroundDirt",
+            "position": {
+                "x": 4.0,
+                "y": 5.0,
+                "z": 6.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestGroundDirt",
+            "position": {
+                "x": 4.0,
+                "y": 5.0,
+                "z": 7.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestGroundDirt",
+            "position": {
+                "x": 4.0,
+                "y": 5.0,
+                "z": 8.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestGroundDirt",
+            "position": {
+                "x": 2.0,
+                "y": 5.0,
+                "z": 8.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestGroundDirt",
+            "position": {
+                "x": 3.0,
+                "y": 2.0,
+                "z": 8.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestGroundDirt",
+            "position": {
+                "x": 3.0,
+                "y": 3.0,
+                "z": 8.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestGroundDirt",
+            "position": {
+                "x": 3.0,
+                "y": 4.0,
+                "z": 8.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestLadder 2",
+            "position": {
+                "x": 3.0,
+                "y": 3.0,
+                "z": 7.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestLadder 2",
+            "position": {
+                "x": 3.0,
+                "y": 4.0,
+                "z": 7.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestGroundDirt",
+            "position": {
+                "x": 4.0,
+                "y": 6.0,
+                "z": 8.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestGroundDirt",
+            "position": {
+                "x": 4.0,
+                "y": 6.0,
+                "z": 7.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestGroundDirt",
+            "position": {
+                "x": 4.0,
+                "y": 6.0,
+                "z": 6.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestGroundDirt",
+            "position": {
+                "x": 4.0,
+                "y": 6.0,
+                "z": 5.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestGroundDirt",
+            "position": {
+                "x": 3.0,
+                "y": 5.0,
+                "z": 6.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestGroundDirt",
+            "position": {
+                "x": 3.0,
+                "y": 6.0,
+                "z": 6.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestGroundDirt",
+            "position": {
+                "x": 2.0,
+                "y": 6.0,
+                "z": 6.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestGroundDirt",
+            "position": {
+                "x": 2.0,
+                "y": 6.0,
+                "z": 7.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestGroundDirt",
+            "position": {
+                "x": 2.0,
+                "y": 6.0,
+                "z": 8.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestGroundDirt",
+            "position": {
+                "x": 3.0,
+                "y": 7.0,
+                "z": 6.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestGroundDirt",
+            "position": {
+                "x": 3.0,
+                "y": 7.0,
+                "z": 7.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestGroundDirt",
+            "position": {
+                "x": 3.0,
+                "y": 7.0,
+                "z": 8.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestGroundDirt",
+            "position": {
+                "x": 3.0,
+                "y": 4.0,
+                "z": 9.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestGroundDirt",
+            "position": {
+                "x": 3.0,
+                "y": 4.0,
+                "z": 10.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestGroundDirt",
+            "position": {
+                "x": 4.0,
+                "y": 5.0,
+                "z": 9.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestGroundDirt",
+            "position": {
+                "x": 4.0,
+                "y": 5.0,
+                "z": 10.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestGroundDirt",
+            "position": {
+                "x": 2.0,
+                "y": 5.0,
+                "z": 9.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestGroundDirt",
+            "position": {
+                "x": 2.0,
+                "y": 5.0,
+                "z": 10.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestGroundDirt",
+            "position": {
+                "x": 2.0,
+                "y": 6.0,
+                "z": 9.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestGroundDirt",
+            "position": {
+                "x": 2.0,
+                "y": 6.0,
+                "z": 10.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestGroundDirt",
+            "position": {
+                "x": 4.0,
+                "y": 6.0,
+                "z": 9.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestGroundDirt",
+            "position": {
+                "x": 4.0,
+                "y": 6.0,
+                "z": 10.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestGroundDirt",
+            "position": {
+                "x": 3.0,
+                "y": 7.0,
+                "z": 9.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestGroundDirt",
+            "position": {
+                "x": 3.0,
+                "y": 7.0,
+                "z": 10.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestGroundDirt",
+            "position": {
+                "x": 3.0,
+                "y": 4.0,
+                "z": 13.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestGroundDirt",
+            "position": {
+                "x": 3.0,
+                "y": 5.0,
+                "z": 13.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestGroundDirt",
+            "position": {
+                "x": 2.0,
+                "y": 5.0,
+                "z": 13.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestGroundDirt",
+            "position": {
+                "x": 1.0,
+                "y": 5.0,
+                "z": 13.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestGroundDirt",
+            "position": {
+                "x": 0.0,
+                "y": 5.0,
+                "z": 13.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestGroundDirt",
+            "position": {
+                "x": 3.0,
+                "y": 6.0,
+                "z": 13.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestGroundDirt",
+            "position": {
+                "x": 2.0,
+                "y": 6.0,
+                "z": 13.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestGroundDirt",
+            "position": {
+                "x": 1.0,
+                "y": 6.0,
+                "z": 13.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestGroundDirt",
+            "position": {
+                "x": 0.0,
+                "y": 6.0,
+                "z": 13.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestGroundDirt",
+            "position": {
+                "x": 3.0,
+                "y": 7.0,
+                "z": 13.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestGroundDirt",
+            "position": {
+                "x": 2.0,
+                "y": 7.0,
+                "z": 13.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestGroundDirt",
+            "position": {
+                "x": 1.0,
+                "y": 7.0,
+                "z": 13.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestGroundDirt",
+            "position": {
+                "x": 0.0,
+                "y": 7.0,
+                "z": 13.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestLadder 2",
+            "position": {
+                "x": 3.0,
+                "y": 5.0,
+                "z": 12.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestLadder 2",
+            "position": {
+                "x": 3.0,
+                "y": 6.0,
+                "z": 12.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestLadder 2",
+            "position": {
+                "x": 2.0,
+                "y": 6.0,
+                "z": 12.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestLadder 2",
+            "position": {
+                "x": 1.0,
+                "y": 6.0,
+                "z": 12.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestLadder 2",
+            "position": {
+                "x": 1.0,
+                "y": 7.0,
+                "z": 12.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestLadder 2",
+            "position": {
+                "x": 0.0,
+                "y": 7.0,
+                "z": 12.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestGroundDirt",
+            "position": {
+                "x": 0.0,
+                "y": 8.0,
+                "z": 13.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestLadder 2",
+            "position": {
+                "x": 0.0,
+                "y": 8.0,
+                "z": 12.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestGroundDirt",
+            "position": {
+                "x": -1.0,
+                "y": 8.0,
+                "z": 13.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+            },
+            "connectionData": []
+        },
+        {
+            "name": "RoundButton",
+            "position": {
+                "x": -1.0,
+                "y": 9.0,
+                "z": 13.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+            },
+            "connectionData": [
+                {
+                    "x": 7.0,
+                    "y": 3.5,
+                    "z": 2.0
+                }
+            ]
+        },
+        {
+            "name": "ForestGroundDirt",
+            "position": {
+                "x": 2.0,
+                "y": 7.0,
+                "z": 10.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestGroundDirt",
+            "position": {
+                "x": 2.0,
+                "y": 8.0,
+                "z": 10.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestGroundDirt",
+            "position": {
+                "x": 2.0,
+                "y": 9.0,
+                "z": 10.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestGroundDirt",
+            "position": {
+                "x": 2.0,
+                "y": 10.0,
+                "z": 10.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestGroundDirt",
+            "position": {
+                "x": 3.0,
+                "y": 8.0,
+                "z": 10.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestGroundDirt",
+            "position": {
+                "x": 3.0,
+                "y": 9.0,
+                "z": 10.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestGroundDirt",
+            "position": {
+                "x": 3.0,
+                "y": 10.0,
+                "z": 10.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestGroundDirt",
+            "position": {
+                "x": 4.0,
+                "y": 7.0,
+                "z": 10.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestGroundDirt",
+            "position": {
+                "x": 4.0,
+                "y": 8.0,
+                "z": 10.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestGroundDirt",
+            "position": {
+                "x": 4.0,
+                "y": 9.0,
+                "z": 10.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestGroundDirt",
+            "position": {
+                "x": 4.0,
+                "y": 10.0,
+                "z": 10.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestGroundDirt",
+            "position": {
+                "x": 1.0,
+                "y": 10.0,
+                "z": 10.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestGroundDirt",
+            "position": {
+                "x": 0.0,
+                "y": 10.0,
+                "z": 10.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestGroundDirt",
+            "position": {
+                "x": -1.0,
+                "y": 10.0,
+                "z": 10.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestGroundDirt",
+            "position": {
+                "x": 1.0,
+                "y": 11.0,
+                "z": 10.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestGroundDirt",
+            "position": {
+                "x": 0.0,
+                "y": 11.0,
+                "z": 10.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestGroundDirt",
+            "position": {
+                "x": -1.0,
+                "y": 11.0,
+                "z": 10.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestGroundDirt",
+            "position": {
+                "x": 1.0,
+                "y": 9.0,
+                "z": 10.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestGroundDirt",
+            "position": {
+                "x": 0.0,
+                "y": 9.0,
+                "z": 10.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestGroundDirt",
+            "position": {
+                "x": -1.0,
+                "y": 9.0,
+                "z": 10.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestGroundDirt",
+            "position": {
+                "x": 1.0,
+                "y": 8.0,
+                "z": 10.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestGroundDirt",
+            "position": {
+                "x": 0.0,
+                "y": 8.0,
+                "z": 10.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestGroundDirt",
+            "position": {
+                "x": -1.0,
+                "y": 8.0,
+                "z": 10.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestGroundDirt",
+            "position": {
+                "x": 1.0,
+                "y": 7.0,
+                "z": 10.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestGroundDirt",
+            "position": {
+                "x": 0.0,
+                "y": 7.0,
+                "z": 10.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestGroundDirt",
+            "position": {
+                "x": -1.0,
+                "y": 7.0,
+                "z": 10.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestGroundDirt",
+            "position": {
+                "x": 2.0,
+                "y": 11.0,
+                "z": 10.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestGroundDirt",
+            "position": {
+                "x": 3.0,
+                "y": 11.0,
+                "z": 10.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestGroundDirt",
+            "position": {
+                "x": 4.0,
+                "y": 11.0,
+                "z": 10.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestGroundDirt",
+            "position": {
+                "x": -1.0,
+                "y": 12.0,
+                "z": 10.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestGroundDirt",
+            "position": {
+                "x": 0.0,
+                "y": 12.0,
+                "z": 10.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestGroundDirt",
+            "position": {
+                "x": 1.0,
+                "y": 12.0,
+                "z": 10.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestGroundDirt",
+            "position": {
+                "x": 2.0,
+                "y": 12.0,
+                "z": 10.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestGroundDirt",
+            "position": {
+                "x": 3.0,
+                "y": 12.0,
+                "z": 10.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestGroundDirt",
+            "position": {
+                "x": 4.0,
+                "y": 12.0,
+                "z": 10.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+            },
+            "connectionData": []
+        },
+        {
+            "name": "RoundButton",
+            "position": {
+                "x": -2.0,
+                "y": 3.0,
+                "z": 2.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+            },
+            "connectionData": [
+                {
+                    "x": 8.0,
+                    "y": 3.5,
+                    "z": -2.0
+                }
+            ]
+        },
+        {
+            "name": "Door3Yellow",
+            "position": {
+                "x": 8.0,
+                "y": 3.5,
+                "z": -2.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.7071068286895752,
+                "z": 0.0,
+                "w": 0.7071068286895752
+            },
+            "connectionData": [
+                {
+                    "x": 8.0,
+                    "y": 3.5,
+                    "z": -2.0
+                }
+            ]
+        },
+        {
+            "name": "ForestGroundDirt",
+            "position": {
+                "x": 3.0,
+                "y": 8.0,
+                "z": 13.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestGroundDirt",
+            "position": {
+                "x": 2.0,
+                "y": 8.0,
+                "z": 13.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestGroundDirt",
+            "position": {
+                "x": 1.0,
+                "y": 8.0,
+                "z": 13.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestGroundDirt",
+            "position": {
+                "x": 1.0,
+                "y": 9.0,
+                "z": 13.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestGroundDirt",
+            "position": {
+                "x": 2.0,
+                "y": 9.0,
+                "z": 13.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestGroundDirt",
+            "position": {
+                "x": 3.0,
+                "y": 9.0,
+                "z": 13.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestGroundDirt",
+            "position": {
+                "x": 3.0,
+                "y": 10.0,
+                "z": 13.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestGroundDirt",
+            "position": {
+                "x": 2.0,
+                "y": 10.0,
+                "z": 13.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+            },
+            "connectionData": []
+        }
+    ]
+}

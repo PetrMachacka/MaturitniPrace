@@ -1,10 +1,10 @@
-using System;
 using System.Collections.Generic;
 using System.IO;
-using Unity.VisualScripting;
 using UnityEngine;
 using Assets.Scripts;
 using UnityEngine.TextCore.Text;
+using TMPro;
+
 public class LoadLevel : MonoBehaviour
 {
     public class LineConnection
@@ -43,7 +43,7 @@ public class LoadLevel : MonoBehaviour
         }
 
         string directoryPath = GetLevelDirectoryPath(levelsPath, selectedGuid);
-        if (directoryPath != null)
+        if (directoryPath != null || PlayerPrefs.GetInt("SteamDownloads") == 2)
         {
             string filePath = Path.Combine(directoryPath, "levelData.json");
             LoadLevelData(filePath);
@@ -66,7 +66,7 @@ public class LoadLevel : MonoBehaviour
             return SteamManager.steamDownloadPath + "/" + selectedGuid;
         }
         if(SteamDownloads == 2){
-            levelsPath = Path.Combine(levelsPath, "Campaign");
+            return "Campaign/" + selectedGuid;
         }
         string[] directories = Directory.GetDirectories(levelsPath);
 
@@ -83,16 +83,29 @@ public class LoadLevel : MonoBehaviour
 
     private void LoadLevelData(string filePath)
     {
+        string selectedGuid = PlayerPrefs.GetString("SelectedLevel", "DefaultLevel");
+        LevelData levelData = null;
+        string json = null;
         Building.objectPrefab = null;
         BuildManager.buildMode = BuildModes.build;
-        if (!File.Exists(filePath))
+        if (!File.Exists(filePath) && PlayerPrefs.GetInt("SteamDownloads") != 2)
         {
             Debug.LogError("Level data file not found: " + filePath);
             return;
         }
 
-        string json = File.ReadAllText(filePath);
-        LevelData levelData = JsonUtility.FromJson<LevelData>(json);
+        if(PlayerPrefs.GetInt("SteamDownloads") == 2)
+        {
+            Debug.Log("Campaign/" + selectedGuid + "/levelData");
+            UnityEngine.TextAsset jsonFile = Resources.Load<UnityEngine.TextAsset>("Campaign/" + selectedGuid + "/levelData");
+            json = jsonFile.text;
+        }
+        else
+        {
+            json = File.ReadAllText(filePath);
+        }
+        
+        levelData = JsonUtility.FromJson<LevelData>(json);
         isCoop = levelData.isCoop;
         if(!isCoop && loadLevelMode == LoadLevelMode.Play)
         {

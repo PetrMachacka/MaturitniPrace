@@ -66,7 +66,7 @@ public class SteamManager : MonoBehaviour
             Steamworks.SteamClient.Init(3336140);
             steamUser = Steamworks.SteamClient.Name.ToString();
             steamId = Steamworks.SteamClient.SteamId.ToString();
-            Debug.Log(steamUser);
+            Debug.Log(steamUser + " " + steamId);
         }
         catch (System.Exception e)
         {

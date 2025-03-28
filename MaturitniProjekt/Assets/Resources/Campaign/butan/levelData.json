@@ -1,0 +1,304 @@
+{
+    "name": "Test5",
+    "isCoop": false,
+    "steamId": "3443004695",
+    "objects": [
+        {
+            "name": "Cube",
+            "position": {
+                "x": 2.0,
+                "y": 2.0,
+                "z": 2.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestGroundDirt",
+            "position": {
+                "x": 2.0,
+                "y": 2.0,
+                "z": 3.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+            },
+            "connectionData": []
+        },
+        {
+            "name": "Ending",
+            "position": {
+                "x": 2.0,
+                "y": 3.5,
+                "z": 2.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestGroundDirt",
+            "position": {
+                "x": 3.0,
+                "y": 2.0,
+                "z": 3.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestGroundDirt",
+            "position": {
+                "x": 3.0,
+                "y": 2.0,
+                "z": 4.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestGroundDirt",
+            "position": {
+                "x": 3.0,
+                "y": 2.0,
+                "z": 5.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestGroundDirt",
+            "position": {
+                "x": 3.0,
+                "y": 2.0,
+                "z": 6.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestGroundDirt",
+            "position": {
+                "x": 3.0,
+                "y": 2.0,
+                "z": 7.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestGroundDirt",
+            "position": {
+                "x": 3.0,
+                "y": 2.0,
+                "z": 8.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestGroundDirt",
+            "position": {
+                "x": 3.0,
+                "y": 2.0,
+                "z": 9.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+            },
+            "connectionData": []
+        },
+        {
+            "name": "SpawnBlockA",
+            "position": {
+                "x": 3.0,
+                "y": 3.5,
+                "z": 9.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+            },
+            "connectionData": []
+        },
+        {
+            "name": "SquareButton",
+            "position": {
+                "x": 3.0,
+                "y": 3.0,
+                "z": 7.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+            },
+            "connectionData": [
+                {
+                    "x": 3.0,
+                    "y": 3.5,
+                    "z": 4.0
+                }
+            ]
+        },
+        {
+            "name": "Door3Yellow",
+            "position": {
+                "x": 3.0,
+                "y": 3.5,
+                "z": 4.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+            },
+            "connectionData": [
+                {
+                    "x": 3.0,
+                    "y": 3.5,
+                    "z": 4.0
+                }
+            ]
+        },
+        {
+            "name": "ForestGroundDirt",
+            "position": {
+                "x": 4.0,
+                "y": 2.0,
+                "z": 4.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestGroundDirt",
+            "position": {
+                "x": 4.0,
+                "y": 2.0,
+                "z": 5.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestGroundDirt",
+            "position": {
+                "x": 4.0,
+                "y": 3.0,
+                "z": 4.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestGroundDirt",
+            "position": {
+                "x": 4.0,
+                "y": 4.0,
+                "z": 4.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestLadder 2",
+            "position": {
+                "x": 4.0,
+                "y": 3.0,
+                "z": 5.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 1.0,
+                "z": 0.0,
+                "w": -4.371138828673793e-8
+            },
+            "connectionData": []
+        },
+        {
+            "name": "ForestLadder 2",
+            "position": {
+                "x": 4.0,
+                "y": 4.0,
+                "z": 5.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 1.0,
+                "z": 0.0,
+                "w": -4.371138828673793e-8
+            },
+            "connectionData": []
+        }
+    ]
+}

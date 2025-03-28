@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq.Expressions;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-
+using TMPro;
 public class Menu : MonoBehaviour
 {
     public GameObject LevelEditSelection;
@@ -11,8 +11,20 @@ public class Menu : MonoBehaviour
     public GameObject LevelPlayCommunitySelection;
     public GameObject Settings;
     public GameObject CampaignLevels;
+    public TextMeshProUGUI text1;
     private void Start()
     {
+        Debug.Log(SteamManager.steamId);
+        if (SteamManager.steamId != "76561198361913117")
+        {
+            Debug.Log("Not the owner of the game, setting text to Chimken.");
+            text1.text = "Chimken";
+        }
+        else
+        {
+            text1.text = "Šimken";
+        }
+
         switch (PlayerPrefs.GetString("OpenMenu"))
         {
             case "PlaySelection":
