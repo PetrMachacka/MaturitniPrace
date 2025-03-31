@@ -1775,7 +1775,7 @@ MonoBehaviour:
   LevelPlayCommunitySelection: {fileID: 1118055314}
   Settings: {fileID: 1440326874}
   CampaignLevels: {fileID: 289565890}
-  text1: {fileID: 0}
+  text1: {fileID: 1854260301}
 --- !u!114 &204443529
 MonoBehaviour:
   m_ObjectHideFlags: 0
