@@ -11,6 +11,7 @@ public class Menu : MonoBehaviour
     public GameObject LevelPlayCommunitySelection;
     public GameObject Settings;
     public GameObject CampaignLevels;
+    public GameObject Tutorial;
     public TextMeshProUGUI text1;
     private void Start()
     {
@@ -41,6 +42,9 @@ public class Menu : MonoBehaviour
                 break;
             case "CampaignSelection":
                 CampaignLevels.SetActive(true);
+                break;
+            case "Tutorial":
+                LevelPlaySelection.SetActive(true);
                 break;
         }
     }
@@ -110,6 +114,18 @@ public class Menu : MonoBehaviour
         }
     }
 
+    public void TutorialMenu()
+    {
+        if(Tutorial.activeSelf)
+        {
+            Tutorial.SetActive(false);
+        }
+        else
+        {
+            Tutorial.SetActive(true);
+            PlayerPrefs.SetString("OpenMenu", "Tutorial");
+        }
+    }
     private void OnExit(){
         switch (PlayerPrefs.GetString("OpenMenu"))
         {
@@ -125,6 +141,9 @@ public class Menu : MonoBehaviour
                 break;
             case "Settings":
                 Settings.SetActive(false);
+                break;
+            case "Tutorial":
+                Tutorial.SetActive(false);
                 break;
         }
     }
